@@ -95,3 +95,7 @@ body,html{  height:100%;  color:#777;  line-height:1.8;  }
 .slides {display:none;}
 .animacion-in{animation:fadein 2s}
 @keyframes fadein{0%{opacity:0}100%{opacity:1}}
+.panel-info{min-height: 11em;}
+@media only screen and (max-device-width: 1024px) {
+    .panel-info{min-height:inherit;}
+}

@@ -59,9 +59,12 @@ if(!isset($_SESSION['usuario'])) {
 
         <div class="w3-overlay w3-animate-opacity" onclick="cerrar_panel()" style="cursor:pointer" id="contenido"></div>
         <div class="contenido">
+            <div align="center" class="w3-row w3-card-2" style="rgba(247, 247, 247, 0.27)">
+                <img src="../../img/imagenes/Logo%20horizontal%20con%20texto.png" alt="" class="w3-responsive w3-animate-zoom" style="height: 7em;">
+            </div>
             <div class="w3-container">
                 <div data-ng-controller="Controlador">
-                    <h1>Bienvenido {{ datos.nombre+" "+datos.apellido}}</h1>
+                    <h2>Bienvenido {{ datos.nombre+" "+datos.apellido}}</h2>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda consequatur dolor inventore ipsam neque non odio repellendus, suscipit totam? Accusamus animi cupiditate dolorem eaque exercitationem impedit magni porro, quis.</p>
                 <div class="w3-row">
@@ -99,6 +102,9 @@ if(!isset($_SESSION['usuario'])) {
                 </div>
             </div>
         </div>
+        <footer class="w3-blue-grey" style="height: 10em;margin-top: 1em;">
+
+        </footer>
     </div>
 <script src="../../js/post_scripts.js"></script>
 </body>

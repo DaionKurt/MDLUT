@@ -1,30 +1,33 @@
 <div data-ng-controller="Controlador_Estado" style="padding-top: 1em">
     <div class="w3-row">
-        <div class="w3-half" style="height: 300px;">
-            <div class="w3-card-2 marg-movil">
+        <div class="w3-half panel-info">
+            <div class="w3-card-2 marg-movil panel-info">
 
                 <header class="w3-container w3-blue">
-                    <h1>Header</h1>
+                    <h2>Información actual</h2>
                 </header>
 
-                <div class="w3-content">
-                    <div class="slides w3-container w3-red animacion-in">
-                        <h2><b>Did You Know?</b></h2>
-                        <p><i>We plan to sell trips to the moon in the 2020s</i></p>
+                <div class="w3-content panel-info">
+                    <div class="slides w3-container animacion-in panel-info">
+                        <h3><b>Datos del paciente</b></h3>
+                        <div class="w3-row">
+                            <div class="w3-half">
+                                <p>Nombre: {{datos.nombre+" "+datos.apellido}}</p>
+                                <p>Sexo: {{datos.sexo=='M'?'Femenino':'Masculino'}}</p>
+                            </div>
+                            <div class="w3-half">
+                                <p>Fecha de Nacimiento: {{datos.fecha_nacimiento}}</p>
+                                <p>Estado actual de diabetes: <b>{{datos.estado_diabetico}}</b></p>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="slides w3-container w3-blue animacion-in">
-                        <h2><b>Did You Know?</b></h2>
-                        <p><i>We plan to sell trips to the moon in the 2020s</i></p>
+                    <div class="slides w3-container animacion-in">
+                        <h3><b>Ultimo diagnóstico realizado</b></h3>
+                        <p>{{regis.nombre}}</p>
                     </div>
-                    <div class="slides w3-container w3-green animacion-in">
-                        <h2><b>Did You Know?</b></h2>
-                        <p><i>We plan to sell trips to the moon in the 2020s</i></p>
-                    </div>
-
-                    <div class="slides w3-container w3-yellow animacion-in">
-                        <h2><b>Did You Know?</b></h2>
-                        <p><i>We plan to sell trips to the moon in the 2020s</i></p>
+                    <div class="slides w3-container animacion-in">
+                        <h3><b>Próxima cita</b></h3>
+                        <p>We plan to sell trips to the moon in the 2020s</p>
                     </div>
                 </div>
                 <div class="w3-center">
@@ -46,60 +49,77 @@
                 </script>
             </div>
         </div>
-        <div class="w3-half">
+        <div class="w3-half w3-hide-small w3-hide-medium">
             <div id="chart_div" style="width: 100%; height: auto;"></div>
         </div>
     </div>
-    <h3>
-        Ultimos análisis de glucosa
-    </h3>
-    <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-black w3-left-align">Open Section 1</button>
-    <div id="Demo1" class="w3-hide w3-container w3-animate-left">
-        <p>Some text..</p>
-    </div>
-
-    <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-black w3-left-align">Open Section 2</button>
-    <div id="Demo2" class="w3-hide w3-container w3-animate-left">
-        <p>Some other text..</p>
-    </div>
-    <script>
-        function myFunction(id) {
-            var x = document.getElementById(id);
-            if (x.className.indexOf("w3-show") === -1) {
-                x.className += " w3-show";
-                x.previousElementSibling.className =
-                    x.previousElementSibling.className.replace("w3-black", "w3-red");
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-                x.previousElementSibling.className =
-                    x.previousElementSibling.className.replace("w3-red", "w3-black");
-            }
-        }
-    </script>
     <div class="w3-row">
         <div class="w3-half padd-movil">
             <h3>
-                Ultimos análisis de glucosa
+                Medico asignado
             </h3>
-            <table class="w3-table-all w3-card-2" style="margin-top: 1em;margin-bottom: 2em;">
+            <div class="w3-card-2">
+                <header class="w3-container w3-light-grey">
+                    <h3>Nombre Genérico</h3>
+                </header>
+                <div class="w3-container">
+                    <p>Médico cirujano y partero (Universidad de Guadalajara) | Cédula no. 4363464</p>
+                    <hr>
+                    <img src="../../img/imagenes/avatar.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cumque eos esse, excepturi id
+                        ipsum iste molestiae perferendis quo recusandae, repellat repudiandae rerum tempora! Alias
+                        autem cum eaque sapiente vel?</p><br>
+                </div>
+                <button class="w3-button w3-block w3-dark-grey">+ Enviar correo</button>
+            </div>
+
+        </div>
+        <div class="w3-half">
+            <h3>
+                Información genérica :v
+            </h3>
+            <table class="w3-table-all w3-card-2" style="margin-bottom: 2em;">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Sexo</th>
+                    <th>Fecha de Nacimiento</th>
+                </tr>
                 <tr>
                     <td>{{ datos.nombre}}</td>
                     <td>{{ datos.apellido }}</td>
                     <td>{{ datos.sexo }}</td>
                     <td>{{ datos.fecha_nacimiento }}</td>
                 </tr>
-            </table>
-        </div>
-        <div class="w3-half">
-            <h3>
-                Ultimos análisis de glucosa
-            </h3>
-            <table class="w3-table-all w3-card-2" style="margin-top: 1em;margin-bottom: 2em;">
-                <tr data-ng-repeat="registro in datos">
-                    <td>{{ registro.Nombre}}</td>
-                    <td>{{ registro.Apellido }}</td>
-                    <td>{{ registro.Edad }}</td>
-                    <td>{{ registro.Correo }}</td>
+                <tr>
+                    <td>{{ datos.nombre}}</td>
+                    <td>{{ datos.apellido }}</td>
+                    <td>{{ datos.sexo }}</td>
+                    <td>{{ datos.fecha_nacimiento }}</td>
+                </tr>
+                <tr>
+                    <td>{{ datos.nombre}}</td>
+                    <td>{{ datos.apellido }}</td>
+                    <td>{{ datos.sexo }}</td>
+                    <td>{{ datos.fecha_nacimiento }}</td>
+                </tr>
+                <tr>
+                    <td>{{ datos.nombre}}</td>
+                    <td>{{ datos.apellido }}</td>
+                    <td>{{ datos.sexo }}</td>
+                    <td>{{ datos.fecha_nacimiento }}</td>
+                </tr>
+                <tr>
+                    <td>{{ datos.nombre}}</td>
+                    <td>{{ datos.apellido }}</td>
+                    <td>{{ datos.sexo }}</td>
+                    <td>{{ datos.fecha_nacimiento }}</td>
+                </tr>
+                <tr>
+                    <td>{{ datos.nombre}}</td>
+                    <td>{{ datos.apellido }}</td>
+                    <td>{{ datos.sexo }}</td>
+                    <td>{{ datos.fecha_nacimiento }}</td>
                 </tr>
             </table>
         </div>
