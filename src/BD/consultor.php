@@ -11,16 +11,30 @@ session_start();
 require('gestorBD.php');
 $conexion = get_connection_test();
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$JSON       = file_get_contents("php://input");
-$request    = json_decode($JSON);
-$tabla      = $request->tabla;
-$elemento    = $request->elemento;
-$sql =     "SELECT * FROM $tabla WHERE '$elemento' = '$usuario'";
+$inner  = $_GET['inner'];
+if($inner=="1"){
+    $tabla = $_GET['tabla'];
+    $elemento_p = $_GET['elemento_p'];
+    $elemento_s = $_GET['elemento_s'];
+    $sql = "SELECT * FROM $tabla WHERE '$elemento_p' = '$elemento_s'";
+}else{
+    $tabla_principal  = $_GET['tabla_p'];
+    $tabla_secundaria = $_GET['tabla_s'];
+    $sql = "SELECT * FROM $tabla_principal INNER JOIN $tabla_secundaria ON usuario.id_usuario=medico.no_usuario";
+}
 try{
-    $stmt = $conexion->query($sql);
-    $resultado = $stmt->fetchObject();
+    $result=$conexion->query($sql);
+    $salida = "";
+    while($rs = $result->fetch(PDO::FETCH_ASSOC)) {
+        if ($salida != "") {$salida .= ",";}
+        $salida .= '{"Nombre":"' .$rs["nombre"]   .'",';
+        $salida .= '"Apellido":"'.$rs["apellido"] .'",';
+        $salida .= '"Cedula":"'    .$rs["no_cedula"]     .'",';
+        $salida .= '"Correo":"'  .$rs["correo"]   .'"}';
+    }
+    $salida ='{"registro":['.$salida.']}';
     $conexion = null;
-    echo  json_encode($resultado);
+    echo($salida);
 }catch(PDOException $e){
     echo '{"error":{"error":'. $e->getMessage() .'}}';
 }

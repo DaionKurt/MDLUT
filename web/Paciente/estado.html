@@ -49,7 +49,7 @@
                 </script>
             </div>
         </div>
-        <div class="w3-half w3-hide-small w3-hide-medium">
+        <div class="w3-half w3-hide-small w3-hide-medium------">
             <div id="chart_div" style="width: 100%; height: auto;"></div>
         </div>
     </div>
@@ -85,41 +85,11 @@
                     <th>Sexo</th>
                     <th>Fecha de Nacimiento</th>
                 </tr>
-                <tr>
-                    <td>{{ datos.nombre}}</td>
-                    <td>{{ datos.apellido }}</td>
-                    <td>{{ datos.sexo }}</td>
-                    <td>{{ datos.fecha_nacimiento }}</td>
-                </tr>
-                <tr>
-                    <td>{{ datos.nombre}}</td>
-                    <td>{{ datos.apellido }}</td>
-                    <td>{{ datos.sexo }}</td>
-                    <td>{{ datos.fecha_nacimiento }}</td>
-                </tr>
-                <tr>
-                    <td>{{ datos.nombre}}</td>
-                    <td>{{ datos.apellido }}</td>
-                    <td>{{ datos.sexo }}</td>
-                    <td>{{ datos.fecha_nacimiento }}</td>
-                </tr>
-                <tr>
-                    <td>{{ datos.nombre}}</td>
-                    <td>{{ datos.apellido }}</td>
-                    <td>{{ datos.sexo }}</td>
-                    <td>{{ datos.fecha_nacimiento }}</td>
-                </tr>
-                <tr>
-                    <td>{{ datos.nombre}}</td>
-                    <td>{{ datos.apellido }}</td>
-                    <td>{{ datos.sexo }}</td>
-                    <td>{{ datos.fecha_nacimiento }}</td>
-                </tr>
-                <tr>
-                    <td>{{ datos.nombre}}</td>
-                    <td>{{ datos.apellido }}</td>
-                    <td>{{ datos.sexo }}</td>
-                    <td>{{ datos.fecha_nacimiento }}</td>
+                <tr data-ng-repeat="registro in dato">
+                    <td>{{ registro.Nombre}}</td>
+                    <td>{{ registro.Apellido }}</td>
+                    <td>{{ registro.Cedula }}</td>
+                    <td>{{ registro.Correo }}</td>
                 </tr>
             </table>
         </div>
