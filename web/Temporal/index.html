@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>Diabetes App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+    body,h1 {font-family: "Raleway", sans-serif}
+    body, html {height: 100%}
+    .bgimg {  background-image: url('diabetes.jpg');  min-height: 100%;  background-position: center;  background-size: cover;  }
+    .opacidad{  background-color: rgba(0,0,0,.3);  padding: .3em;  }
+    .w3-animate-opacity{  -webkit-animation: opac 1.5s;  animation: opac 1.5s;  }
+    .w3-animate-top{  -webkit-animation: animatetop 1.4s;  animation: animatetop 1.4s;  }
+</style>
+<body>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topleft w3-padding-large w3-xlarge opacidad">
+        Logo
+    </div>
+    <div class="w3-display-middle opacidad">
+        <h1 class="w3-jumbo w3-animate-top">MUY PRONTO</h1>
+        <hr class="w3-border-grey" style="margin:auto;width:40%">
+        <p id="fecha" class="w3-large w3-center"></p>
+    </div>
+    <div class="w3-display-bottomleft w3-padding-large opacidad">
+        Creado por <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Carlos A. Fernández</a>
+    </div>
+</div>
+<script>
+    hoy = new Date();
+    final = new Date("April 28, 2017");
+    final.setYear = hoy.getYear;
+    dias_restantes = (final.getTime() - hoy.getTime()) / (1000*60*60*24);
+    dias_restantes = Math.round(dias_restantes)+1;
+    document.getElementById("fecha").innerHTML = "Faltan "+dias_restantes+" dias";
+</script>
+</body>
+</html>

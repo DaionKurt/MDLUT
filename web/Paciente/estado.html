@@ -1,0 +1,107 @@
+<div data-ng-controller="Controlador_Estado" style="padding-top: 1em">
+    <div class="w3-row">
+        <div class="w3-half" style="height: 300px;">
+            <div class="w3-card-2 marg-movil">
+
+                <header class="w3-container w3-blue">
+                    <h1>Header</h1>
+                </header>
+
+                <div class="w3-content">
+                    <div class="slides w3-container w3-red animacion-in">
+                        <h2><b>Did You Know?</b></h2>
+                        <p><i>We plan to sell trips to the moon in the 2020s</i></p>
+                    </div>
+
+                    <div class="slides w3-container w3-blue animacion-in">
+                        <h2><b>Did You Know?</b></h2>
+                        <p><i>We plan to sell trips to the moon in the 2020s</i></p>
+                    </div>
+                    <div class="slides w3-container w3-green animacion-in">
+                        <h2><b>Did You Know?</b></h2>
+                        <p><i>We plan to sell trips to the moon in the 2020s</i></p>
+                    </div>
+
+                    <div class="slides w3-container w3-yellow animacion-in">
+                        <h2><b>Did You Know?</b></h2>
+                        <p><i>We plan to sell trips to the moon in the 2020s</i></p>
+                    </div>
+                </div>
+                <div class="w3-center">
+                    <button class="w3-button" onclick="mueve_carrusel(-1)">&#10094; Anterior</button>
+                    <button class="w3-button" onclick="mueve_carrusel(1)">Siguiente &#10095;</button>
+                </div>
+                <script>
+                    var indice = 1;
+                    carrusel(indice);
+                    function mueve_carrusel(n) {carrusel(indice += n);}
+                    function carrusel(n) {
+                        var x = document.getElementsByClassName("slides");
+                        if (n > x.length) {indice = 1}
+                        if (n < 1) {indice = x.length}
+                        for (var i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";}
+                        x[indice-1].style.display = "block";
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="w3-half">
+            <div id="chart_div" style="width: 100%; height: auto;"></div>
+        </div>
+    </div>
+    <h3>
+        Ultimos análisis de glucosa
+    </h3>
+    <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-black w3-left-align">Open Section 1</button>
+    <div id="Demo1" class="w3-hide w3-container w3-animate-left">
+        <p>Some text..</p>
+    </div>
+
+    <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-black w3-left-align">Open Section 2</button>
+    <div id="Demo2" class="w3-hide w3-container w3-animate-left">
+        <p>Some other text..</p>
+    </div>
+    <script>
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") === -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className =
+                    x.previousElementSibling.className.replace("w3-black", "w3-red");
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+                x.previousElementSibling.className =
+                    x.previousElementSibling.className.replace("w3-red", "w3-black");
+            }
+        }
+    </script>
+    <div class="w3-row">
+        <div class="w3-half padd-movil">
+            <h3>
+                Ultimos análisis de glucosa
+            </h3>
+            <table class="w3-table-all w3-card-2" style="margin-top: 1em;margin-bottom: 2em;">
+                <tr>
+                    <td>{{ datos.nombre}}</td>
+                    <td>{{ datos.apellido }}</td>
+                    <td>{{ datos.sexo }}</td>
+                    <td>{{ datos.fecha_nacimiento }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="w3-half">
+            <h3>
+                Ultimos análisis de glucosa
+            </h3>
+            <table class="w3-table-all w3-card-2" style="margin-top: 1em;margin-bottom: 2em;">
+                <tr data-ng-repeat="registro in datos">
+                    <td>{{ registro.Nombre}}</td>
+                    <td>{{ registro.Apellido }}</td>
+                    <td>{{ registro.Edad }}</td>
+                    <td>{{ registro.Correo }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

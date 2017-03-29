@@ -1,0 +1,97 @@
+body,h1,h2,h3,h4,h5,h6{font-family:"Calibri",sans-serif;}
+body,html{  height:100%;  color:#777;  line-height:1.8;  }
+.fondo-parallax{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fondo-principal{
+    background-image: url('../img/imagenes/diabetes.jpg');
+    min-height:100%;
+}
+.w3-wide{letter-spacing: 10px;}
+.w3-hover-opacity{cursor:pointer;}
+@media only screen and (max-device-width: 1024px) {
+    .fondo-parallax{background-attachment: fixed;}
+}
+.logo{ width: 20em; }
+.opacidad{ background-color: rgba(255,255,255,.7); padding: .3em; border-radius: 2%; }
+.btn-espacio{ width:15em;}
+.btn-inicio-sesion{
+    -webkit-border-top-left-radius: 2px;
+    -webkit-border-top-right-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-topright: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+.imagen-lateral{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+.imagen-lateral>img{
+    flex-shrink:0;
+    min-width:100%;
+    min-height:100%;
+    max-height:100%;
+}
+.entrada:focus {
+    outline-width: 0;
+    border-bottom: 1.5px solid #009688;
+    animation:animateright 1s;
+}
+.elementos-moviles{
+    height: 100%;
+}
+@media only screen and (max-device-width: 1024px) {
+    .elementos-moviles{ height: auto;}
+}
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    border-bottom: 16px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } to { bottom:0px; opacity:1 } }
+@keyframes animatebottom { from{ bottom:-100px; opacity:0 } to{ bottom:0; opacity:1 } }
+#contenido_web { display: none; }
+.marg-movil{ margin-right: 1em;  }
+@media only screen and (max-device-width: 1024px) {
+    .marg-movil{margin-right: 0; margin-bottom: 1em;}
+}
+.padd-movil{ padding-right: 1em;  }
+@media only screen and (max-device-width: 1024px) {
+    .padd-movil{padding-right: 0; padding-bottom: 1em;}
+}
+.slides {display:none;}
+.animacion-in{animation:fadein 2s}
+@keyframes fadein{0%{opacity:0}100%{opacity:1}}

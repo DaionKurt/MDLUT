@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="diaman">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="pdv"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="phpmyadmin"/>
+    <schema id="8" parent="1" name="prueba"/>
+    <schema id="9" parent="1" name="prueba_an"/>
+    <schema id="10" parent="1" name="test"/>
+    <table id="11" parent="2" name="administrador"/>
+    <table id="12" parent="2" name="cita"/>
+    <table id="13" parent="2" name="diagnostico"/>
+    <table id="14" parent="2" name="horario"/>
+    <table id="15" parent="2" name="medicamento"/>
+    <table id="16" parent="2" name="medicamento_recetado"/>
+    <table id="17" parent="2" name="medico"/>
+    <table id="18" parent="2" name="paciente"/>
+    <table id="19" parent="2" name="receta"/>
+    <table id="20" parent="2" name="usuario"/>
+    <column id="21" parent="11" name="id_admon">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="11" name="no_usuario">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="11" name="clave">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="24" parent="11" name="usuario_a">
+      <ColNames>no_usuario</ColNames>
+    </index>
+    <key id="25" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_admon
+no_usuario</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="26" parent="11" name="usuario_a">
+      <ColNames>no_usuario</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id_usuario</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="27" parent="12" name="id_cita">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="12" name="no_medico">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="12" name="no_paciente">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="12" name="horario">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="12" name="anotaciones">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>&apos;Ninguna&apos;</DefaultExpression>
+    </column>
+    <index id="32" parent="12" name="horario_c">
+      <ColNames>horario</ColNames>
+    </index>
+    <index id="33" parent="12" name="no_medico">
+      <ColNames>no_medico
+no_paciente
+horario</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="34" parent="12" name="paciente_c">
+      <ColNames>no_paciente</ColNames>
+    </index>
+    <key id="35" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_cita</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="36" parent="12" name="no_medico">
+      <ColNames>no_medico
+no_paciente
+horario</ColNames>
+      <UnderlyingIndexName>no_medico</UnderlyingIndexName>
+    </key>
+    <foreign-key id="37" parent="12" name="medico_c">
+      <ColNames>no_medico</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>medico</RefTableName>
+      <RefColNames>id_medico</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="38" parent="12" name="paciente_c">
+      <ColNames>no_paciente</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>paciente</RefTableName>
+      <RefColNames>id_paciente</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="39" parent="12" name="horario_c">
+      <ColNames>horario</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>horario</RefTableName>
+      <RefColNames>id_horario</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="40" parent="13" name="id_diagnostico">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="13" name="no_paciente">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="13" name="estado">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;No Diabético&apos;</DefaultExpression>
+    </column>
+    <column id="43" parent="13" name="imc">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="13" name="niv_glucosa">
+      <Position>5</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="13" name="cat_glucosa">
+      <Position>6</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="13" name="porc_certeza">
+      <Position>7</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="47" parent="13" name="paciente_d">
+      <ColNames>no_paciente</ColNames>
+    </index>
+    <key id="48" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_diagnostico</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="49" parent="13" name="paciente_d">
+      <ColNames>no_paciente</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>paciente</RefTableName>
+      <RefColNames>id_paciente</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="50" parent="14" name="id_horario">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="14" name="medico">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="14" name="hora">
+      <Position>3</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="14" name="dia">
+      <Position>4</Position>
+      <DataType>varchar(7)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="54" parent="14" name="medico">
+      <ColNames>medico
+hora
+dia</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_horario
+medico</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="56" parent="14" name="medico">
+      <ColNames>medico
+hora
+dia</ColNames>
+      <UnderlyingIndexName>medico</UnderlyingIndexName>
+    </key>
+    <foreign-key id="57" parent="14" name="medico">
+      <ColNames>medico</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>medico</RefTableName>
+      <RefColNames>id_medico</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="58" parent="15" name="id_medicamento">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="59" parent="15" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="15" name="descripcion">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="15" name="dosis">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="15" name="via_administracion">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="63" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_medicamento
+nombre</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="64" parent="16" name="id_receta">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="16" name="id_medicamento">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="66" parent="16" name="Medicamento_m">
+      <ColNames>id_medicamento</ColNames>
+    </index>
+    <key id="67" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_receta
+id_medicamento</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="68" parent="16" name="Receta_m">
+      <ColNames>id_receta</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>receta</RefTableName>
+      <RefColNames>id_receta</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="69" parent="16" name="Medicamento_m">
+      <ColNames>id_medicamento</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>medicamento</RefTableName>
+      <RefColNames>id_medicamento</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="70" parent="17" name="id_medico">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="71" parent="17" name="no_usuario">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="17" name="no_admon">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="17" name="no_cedula">
+      <Position>4</Position>
+      <DataType>varchar(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="74" parent="17" name="admon_m">
+      <ColNames>no_admon</ColNames>
+    </index>
+    <index id="75" parent="17" name="usuario_m">
+      <ColNames>no_usuario</ColNames>
+    </index>
+    <key id="76" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_medico
+no_usuario</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="77" parent="17" name="usuario_m">
+      <ColNames>no_usuario</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id_usuario</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="78" parent="17" name="admon_m">
+      <ColNames>no_admon</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>administrador</RefTableName>
+      <RefColNames>id_admon</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="79" parent="18" name="id_paciente">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="80" parent="18" name="no_usuario">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="18" name="estado_diabetico">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;No Diabético&apos;</DefaultExpression>
+    </column>
+    <index id="82" parent="18" name="usuario_p">
+      <ColNames>no_usuario</ColNames>
+    </index>
+    <key id="83" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_paciente
+no_usuario</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="84" parent="18" name="usuario_p">
+      <ColNames>no_usuario</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id_usuario</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="85" parent="19" name="id_receta">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="86" parent="19" name="no_medico">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="19" name="no_paciente">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="19" name="descripcion">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="19" name="fecha_expedicion">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="19" name="fecha_limite">
+      <Position>6</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="91" parent="19" name="medico_r">
+      <ColNames>no_medico</ColNames>
+    </index>
+    <index id="92" parent="19" name="paciente_r">
+      <ColNames>no_paciente</ColNames>
+    </index>
+    <key id="93" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_receta
+no_medico
+no_paciente</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="94" parent="19" name="medico_r">
+      <ColNames>no_medico</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>medico</RefTableName>
+      <RefColNames>id_medico</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="95" parent="19" name="paciente_r">
+      <ColNames>no_paciente</ColNames>
+      <RefSchemaName>diaman</RefSchemaName>
+      <RefTableName>paciente</RefTableName>
+      <RefColNames>id_paciente</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="96" parent="20" name="id_usuario">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="97" parent="20" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="20" name="apellido">
+      <Position>3</Position>
+      <DataType>varchar(35)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="99" parent="20" name="sexo">
+      <Position>4</Position>
+      <DataType>char(1)|0</DataType>
+      <DefaultExpression>&apos;N&apos;</DefaultExpression>
+    </column>
+    <column id="100" parent="20" name="fecha_nacimiento">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+      <DefaultExpression>&apos;01/01/2000&apos;</DefaultExpression>
+    </column>
+    <column id="101" parent="20" name="telefono">
+      <Position>6</Position>
+      <DataType>varchar(13)|0</DataType>
+      <DefaultExpression>&apos;3333333333&apos;</DefaultExpression>
+    </column>
+    <column id="102" parent="20" name="edad">
+      <Position>7</Position>
+      <DataType>tinyint(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="103" parent="20" name="usuario">
+      <Position>8</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="20" name="correo">
+      <Position>9</Position>
+      <DataType>varchar(35)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="20" name="pass">
+      <Position>10</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="20" name="activo">
+      <Position>11</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="107" parent="20" name="correo">
+      <ColNames>correo</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="108" parent="20" name="usuario">
+      <ColNames>usuario</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="109" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_usuario</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="110" parent="20" name="usuario">
+      <ColNames>usuario</ColNames>
+      <UnderlyingIndexName>usuario</UnderlyingIndexName>
+    </key>
+    <key id="111" parent="20" name="correo">
+      <ColNames>correo</ColNames>
+      <UnderlyingIndexName>correo</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
