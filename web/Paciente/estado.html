@@ -2,7 +2,6 @@
     <div class="w3-row">
         <div class="w3-half panel-info">
             <div class="w3-card-2 marg-movil panel-info">
-
                 <header class="w3-container w3-blue">
                     <h2>Información actual</h2>
                 </header>
@@ -12,12 +11,12 @@
                         <h3><b>Datos del paciente</b></h3>
                         <div class="w3-row">
                             <div class="w3-half">
-                                <p>Nombre: {{datos.nombre+" "+datos.apellido}}</p>
-                                <p>Sexo: {{datos.sexo=='M'?'Femenino':'Masculino'}}</p>
+                                <p>Nombre: {{informacion.Nombre+" "+informacion.Apellido}}</p>
+                                <p>Sexo: {{informacion.Sexo=='M'?'Femenino':'Masculino'}}</p>
                             </div>
                             <div class="w3-half">
-                                <p>Fecha de Nacimiento: {{datos.fecha_nacimiento}}</p>
-                                <p>Estado actual de diabetes: <b>{{datos.estado_diabetico}}</b></p>
+                                <p>Fecha de Nacimiento: {{informacion.Fecha}}</p>
+                                <p>Estado actual de diabetes: <b>{{informacion.Estado}}</b></p>
                             </div>
                         </div>
                     </div>
@@ -49,7 +48,7 @@
                 </script>
             </div>
         </div>
-        <div class="w3-half w3-hide-small w3-hide-medium------">
+        <div class="w3-half w3-hide-small">
             <div id="chart_div" style="width: 100%; height: auto;"></div>
         </div>
     </div>

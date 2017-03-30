@@ -1,8 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION['usuario'])) {
+include('../../src/Entidades/Usuario.php');
+include('../../src/Entidades/Paciente.php');
+include('../../src/Entidades/Medico.php');
+if(!isset($_SESSION['usuario']))
     header("location: ../../index.php");
-}
+$objeto = unserialize($_SESSION['objeto']);
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,9 +42,9 @@ if(!isset($_SESSION['usuario'])) {
 <div id="loader"></div>
     <div id="contenido_web" class="animate-bottom">
         <div class="w3-sidebar w3-bar-block w3-animate-left sidebar" id="panel_lateral">
-            <div align="center" data-ng-controller="Controlador">
+            <div align="center" <!--data-ng-controller="Controlador"-->>
                 <img src="../../img/imagenes/avatar.png" alt="" style="width: 50%;padding-top: 1em" class="w3-responsive w3-circle">
-                <h2>{{ datos.nombre+" "+datos.apellido}}</h2>
+                <h2><?php echo $objeto->get_nombre()." ".$objeto->get_apellido();?></h2>
                 <p>Datos del usuario bla bla</p>
             </div>
             <span onclick="cerrar_panel();" class="w3-button w3-display-topright w3-xlarge" id="cerrar">&times;</span>
@@ -63,9 +66,7 @@ if(!isset($_SESSION['usuario'])) {
                 <img src="../../img/imagenes/Logo%20horizontal%20con%20texto.png" alt="" class="w3-responsive w3-animate-zoom" style="height: 7em;">
             </div>
             <div class="w3-container">
-                <div data-ng-controller="Controlador">
-                    <h2>Bienvenido {{ datos.nombre+" "+datos.apellido}}</h2>
-                </div>
+                    <h2>Bienvenido <?php echo $objeto->get_nombre()." ".$objeto->get_apellido();?></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda consequatur dolor inventore ipsam neque non odio repellendus, suscipit totam? Accusamus animi cupiditate dolorem eaque exercitationem impedit magni porro, quis.</p>
                 <div class="w3-row">
                     <a href="javascript:void(0)" onclick="cambia_panel(event,'Estado');">
@@ -90,15 +91,11 @@ if(!isset($_SESSION['usuario'])) {
                 </div>
                 <div id="Citas" class="w3-container contenedor" style="display: none;">
                     <h2>Citas</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur eligendi eum
-                        expedita facere fugiat id, itaque laboriosam mollitia nam nisi non porro qui quia reprehenderit
-                        sed tempora ullam voluptatum.</p>
+                    <div data-ng-include="'citas.html'"></div>
                 </div>
                 <div id="Medicamentos" class="w3-container contenedor" style="display: none;">
                     <h2>Medicamentos</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci debitis dignissimos
-                        ducimus, eaque esse id inventore iste, iusto libero modi nostrum quod quos recusandae repellat
-                        repellendus, sed similique unde.</p>
+                    <div data-ng-include="'medicamentos.html'"></div>
                 </div>
             </div>
         </div>

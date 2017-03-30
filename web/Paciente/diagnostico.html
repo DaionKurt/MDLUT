@@ -1,10 +1,25 @@
 <div data-ng-controller="Controlador_Diagnostico">
-    <table>
-        <tr data-ng-repeat="registro in datos">
-            <td>{{ registro.Nombre}}</td>
-            <td>{{ registro.Descripcion }}</td>
-            <td>{{ registro.Dosis }}</td>
-            <td>{{ registro.Via }}</td>
+    <table class="w3-table-all w3-card-2">
+        <tr>
+            <th>Estado diabético</th>
+            <th>IMC</th>
+            <th>Nivel de Glucosa</th>
+            <th>Glucosa</th>
+            <th>% de Certeza</th>
+        </tr>
+        <tr data-ng-repeat="diagnostico in diagnosticos">
+            <td>{{ diagnostico.Estado}}</td>
+            <td>{{ diagnostico.IMC }}</td>
+            <td>{{ diagnostico.Glucosa }}</td>
+            <td>{{ diagnostico.Cat_g }}</td>
+            <td>{{ diagnostico.Certeza}}</td>
+        </tr>
+        <tr data-ng-repeat="X in diagnosticos | limitTo: 1">
+            <td>{{diagnosticos[diagnosticos.length-1].Estado}}</td>
+            <td>{{diagnosticos[diagnosticos.length-1].IMC}}</td>
+            <td>{{diagnosticos[diagnosticos.length-1].Glucosa}}</td>
+            <td>{{diagnosticos[diagnosticos.length-1].Cat_g}}</td>
+            <td>{{diagnosticos[diagnosticos.length-1].Certeza}}</td>
         </tr>
     </table>
 </div>

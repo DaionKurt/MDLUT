@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div data-ng-controller="Controlador_Medicamentos">
+    <div class="w3-row">
+        <div class="w3-half">
+            <table class="w3-table-all w3-card-2">
+                <tr>
+                    <th>Descripcion</th>
+                    <th>Fecha expediente</th>
+                    <th>Fecha limite</th>
+                </tr>
+                <tr data-ng-repeat="receta in recetas">
+                    <td>{{ receta.Descripcion}}</td>
+                    <td>{{ receta.Fecha_expediente }}</td>
+                    <td>{{ receta.Fecha_limite }}</td>
+                </tr>
+                <tr data-ng-repeat="X in recetas | limitTo: 1">
+                    <td>{{recetas[recetas.length-1].Descripcion}}</td>
+                    <td>{{recetas[recetas.length-1].Fecha_expediente}}</td>
+                    <td>{{recetas[recetas.length-1].Fecha_limite}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="w3-half">
+            <table class="w3-table-all w3-card-2">
+                <tr>
+                    <th>Medicamento</th>
+                    <th>Informacion</th>
+                    <th>Dosis</th>
+                    <th>Via</th>
+                </tr>
+                <tr data-ng-repeat="medicamento in medicamentos">
+                    <td>{{ medicamento.Medicamento}}</td>
+                    <td>{{ medicamento.Informacion }}</td>
+                    <td>{{ medicamento.Dosis }}</td>
+                    <td>{{ medicamento.Via}}</td>
+                </tr>
+                <tr data-ng-repeat="X in medicamentos | limitTo: 1">
+                    <td>{{medicamentos[medicamentos.length-1].Medicamento}}</td>
+                    <td>{{medicamentos[medicamentos.length-1].Informacion}}</td>
+                    <td>{{medicamentos[medicamentos.length-1].Dosis}}</td>
+                    <td>{{medicamentos[medicamentos.length-1].Via}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

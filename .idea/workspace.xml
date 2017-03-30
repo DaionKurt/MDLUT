@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c66bdc6-a86e-424c-80d0-719f5dfd4f84" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Gestores/Analisis.php" afterPath="$PROJECT_DIR$/src/Gestores/consultor.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js" afterPath="$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BD/consultor.php" afterPath="$PROJECT_DIR$/src/BD/consultor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BD/inicio_sesion.php" afterPath="$PROJECT_DIR$/src/BD/inicio_sesion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/citas.html" afterPath="$PROJECT_DIR$/web/Paciente/citas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/diagnostico.html" afterPath="$PROJECT_DIR$/web/Paciente/diagnostico.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/estado.html" afterPath="$PROJECT_DIR$/web/Paciente/estado.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/index.php" afterPath="$PROJECT_DIR$/web/Paciente/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/medicamentos.html" afterPath="$PROJECT_DIR$/web/Paciente/medicamentos.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,26 +48,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Pruebas/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/Paciente/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="84" column="27" lean-forward="false" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="97" column="55" lean-forward="false" selection-start-line="97" selection-start-column="55" selection-end-line="97" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,92 +60,82 @@
       <file leaf-file-name="estado.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/Paciente/estado.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="91" column="42" lean-forward="false" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
+            <state relative-caret-position="170">
+              <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="peticionesB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Pruebas/peticionesB.php">
+      <file leaf-file-name="diagnostico.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/Paciente/diagnostico.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="6" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="citas.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/Paciente/citas.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="16" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medicamentos.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
               <folding>
-                <marker date="1490473248956" expanded="true" signature="272:297" ph="SELECT * FRO... medicamento" />
+                <marker date="1490848616078" expanded="true" signature="391:438" ph="SELECT * FRO... receta" />
+                <marker date="1490848616078" expanded="true" signature="391:450" ph="SELECT * FRO... receta" />
+                <marker date="1490848616078" expanded="true" signature="465:800" ph="SELECT DISTI... medicamento" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controlador_Paciente.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="informacion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+              <folding>
+                <marker date="1490811859748" expanded="true" signature="385:503" ph="SELECT * FRO... ${$tabla_principal}" />
+                <marker date="1490811859748" expanded="true" signature="385:512" ph="SELECT * FRO... usuario" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medicamentos.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/Paciente/medicamentos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controlador_Paciente.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="52" column="3" lean-forward="true" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
+            <state relative-caret-position="267">
+              <caret line="21" column="88" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="88" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="consultor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BD/consultor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="27" />
-              <folding>
-                <marker date="1490796545457" expanded="true" signature="497:541" ph="SELECT * FRO... " />
-                <marker date="1490796545457" expanded="true" signature="497:552" ph="SELECT * FRO... " />
-                <marker date="1490796545457" expanded="true" signature="497:553" ph="SELECT * FRO... ${$tabla}" />
-                <marker date="1490796545457" expanded="true" signature="659:666" ph="SELECT * FRO... usuario" />
-                <marker date="1490796545457" expanded="true" signature="659:758" ph="SELECT * FRO... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inicio_sesion.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BD/inicio_sesion.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-424">
-              <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-              <folding>
-                <element signature="e#6#90#0#PHP" expanded="false" />
-                <marker date="1490751908213" expanded="true" signature="561:583" ph="SELECT * FRO... usuario" />
-                <marker date="1490751908213" expanded="true" signature="561:597" ph="SELECT * FRO... usuario" />
-                <marker date="1490751908213" expanded="true" signature="561:617" ph="SELECT * FRO... usuario" />
-                <marker date="1490751908213" expanded="true" signature="561:643" ph="SELECT * FRO... usuario" />
-                <marker date="1490751908213" expanded="true" signature="658:828" ph="SELECT * FRO... usuario" />
-                <marker date="1490751908213" expanded="true" signature="843:1013" ph="SELECT medic... usuario" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info_usuario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gestores/info_usuario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controlador.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -178,6 +160,7 @@
       <find>inici</find>
       <find>demo</find>
       <find>logo</find>
+      <find>cONTROLADOR</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,13 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/medicamentos.html" />
-        <option value="$PROJECT_DIR$/web/perfil.html" />
-        <option value="$PROJECT_DIR$/web/admon.html" />
-        <option value="$PROJECT_DIR$/web/novedades.html" />
-        <option value="$PROJECT_DIR$/web/Admon/index.html" />
-        <option value="$PROJECT_DIR$/web/Medico/index.html" />
-        <option value="$PROJECT_DIR$/web/Usuario/index.html" />
         <option value="$PROJECT_DIR$/web/Medico/citas.html" />
         <option value="$PROJECT_DIR$/web/Medico/estadisticas.html" />
         <option value="$PROJECT_DIR$/web/Medico/horarios.html" />
@@ -213,16 +189,13 @@
         <option value="$PROJECT_DIR$/web/Pruebas/indexado.php" />
         <option value="$PROJECT_DIR$/web/Pruebas/app.js" />
         <option value="$PROJECT_DIR$/web/Pruebas/test.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e259dbb5-c82b-4dab-ae56-e730956ff7a6/console.sql" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/scripts.js" />
         <option value="$PROJECT_DIR$/web/Paciente/index.html" />
         <option value="$PROJECT_DIR$/src/BD/cerrar_sesion.php" />
         <option value="$PROJECT_DIR$/web/Pruebas/index.php" />
-        <option value="$PROJECT_DIR$/web/Paciente/diagnostico.html" />
         <option value="$PROJECT_DIR$/js/post_scripts.js" />
         <option value="$PROJECT_DIR$/css/w3.css" />
-        <option value="$PROJECT_DIR$/js/Graficos/graficos.js" />
         <option value="$PROJECT_DIR$/js/Controladores/Controlador.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/Entidades/Medico.php" />
@@ -231,12 +204,22 @@
         <option value="$PROJECT_DIR$/src/Gestores/elementos_pacientes.php" />
         <option value="$PROJECT_DIR$/src/Gestores/info_paciente.php" />
         <option value="$PROJECT_DIR$/src/Gestores/Analisis.php" />
-        <option value="$PROJECT_DIR$/src/BD/inicio_sesion.php" />
         <option value="$PROJECT_DIR$/css/estilos.css" />
-        <option value="$PROJECT_DIR$/web/Paciente/index.php" />
         <option value="$PROJECT_DIR$/src/BD/consultor.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e259dbb5-c82b-4dab-ae56-e730956ff7a6/console.sql" />
+        <option value="$PROJECT_DIR$/src/Gestores/Consultas_Medico/informacion.php" />
+        <option value="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php" />
+        <option value="$PROJECT_DIR$/js/Graficos/graficos.js" />
+        <option value="$PROJECT_DIR$/src/BD/inicio_sesion.php" />
+        <option value="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php" />
         <option value="$PROJECT_DIR$/web/Paciente/estado.html" />
+        <option value="$PROJECT_DIR$/web/Paciente/diagnostico.html" />
+        <option value="$PROJECT_DIR$/web/Paciente/citas.html" />
+        <option value="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php" />
+        <option value="$PROJECT_DIR$/web/Paciente/index.php" />
+        <option value="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php" />
         <option value="$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js" />
+        <option value="$PROJECT_DIR$/web/Paciente/medicamentos.html" />
       </list>
     </option>
   </component>
@@ -250,10 +233,12 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="22" />
-    <option name="width" value="1376" />
+    <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -269,6 +254,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -362,6 +349,28 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gestores" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Consultas_Pacientes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -381,56 +390,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto Modular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto Modular" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto Modular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto Modular" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controladores" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto Modular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto Modular" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,17 +407,18 @@
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\src\Gestores\Consultas_Pacientes" />
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\src\Entidades" />
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\web\Medico" />
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\web\Paciente" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\img\imagenes" />
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\src\Gestores" />
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\Pruebas" />
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\web\Temporal" />
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\img\temporal" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\src\Entidades" />
-      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\web\Medico" />
-      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\web\Paciente" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -471,20 +433,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.php">
-    <configuration default="false" name="info_usuario.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/info_usuario.php">
-      <method />
-    </configuration>
-    <configuration default="false" name="inicio_sesion.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/BD/inicio_sesion.php">
-      <method />
-    </configuration>
-    <configuration default="false" name="estado.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Proyecto Modular/Paciente/estado.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="consultor.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/BD/consultor.php">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="PHP Script.medicamentos.php">
     <configuration default="false" name="consultor.php (1)" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/consultor.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="informacion.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="diagnosticos.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="citas.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="medicamentos.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php">
       <method />
     </configuration>
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
@@ -565,19 +527,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.php" />
-      <item index="1" class="java.lang.String" itemvalue="PHP Script.info_usuario.php" />
-      <item index="2" class="java.lang.String" itemvalue="PHP Script.inicio_sesion.php" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.estado.html" />
-      <item index="4" class="java.lang.String" itemvalue="PHP Script.consultor.php" />
-      <item index="5" class="java.lang.String" itemvalue="PHP Script.consultor.php (1)" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.consultor.php (1)" />
+      <item index="2" class="java.lang.String" itemvalue="PHP Script.informacion.php" />
+      <item index="3" class="java.lang.String" itemvalue="PHP Script.diagnosticos.php" />
+      <item index="4" class="java.lang.String" itemvalue="PHP Script.citas.php" />
+      <item index="5" class="java.lang.String" itemvalue="PHP Script.medicamentos.php" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.consultor.php" />
-        <item index="1" class="java.lang.String" itemvalue="PHP Script.consultor.php (1)" />
-        <item index="2" class="java.lang.String" itemvalue="PHP Script.info_usuario.php" />
-        <item index="3" class="java.lang.String" itemvalue="PHP Script.inicio_sesion.php" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.estado.html" />
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.medicamentos.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.citas.php" />
+        <item index="2" class="java.lang.String" itemvalue="PHP Script.diagnosticos.php" />
+        <item index="3" class="java.lang.String" itemvalue="PHP Script.consultor.php (1)" />
+        <item index="4" class="java.lang.String" itemvalue="PHP Script.informacion.php" />
       </list>
     </recent_temporary>
   </component>
@@ -599,35 +561,58 @@
       <workItem from="1490576167541" duration="40631000" />
       <workItem from="1490704927176" duration="16103000" />
       <workItem from="1490742010949" duration="21886000" />
+      <workItem from="1490806949655" duration="16892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102149000" />
+    <option name="totallyTimeSpent" value="119041000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1376" height="754" extended-state="6" />
+    <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1757353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21292217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2515528" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21229868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25120774" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2515528" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1749634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21229868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -642,48 +627,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/Medico/citas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Medico/horarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Medico/expedientes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Admon/medicos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Admon/medicamentos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Admon/pacientes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/Medico/estadisticas.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -827,13 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e259dbb5-c82b-4dab-ae56-e730956ff7a6/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="77" lean-forward="false" selection-start-line="0" selection-start-column="77" selection-end-line="0" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -848,23 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Paciente/diagnostico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/Graficos/graficos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
@@ -895,14 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="112" column="56" lean-forward="true" selection-start-line="112" selection-start-column="56" selection-end-line="112" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/estilos.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -927,16 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gestores/consultor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <marker date="1490751816175" expanded="true" signature="354:375" ph="SELECT * FRO... usuario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/Pruebas/peticionesA.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -949,63 +850,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gestores/info_usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BD/inicio_sesion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-424">
-          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding>
-            <element signature="e#6#90#0#PHP" expanded="false" />
-            <marker date="1490751908213" expanded="true" signature="561:583" ph="SELECT * FRO... usuario" />
-            <marker date="1490751908213" expanded="true" signature="561:597" ph="SELECT * FRO... usuario" />
-            <marker date="1490751908213" expanded="true" signature="561:617" ph="SELECT * FRO... usuario" />
-            <marker date="1490751908213" expanded="true" signature="561:643" ph="SELECT * FRO... usuario" />
-            <marker date="1490751908213" expanded="true" signature="658:828" ph="SELECT * FRO... usuario" />
-            <marker date="1490751908213" expanded="true" signature="843:1013" ph="SELECT medic... usuario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/Pruebas/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="45" />
+        <state relative-caret-position="561">
+          <caret line="33" column="45" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Paciente/index.php">
+    <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="84" column="27" lean-forward="false" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+        <state relative-caret-position="61">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Pruebas/peticionesB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1490473248956" expanded="true" signature="272:297" ph="SELECT * FRO... medicamento" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gestores/consultor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="52" lean-forward="true" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+          <folding>
+            <marker date="1490751816175" expanded="true" signature="354:375" ph="SELECT * FRO... usuario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e259dbb5-c82b-4dab-ae56-e730956ff7a6/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BD/consultor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="27" />
+        <state relative-caret-position="224">
+          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <marker date="1490796545457" expanded="true" signature="497:541" ph="SELECT * FRO... " />
             <marker date="1490796545457" expanded="true" signature="497:552" ph="SELECT * FRO... " />
@@ -1016,35 +908,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Pruebas/peticionesB.php">
+    <entry file="file://$PROJECT_DIR$/js/Graficos/graficos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding>
-            <marker date="1490473248956" expanded="true" signature="272:297" ph="SELECT * FRO... medicamento" />
+            <element signature="e#0#42#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entidades/Usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="112" column="29" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BD/inicio_sesion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="47" column="56" lean-forward="false" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="56" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="false" />
+            <marker date="1490816843874" expanded="true" signature="561:583" ph="SELECT * FRO... usuario" />
+            <marker date="1490816843874" expanded="true" signature="561:597" ph="SELECT * FRO... usuario" />
+            <marker date="1490816843874" expanded="true" signature="561:617" ph="SELECT * FRO... usuario" />
+            <marker date="1490816843874" expanded="true" signature="561:643" ph="SELECT * FRO... usuario" />
+            <marker date="1490816843874" expanded="true" signature="658:828" ph="SELECT * FRO... usuario" />
+            <marker date="1490816843874" expanded="true" signature="843:1013" ph="SELECT medic... usuario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gestores/info_usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/Paciente/estado.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="91" column="42" lean-forward="false" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
+        <state relative-caret-position="170">
+          <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Paciente/citas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="16" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <marker date="1490844927085" expanded="true" signature="387:610" ph="SELECT * FRO... Usuario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
+          <folding>
+            <marker date="1490816898343" expanded="true" signature="387:501" ph="SELECT * FRO... Diagnostico" />
+            <marker date="1490816898343" expanded="true" signature="387:512" ph="SELECT * FRO... Diagnostico" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Paciente/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="97" column="55" lean-forward="false" selection-start-line="97" selection-start-column="55" selection-end-line="97" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding>
+            <marker date="1490811859748" expanded="true" signature="385:503" ph="SELECT * FRO... ${$tabla_principal}" />
+            <marker date="1490811859748" expanded="true" signature="385:512" ph="SELECT * FRO... usuario" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="52" column="3" lean-forward="true" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
+        <state relative-caret-position="267">
+          <caret line="21" column="88" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="88" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Paciente/diagnostico.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Paciente/medicamentos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <marker date="1490848616078" expanded="true" signature="391:438" ph="SELECT * FRO... receta" />
+            <marker date="1490848616078" expanded="true" signature="391:450" ph="SELECT * FRO... receta" />
+            <marker date="1490848616078" expanded="true" signature="465:800" ph="SELECT DISTI... medicamento" />
           </folding>
         </state>
       </provider>

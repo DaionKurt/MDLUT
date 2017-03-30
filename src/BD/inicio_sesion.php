@@ -44,7 +44,8 @@ try{
         $paciente_objeto = new \Entidades\Paciente($nombre_u,$apellido_u,$sexo_u,$fecha_nacimiento_u,$telefono_u,
             $edad_u,$usuario_u,$correo_u,$activo_u,$id_u,$estado_p,$id_p);
         $_SESSION['usuario'] = $id_u;
-        $_SESSION['paciente'] = serialize($paciente_objeto);
+        $_SESSION['paciente'] = $id_p;
+        $_SESSION['objeto'] = serialize($paciente_objeto);
     }
     if($medico_s->rowCount()>=1){
         $medico_stm = $medico_s->fetch(PDO::FETCH_ASSOC);
@@ -55,7 +56,8 @@ try{
             $telefono_u,$edad_u,$usuario_u,$correo_u,$activo_u,$id_u,$cedula_m,
             $id_m,$no_admon);
         $_SESSION['usuario'] = $id_u;
-        $_SESSION['medico'] = serialize($medico_objeto);
+        $_SESSION['medico'] = $id_m;
+        $_SESSION['objeto'] = serialize($medico_objeto);
     }
     $conexion = null;
     echo  json_encode($usuario);
