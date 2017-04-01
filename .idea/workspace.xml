@@ -2,18 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c66bdc6-a86e-424c-80d0-719f5dfd4f84" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Perceptron-master/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Perceptron-master/src/JTet/Perceptron/Perceptron.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/RGTR/A.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/RGTR/Perceptron.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/BlacklistHelper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/BlacklistHelperModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/NaiveBayesClassifier.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/NaiveBayesClassifierException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/NaiveBayesClassifierStore.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/NaiveBayesClassifierStoreRedis.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/composer.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/phpunit.xml.dist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/src/Fieg/Bayes/Classifier.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/src/Fieg/Bayes/Tokenizer/WhitespaceAndPunctuationTokenizer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/src/Fieg/Bayes/TokenizerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/tests/Fieg/Bayes/ClassifierTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/tests/Fieg/Bayes/Tokenizer/WhitespaceAndPunctuationTokenizerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/bayes-master/tests/bootstrap.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/neural-network-master/neural-network-master/LICENSE.TXT" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/neural-network-master/neural-network-master/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/neural-network-master/neural-network-master/class_neuralnetwork.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/neural-network-master/neural-network-master/documentation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/neural-network-master/neural-network-master/example-cli.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/neural-network-master/neural-network-master/example.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/.gitattributes" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/composer.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/examples/basic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/examples/basic_svm.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/examples/bayes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/examples/converter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/examples/language.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/examples/svm.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Classifier/Classifier.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Classifier/ClassifierInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Classifier/ComplementNaiveBayes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Classifier/SVM.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Config/DataSourceConfiguration.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/CSV.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/Closure.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/Converter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/DataArray.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/DataSourceInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/Directory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/Grouped.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/Json.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/PDOQuery.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/DataSource/Serialized.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Model/CachedModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Model/Model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Model/ModelInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Model/SVMCachedModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Model/SVMModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Normalizer/Document/Lowercase.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Normalizer/Document/NormalizerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Normalizer/Token/Grouped.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Normalizer/Token/NormalizerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Normalizer/Token/PhpStemmer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Normalizer/Token/Porter.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Normalizer/Token/Stopword.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Tokenizer/TokenizerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Tokenizer/Word.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/Complement.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/DocumentCount.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/DocumentLength.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/DocumentTokenCounts.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/TFIDF.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/TokenAppearanceCount.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/TokenCountByDocument.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/TokenPreparation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/TokensByCategory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Transform/Weight.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/canvasjs.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BD/registro_usuario.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Pacientes/citas.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gestores/Pacientes/crear_cita.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Inteligente/.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Inteligente/Fuzzy.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Inteligente/Membrerias.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pruebas/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pruebas/src/JTet/MultiLayerPerceptron/MultiLayerPerceptron.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pruebas/src/JTet/MultiLayerPerceptron/Tests/MultiLayerPerceptronTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pruebas/.travis.yml" afterPath="$PROJECT_DIR$/Pruebas/Perceptron-master/.travis.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pruebas/composer.json" afterPath="$PROJECT_DIR$/Pruebas/Perceptron-master/composer.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pruebas/phpunit.xml.dist" afterPath="$PROJECT_DIR$/Pruebas/Perceptron-master/phpunit.xml.dist" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php" afterPath="$PROJECT_DIR$/src/Gestores/Pacientes/diagnosticos.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php" afterPath="$PROJECT_DIR$/src/Gestores/Pacientes/informacion.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php" afterPath="$PROJECT_DIR$/src/Gestores/Pacientes/medicamentos.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/Paciente/medicamentos.html" afterPath="$PROJECT_DIR$/web/Paciente/recetas.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/estilos.css" afterPath="$PROJECT_DIR$/css/estilos.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js" afterPath="$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BD/inicio_sesion.php" afterPath="$PROJECT_DIR$/src/BD/inicio_sesion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/post_scripts.js" afterPath="$PROJECT_DIR$/js/post_scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/scripts.js" afterPath="$PROJECT_DIR$/js/scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gestores/info_usuario.php" afterPath="$PROJECT_DIR$/src/Gestores/info_usuario.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/citas.html" afterPath="$PROJECT_DIR$/web/Paciente/citas.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/diagnostico.html" afterPath="$PROJECT_DIR$/web/Paciente/diagnostico.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/estado.html" afterPath="$PROJECT_DIR$/web/Paciente/estado.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/index.php" afterPath="$PROJECT_DIR$/web/Paciente/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Paciente/medicamentos.html" afterPath="$PROJECT_DIR$/web/Paciente/medicamentos.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Pruebas/index.php" afterPath="$PROJECT_DIR$/web/Pruebas/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,93 +148,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Paciente/index.php">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="97" column="55" lean-forward="false" selection-start-line="97" selection-start-column="55" selection-end-line="97" selection-end-column="55" />
+            <state relative-caret-position="75">
+              <caret line="188" column="40" lean-forward="false" selection-start-line="188" selection-start-column="40" selection-end-line="188" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="estado.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Paciente/estado.html">
+      <file leaf-file-name="Controlador.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diagnostico.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Paciente/diagnostico.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="6" />
+            <state relative-caret-position="43">
+              <caret line="44" column="56" lean-forward="false" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="citas.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Paciente/citas.html">
+      <file leaf-file-name="registro_usuario.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BD/registro_usuario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="16" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="medicamentos.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+            <state relative-caret-position="221">
+              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
               <folding>
-                <marker date="1490848616078" expanded="true" signature="391:438" ph="SELECT * FRO... receta" />
-                <marker date="1490848616078" expanded="true" signature="391:450" ph="SELECT * FRO... receta" />
-                <marker date="1490848616078" expanded="true" signature="465:800" ph="SELECT DISTI... medicamento" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="informacion.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-              <folding>
-                <marker date="1490811859748" expanded="true" signature="385:503" ph="SELECT * FRO... ${$tabla_principal}" />
-                <marker date="1490811859748" expanded="true" signature="385:512" ph="SELECT * FRO... usuario" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="medicamentos.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Paciente/medicamentos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controlador_Paciente.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="21" column="88" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="88" />
-              <folding>
-                <element signature="e#0#42#0" expanded="false" />
+                <element signature="e#6#90#0#PHP" expanded="false" />
+                <marker date="1491014152901" expanded="true" signature="573:631" ph="UPDATE Horar... " />
+                <marker date="1491014152901" expanded="true" signature="643:761" ph="INSERT INTO Cita... " />
               </folding>
             </state>
           </provider>
@@ -161,6 +202,11 @@
       <find>demo</find>
       <find>logo</find>
       <find>cONTROLADOR</find>
+      <find>inferirCondicionDifusaCuantitativo</find>
+      <find>w3-quarter</find>
+      <find>overla</find>
+      <find>sele</find>
+      <find>select</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,33 +215,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/Medico/citas.html" />
-        <option value="$PROJECT_DIR$/web/Medico/estadisticas.html" />
-        <option value="$PROJECT_DIR$/web/Medico/horarios.html" />
-        <option value="$PROJECT_DIR$/web/Medico/expedientes.html" />
-        <option value="$PROJECT_DIR$/web/Admon/medicos.html" />
-        <option value="$PROJECT_DIR$/web/Admon/pacientes.html" />
-        <option value="$PROJECT_DIR$/web/Admon/medicamentos.html" />
-        <option value="$PROJECT_DIR$/web/Temporal/index.html" />
-        <option value="$PROJECT_DIR$/src/BD/gestorBD.php" />
-        <option value="$PROJECT_DIR$/src/Entidades/Administrador.php" />
-        <option value="$PROJECT_DIR$/src/Entidades/Expediente.php" />
-        <option value="$PROJECT_DIR$/src/Entidades/Medicamento.php" />
-        <option value="$PROJECT_DIR$/src/Entidades/Receta.php" />
-        <option value="$PROJECT_DIR$/src/Entidades/Horario.php" />
-        <option value="$PROJECT_DIR$/src/Entidades/Cita.php" />
         <option value="$PROJECT_DIR$/web/Pruebas/peticiones.php" />
         <option value="$PROJECT_DIR$/web/Pruebas/peticionesB.php" />
         <option value="$PROJECT_DIR$/web/Pruebas/indexado.php" />
         <option value="$PROJECT_DIR$/web/Pruebas/app.js" />
         <option value="$PROJECT_DIR$/web/Pruebas/test.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/scripts.js" />
         <option value="$PROJECT_DIR$/web/Paciente/index.html" />
         <option value="$PROJECT_DIR$/src/BD/cerrar_sesion.php" />
-        <option value="$PROJECT_DIR$/web/Pruebas/index.php" />
-        <option value="$PROJECT_DIR$/js/post_scripts.js" />
-        <option value="$PROJECT_DIR$/css/w3.css" />
         <option value="$PROJECT_DIR$/js/Controladores/Controlador.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/Entidades/Medico.php" />
@@ -204,7 +231,6 @@
         <option value="$PROJECT_DIR$/src/Gestores/elementos_pacientes.php" />
         <option value="$PROJECT_DIR$/src/Gestores/info_paciente.php" />
         <option value="$PROJECT_DIR$/src/Gestores/Analisis.php" />
-        <option value="$PROJECT_DIR$/css/estilos.css" />
         <option value="$PROJECT_DIR$/src/BD/consultor.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e259dbb5-c82b-4dab-ae56-e730956ff7a6/console.sql" />
         <option value="$PROJECT_DIR$/src/Gestores/Consultas_Medico/informacion.php" />
@@ -212,14 +238,34 @@
         <option value="$PROJECT_DIR$/js/Graficos/graficos.js" />
         <option value="$PROJECT_DIR$/src/BD/inicio_sesion.php" />
         <option value="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php" />
-        <option value="$PROJECT_DIR$/web/Paciente/estado.html" />
-        <option value="$PROJECT_DIR$/web/Paciente/diagnostico.html" />
-        <option value="$PROJECT_DIR$/web/Paciente/citas.html" />
-        <option value="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php" />
-        <option value="$PROJECT_DIR$/web/Paciente/index.php" />
         <option value="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php" />
-        <option value="$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js" />
+        <option value="$PROJECT_DIR$/src/Inteligente/Membrerias.php" />
+        <option value="$PROJECT_DIR$/src/Inteligente/Fuzzy.php" />
+        <option value="$PROJECT_DIR$/src/Inteligente/.php" />
+        <option value="$PROJECT_DIR$/css/w3.css" />
+        <option value="$PROJECT_DIR$/web/Pruebas/index.php" />
+        <option value="$PROJECT_DIR$/web/Paciente/estado.html" />
         <option value="$PROJECT_DIR$/web/Paciente/medicamentos.html" />
+        <option value="$PROJECT_DIR$/Pruebas/RGTR/TokenizerInterface.php" />
+        <option value="$PROJECT_DIR$/Pruebas/RGTR/WhitespaceAndPunctuationTokenizer.php" />
+        <option value="$PROJECT_DIR$/Pruebas/RGTR/Neural.php" />
+        <option value="$PROJECT_DIR$/Pruebas/RGTR/Classifier.php" />
+        <option value="$PROJECT_DIR$/Pruebas/Perceptron-master/src/JTet/Perceptron/Tests/PerceptronTest.php" />
+        <option value="$PROJECT_DIR$/Pruebas/RGTR/A.php" />
+        <option value="$PROJECT_DIR$/Pruebas/RGTR/Perceptron.php" />
+        <option value="$PROJECT_DIR$/src/Gestores/info_usuario.php" />
+        <option value="$PROJECT_DIR$/web/Paciente/index.php" />
+        <option value="$PROJECT_DIR$/web/Paciente/diagnostico.html" />
+        <option value="$PROJECT_DIR$/css/estilos.css" />
+        <option value="$PROJECT_DIR$/js/scripts.js" />
+        <option value="$PROJECT_DIR$/js/post_scripts.js" />
+        <option value="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php" />
+        <option value="$PROJECT_DIR$/src/Gestores/Pacientes/crear_cita.php" />
+        <option value="$PROJECT_DIR$/src/Gestores/Pacientes/citas.php" />
+        <option value="$PROJECT_DIR$/web/Paciente/citas.html" />
+        <option value="$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js" />
+        <option value="$PROJECT_DIR$/src/BD/registro_usuario.php" />
+        <option value="$PROJECT_DIR$/web/Paciente/recetas.html" />
       </list>
     </option>
   </component>
@@ -254,8 +300,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -331,6 +375,20 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Gestores" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
@@ -354,21 +412,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Consultas_Pacientes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto Modular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proyecto Modular" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="Pacientes" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,8 +434,56 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controladores" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Proyecto Modular" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -407,18 +499,19 @@
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\Pruebas\RGTR" />
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\Pruebas" />
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\js" />
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\img\imagenes" />
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\src\Gestores" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\Pruebas\RGTR" />
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\src\Gestores\Consultas_Pacientes" />
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\src\Entidades" />
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\web\Medico" />
       <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\web\Paciente" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\img\imagenes" />
-      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\src\Gestores" />
-      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\Pruebas" />
-      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\web\Temporal" />
-      <recent name="C:\Users\carlo\PhpstormProjects\Proyecto Modular\img\temporal" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -433,20 +526,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.medicamentos.php">
-    <configuration default="false" name="consultor.php (1)" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/consultor.php">
+  <component name="RunManager" selected="PHP Script.citas.php">
+    <configuration default="false" name="info_usuario.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/info_usuario.php">
       <method />
     </configuration>
-    <configuration default="false" name="informacion.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php">
+    <configuration default="false" name="info_usuario.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Proyecto Modular/Gestores/info_usuario.php">
       <method />
     </configuration>
-    <configuration default="false" name="diagnosticos.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php">
+    <configuration default="false" name="diagnostico.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Proyecto Modular/Paciente/diagnostico.html">
       <method />
     </configuration>
-    <configuration default="false" name="citas.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php">
+    <configuration default="false" name="citas.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Pacientes/citas.php">
       <method />
     </configuration>
-    <configuration default="false" name="medicamentos.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php">
+    <configuration default="false" name="crear_cita.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/Gestores/Pacientes/crear_cita.php">
       <method />
     </configuration>
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
@@ -527,19 +620,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.php" />
-      <item index="1" class="java.lang.String" itemvalue="PHP Script.consultor.php (1)" />
-      <item index="2" class="java.lang.String" itemvalue="PHP Script.informacion.php" />
-      <item index="3" class="java.lang.String" itemvalue="PHP Script.diagnosticos.php" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.info_usuario.php" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.info_usuario.php" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.diagnostico.html" />
       <item index="4" class="java.lang.String" itemvalue="PHP Script.citas.php" />
-      <item index="5" class="java.lang.String" itemvalue="PHP Script.medicamentos.php" />
+      <item index="5" class="java.lang.String" itemvalue="PHP Script.crear_cita.php" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.medicamentos.php" />
-        <item index="1" class="java.lang.String" itemvalue="PHP Script.citas.php" />
-        <item index="2" class="java.lang.String" itemvalue="PHP Script.diagnosticos.php" />
-        <item index="3" class="java.lang.String" itemvalue="PHP Script.consultor.php (1)" />
-        <item index="4" class="java.lang.String" itemvalue="PHP Script.informacion.php" />
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.citas.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.crear_cita.php" />
+        <item index="2" class="java.lang.String" itemvalue="PHP Script.info_usuario.php" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.diagnostico.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.info_usuario.php" />
       </list>
     </recent_temporary>
   </component>
@@ -561,26 +654,29 @@
       <workItem from="1490576167541" duration="40631000" />
       <workItem from="1490704927176" duration="16103000" />
       <workItem from="1490742010949" duration="21886000" />
-      <workItem from="1490806949655" duration="16892000" />
+      <workItem from="1490806949655" duration="17294000" />
+      <workItem from="1490887633080" duration="26338000" />
+      <workItem from="1490966333728" duration="33790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119041000" />
+    <option name="totallyTimeSpent" value="179571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1913767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21229868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25120774" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33816424" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -589,7 +685,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -622,314 +717,302 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/Medico/estadisticas.html">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="197">
+          <caret line="800" column="9" lean-forward="false" selection-start-line="800" selection-start-column="9" selection-end-line="800" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Usuario/index.html">
+    <entry file="file://$PROJECT_DIR$/src/Inteligente/.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="-11">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/temporal/diabetes.jpg" />
-    <entry file="file://$PROJECT_DIR$/css/angular-material.min.css">
+    <entry file="file://$PROJECT_DIR$/src/Inteligente/Fuzzy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="223" column="89" lean-forward="true" selection-start-line="223" selection-start-column="89" selection-end-line="223" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inteligente/Membrerias.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/canvasjs.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pruebas/neural-network-master/neural-network-master/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/README">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/icon.css">
+    <entry file="file://$PROJECT_DIR$/Pruebas/statistical-classifier-master/src/Camspiers/StatisticalClassifier/Model/Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pruebas/src/JTet/MultiLayerPerceptron/Tests/MultiLayerPerceptronTest.php">
+    <entry file="file://$PROJECT_DIR$/Pruebas/statistical-classifier-master/examples/language.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="247">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/e259dbb5-c82b-4dab-ae56-e730956ff7a6">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>e259dbb5-c82b-4dab-ae56-e730956ff7a6</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="350.0" y="295.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Medicamento.php">
+    <entry file="file://$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/NaiveBayesClassifierStoreRedis.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="-500">
+          <caret line="65" column="29" lean-forward="true" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Expediente.php">
+    <entry file="file://$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Administrador.php">
+    <entry file="file://$PROJECT_DIR$/Pruebas/Simple-Naive-Bayes-Classifier-for-PHP-master/NaiveBayesClassifier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="-663">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Receta.php">
+    <entry file="file://$PROJECT_DIR$/Pruebas/neural-network-master/neural-network-master/example.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="37">
+          <caret line="88" column="40" lean-forward="false" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Horario.php">
+    <entry file="file://$PROJECT_DIR$/Pruebas/bayes-master/tests/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Cita.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysql/mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="54" column="9" lean-forward="false" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/tables.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="217" column="16" lean-forward="false" selection-start-line="217" selection-start-column="16" selection-end-line="217" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="1014" column="0" lean-forward="false" selection-start-line="1014" selection-start-column="0" selection-end-line="1014" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Temporal/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="57" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pruebas/src/JTet/MultiLayerPerceptron/MultiLayerPerceptron.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Pruebas/app.js" />
-    <entry file="file://$PROJECT_DIR$/web/Pruebas/test.html" />
-    <entry file="file://$PROJECT_DIR$/web/Pruebas/indexado.php" />
-    <entry file="file://$PROJECT_DIR$/src/BD/gestorBD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/scripts.js">
+    <entry file="file://$PROJECT_DIR$/Pruebas/bayes-master/src/Fieg/Bayes/Classifier.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/post_scripts.js">
+    <entry file="file://$PROJECT_DIR$/Pruebas/bayes-master/src/Fieg/Bayes/TokenizerInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BD/cerrar_sesion.php">
+    <entry file="file://$PROJECT_DIR$/Pruebas/bayes-master/src/Fieg/Bayes/Tokenizer/WhitespaceAndPunctuationTokenizer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="102">
+          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pruebas/bayes-master/tests/Fieg/Bayes/Tokenizer/WhitespaceAndPunctuationTokenizerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pruebas/bayes-master/tests/Fieg/Bayes/ClassifierTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="43" column="18" lean-forward="true" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pruebas/RGTR/WhitespaceAndPunctuationTokenizer.php" />
+    <entry file="file://$PROJECT_DIR$/Pruebas/RGTR/TokenizerInterface.php" />
+    <entry file="file://$PROJECT_DIR$/Pruebas/RGTR/Neural.php" />
+    <entry file="file://$PROJECT_DIR$/Pruebas/RGTR/Classifier.php" />
+    <entry file="file://$PROJECT_DIR$/Pruebas/Perceptron-master/src/JTet/Perceptron/Perceptron.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="55" column="42" lean-forward="false" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Medico.php">
+    <entry file="file://$PROJECT_DIR$/Pruebas/Perceptron-master/src/JTet/Perceptron/Tests/PerceptronTest.php" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_9.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="671" column="9" lean-forward="false" selection-start-line="671" selection-start-column="9" selection-end-line="671" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pruebas/RGTR/Perceptron.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="79" column="35" lean-forward="false" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pruebas/RGTR/A.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gestores/info_usuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Paciente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="64" column="10" lean-forward="true" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/estilos.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="99" column="34" lean-forward="false" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/w3.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-113">
-          <caret line="200" column="1" lean-forward="false" selection-start-line="200" selection-start-column="1" selection-end-line="200" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Pruebas/peticionesA.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="56" lean-forward="true" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
-          <folding>
-            <marker date="1490472745539" expanded="true" signature="272:285" ph="SELECT * FRO... " />
-            <marker date="1490472745539" expanded="true" signature="272:293" ph="SELECT * FRO... usuario" />
-            <marker date="1490472745539" expanded="true" signature="873:894" ph="SELECT * FRO... usuario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Pruebas/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="45" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Pruebas/peticionesB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <marker date="1490473248956" expanded="true" signature="272:297" ph="SELECT * FRO... medicamento" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gestores/consultor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="52" lean-forward="true" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+        <state relative-caret-position="272">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
             <marker date="1490751816175" expanded="true" signature="354:375" ph="SELECT * FRO... usuario" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e259dbb5-c82b-4dab-ae56-e730956ff7a6/console.sql">
+    <entry file="file://$PROJECT_DIR$/web/Pruebas/peticionesA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BD/consultor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1490796545457" expanded="true" signature="497:541" ph="SELECT * FRO... " />
-            <marker date="1490796545457" expanded="true" signature="497:552" ph="SELECT * FRO... " />
-            <marker date="1490796545457" expanded="true" signature="497:553" ph="SELECT * FRO... ${$tabla}" />
-            <marker date="1490796545457" expanded="true" signature="659:666" ph="SELECT * FRO... usuario" />
-            <marker date="1490796545457" expanded="true" signature="659:758" ph="SELECT * FRO... " />
+            <marker date="1490472745539" expanded="true" signature="272:293" ph="SELECT * FRO... usuario" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Graficos/graficos.js">
+    <entry file="file://$PROJECT_DIR$/web/Pruebas/peticionesB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1490473248956" expanded="true" signature="272:297" ph="SELECT * FRO... medicamento" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Pruebas/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gestores/Pacientes/medicamentos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="70" lean-forward="true" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
+          <folding>
+            <marker date="1490848616078" expanded="true" signature="391:438" ph="SELECT * FRO... receta" />
+            <marker date="1490848616078" expanded="true" signature="391:450" ph="SELECT * FRO... receta" />
+            <marker date="1490848616078" expanded="true" signature="465:800" ph="SELECT DISTI... medicamento" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Paciente/diagnostico.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="83" column="40" lean-forward="true" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#label#0;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/estilos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="94" column="23" lean-forward="false" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/post_scripts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <caret line="45" column="69" lean-forward="false" selection-start-line="45" selection-start-column="69" selection-end-line="45" selection-end-column="69" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Usuario.php">
+    <entry file="file://$PROJECT_DIR$/web/Paciente/estado.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="112" column="29" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="29" />
+        <state relative-caret-position="153">
+          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BD/inicio_sesion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="47" column="56" lean-forward="false" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="56" />
+        <state relative-caret-position="91">
+          <caret line="43" column="60" lean-forward="false" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
           <folding>
             <element signature="e#6#90#0#PHP" expanded="false" />
             <marker date="1490816843874" expanded="true" signature="561:583" ph="SELECT * FRO... usuario" />
@@ -942,48 +1025,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gestores/info_usuario.php">
+    <entry file="file://$PROJECT_DIR$/css/w3.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="127">
+          <caret line="50" column="1" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Paciente/estado.html">
+    <entry file="file://$PROJECT_DIR$/src/Gestores/Pacientes/diagnosticos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Paciente/citas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/citas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding>
-            <marker date="1490844927085" expanded="true" signature="387:610" ph="SELECT * FRO... Usuario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/diagnosticos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
+        <state relative-caret-position="221">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <marker date="1490816898343" expanded="true" signature="387:501" ph="SELECT * FRO... Diagnostico" />
             <marker date="1490816898343" expanded="true" signature="387:512" ph="SELECT * FRO... Diagnostico" />
@@ -991,59 +1044,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Paciente/index.php">
+    <entry file="file://$PROJECT_DIR$/src/Gestores/Pacientes/citas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="97" column="55" lean-forward="false" selection-start-line="97" selection-start-column="55" selection-end-line="97" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="629">
+          <caret line="55" column="65" lean-forward="false" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
+          <folding>
+            <marker date="1491010113816" expanded="true" signature="389:612" ph="SELECT * FRO... Usuario" />
+            <marker date="1491010113816" expanded="true" signature="630:663" ph="SELECT MAX(i... Medico" />
+            <marker date="1491010113816" expanded="true" signature="1389:1704" ph="SELECT horar... Horario" />
+            <marker date="1491010113816" expanded="true" signature="1389:1726" ph="SELECT horar... Horario" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/informacion.php">
+    <entry file="file://$PROJECT_DIR$/web/Paciente/citas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding>
-            <marker date="1490811859748" expanded="true" signature="385:503" ph="SELECT * FRO... ${$tabla_principal}" />
-            <marker date="1490811859748" expanded="true" signature="385:512" ph="SELECT * FRO... usuario" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador_Paciente.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" column="88" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="88" />
+        <state relative-caret-position="145">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Paciente/diagnostico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Paciente/medicamentos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gestores/Consultas_Pacientes/medicamentos.php">
+    <entry file="file://$PROJECT_DIR$/src/Gestores/Pacientes/crear_cita.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <caret line="16" column="57" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="1" />
           <folding>
-            <marker date="1490848616078" expanded="true" signature="391:438" ph="SELECT * FRO... receta" />
-            <marker date="1490848616078" expanded="true" signature="391:450" ph="SELECT * FRO... receta" />
-            <marker date="1490848616078" expanded="true" signature="465:800" ph="SELECT DISTI... medicamento" />
+            <element signature="e#6#90#0#PHP" expanded="false" />
+            <marker date="1491009891728" expanded="true" signature="588:636" ph="UPDATE Horar... " />
+            <marker date="1491009891728" expanded="true" signature="588:646" ph="UPDATE Horar... " />
+            <marker date="1491009891728" expanded="true" signature="658:776" ph="INSERT INTO Cita... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Paciente/recetas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="49" column="74" lean-forward="false" selection-start-line="49" selection-start-column="74" selection-end-line="49" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Paciente/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="39" column="44" lean-forward="true" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="188" column="40" lean-forward="false" selection-start-line="188" selection-start-column="40" selection-end-line="188" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Controladores/Controlador.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="44" column="56" lean-forward="false" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BD/registro_usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="false" />
+            <marker date="1491014152901" expanded="true" signature="573:631" ph="UPDATE Horar... " />
+            <marker date="1491014152901" expanded="true" signature="643:761" ph="INSERT INTO Cita... " />
           </folding>
         </state>
       </provider>

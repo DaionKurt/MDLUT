@@ -1,0 +1,38 @@
+{
+	"name": "camspiers/statistical-classifier",
+	"description": "A PHP implementation of Complement Naive Bayes and SVM statistical classifiers, including a structure for building other classifier, multiple data sources and multiple caching backends",
+	"keywords": ["classifier", "svm", "naive", "bayes"],
+	"homepage": "http://php-classifier.com/",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Cam Spiers",
+			"email": "camspiers@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"symfony/config": "~2.2",
+		"symfony/options-resolver": "~2.2"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~3.7",
+		"mikey179/vfsStream": "~1.2",
+		"maximebf/cachecache": "~1.0"
+	},
+	"suggest": {
+		"camspiers/porter-stemmer": "Using a stemmer can help with language based classification",
+		"maximebf/cachecache": "Using caching will help improve performance on large datasets"
+	},
+	"autoload": {
+		"psr-0": {
+			"Camspiers\\StatisticalClassifier": "src/"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.8.x-dev"
+		}
+	}
+}

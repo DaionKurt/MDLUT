@@ -15,6 +15,7 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 });
 
 function abrir_panel() {
+
     document.getElementById("panel_lateral").style.display = "block";
     document.getElementById("contenido").style.display = "block";
 }
@@ -43,4 +44,21 @@ function carga() {
 function muestra_contenido() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("contenido_web").style.display = "block";
+}
+function buscar(busqueda,tabla){
+    var input, filter, table, tr, td, i;
+    input = document.getElementById(busqueda);
+    filter = input.value.toUpperCase();
+    table = document.getElementById(tabla);
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
 }

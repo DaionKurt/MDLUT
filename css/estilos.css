@@ -92,10 +92,57 @@ body,html{  height:100%;  color:#777;  line-height:1.8;  }
 @media only screen and (max-device-width: 1024px) {
     .padd-movil{padding-right: 0; padding-bottom: 1em;}
 }
-.slides {display:none;}
+.slides,.slides_medicos {display:none;}
 .animacion-in{animation:fadein 2s}
 @keyframes fadein{0%{opacity:0}100%{opacity:1}}
 .panel-info{min-height: 11em;}
+.medico-actual{max-width: 80%}
 @media only screen and (max-device-width: 1024px) {
+    .medico-actual{max-width: 100%}
     .panel-info{min-height:inherit;}
+}
+.dizzy-gillespie {
+    filter: saturate(3);
+    width: 0.1px;
+    height: 0.1px;
+    border: 40px solid transparent;
+    border-radius: 5px;
+    animation: loader 3s ease-in infinite, spin 1s linear infinite;
+}
+.dizzy-gillespie::before {
+    filter: saturate(0.3);
+    display: block;
+    position: absolute;
+    z-index: -1;
+    margin-left: -40px;
+    margin-top: -40px;
+    content:'';
+    height: 0.1em   ;
+    width: 0.1em;
+    border: 40px solid transparent;
+    border-radius: 5px;
+    animation: loader 2s ease-in infinite reverse, spin 0.8s linear infinite reverse;
+}
+.dizzy-gillespie::after {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    margin-left: -10px;
+    margin-top: -10px;
+    content:'';
+    height:20px;
+    width:20px;
+    border-radius: 20px;
+    background-color: white;
+}
+@keyframes loader {
+    0% {border-bottom-color:transparent;border-top-color:#114357}
+    25% {border-left-color:transparent;border-right-color:#826C75}
+    50% {border-top-color:transparent;border-bottom-color:#F29492}
+    75% {border-right-color:transparent;border-left-color:#826C75}
+    100% {border-bottom-color:transparent;border-top-color:#114357}
+}
+@keyframes spin {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(-360deg)}
 }

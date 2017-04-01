@@ -1,25 +1,214 @@
-<div data-ng-controller="Controlador_Diagnostico">
-    <table class="w3-table-all w3-card-2">
-        <tr>
-            <th>Estado diabético</th>
-            <th>IMC</th>
-            <th>Nivel de Glucosa</th>
-            <th>Glucosa</th>
-            <th>% de Certeza</th>
-        </tr>
-        <tr data-ng-repeat="diagnostico in diagnosticos">
-            <td>{{ diagnostico.Estado}}</td>
-            <td>{{ diagnostico.IMC }}</td>
-            <td>{{ diagnostico.Glucosa }}</td>
-            <td>{{ diagnostico.Cat_g }}</td>
-            <td>{{ diagnostico.Certeza}}</td>
-        </tr>
-        <tr data-ng-repeat="X in diagnosticos | limitTo: 1">
-            <td>{{diagnosticos[diagnosticos.length-1].Estado}}</td>
-            <td>{{diagnosticos[diagnosticos.length-1].IMC}}</td>
-            <td>{{diagnosticos[diagnosticos.length-1].Glucosa}}</td>
-            <td>{{diagnosticos[diagnosticos.length-1].Cat_g}}</td>
-            <td>{{diagnosticos[diagnosticos.length-1].Certeza}}</td>
-        </tr>
-    </table>
+<div data-ng-controller="Controlador_Diagnostico" >
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut, cum eum hic nesciunt
+        quibusdam quisquam? Amet beatae facere magnam, maxime necessitatibus odio odit placeat qui repudiandae sed
+        veniam?</p>
+    <div class="w3-row">
+        <div class="w3-half padd-movil">
+            <div class="w3-card-2">
+                <header class="w3-container w3-green">
+                    <h4>Último diagnóstico</h4>
+                </header>
+                <div class="w3-container">
+                        <p>{{ultimo.Estado}}<br>
+                        {{ultimo.IMC}}<br>
+                        {{ultimo.Glucosa}}<br>
+                        {{ultimo.Cat_g}}<br>
+                        {{ultimo.Certeza}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="w3-half" align="center">
+            <h4>¿Estás listo para un diagnóstico reciente?</h4>
+            <button class="w3-button w3-blue w3-hover-blue-gray"
+                    onclick="document.getElementById('nuevo_diagnos').style.display='block'">Generar nuevo diagnóstico</button>
+            <p style="text-align: center"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <br>Animi corporis eius, eos in molestias nihil nobis quidem rerum</p>
+        </div>
+    </div>
+    <div class="w3-row">
+        <h3>Historial de diagnósticos</h3>
+        <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar diagnóstico"
+               id="buscar_dx" onkeyup="buscar('buscar_dx','tabla_diagnosticos')">
+        <div class="w3-responsive">
+            <br>
+            <table class="w3-table-all w3-card-2" id="tabla_diagnosticos">
+                <tr>
+                    <th>Estado diabético</th>
+                    <th>IMC</th>
+                    <th>Nivel de Glucosa</th>
+                    <th>Glucosa</th>
+                    <th>% de Certeza</th>
+                </tr>
+                <tr class="w3-hover-light-blue" data-ng-repeat="diagnostico in diagnosticos" ng-if="existen">
+                    <td>{{ diagnostico.Estado}}</td>
+                    <td>{{ diagnostico.IMC }}</td>
+                    <td>{{ diagnostico.Glucosa }}</td>
+                    <td>{{ diagnostico.Cat_g }}</td>
+                    <td>{{ diagnostico.Certeza}}</td>
+                </tr>
+                <!--<tr class="w3-hover-light-blue" data-ng-repeat="X in diagnosticos | limitTo: 1">
+                    <td>{{diagnosticos[diagnosticos.length-1].Estado}}</td>
+                    <td>{{diagnosticos[diagnosticos.length-1].IMC}}</td>
+                    <td>{{diagnosticos[diagnosticos.length-1].Glucosa}}</td>
+                    <td>{{diagnosticos[diagnosticos.length-1].Cat_g}}</td>
+                    <td>{{diagnosticos[diagnosticos.length-1].Certeza}}</td>
+                </tr>-->
+            </table>
+            <div ng-if="!existen">
+                Aun no hay nada
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="w3-row w3-center">
+        <div class="w3-bar w3-border">
+            <a href="#" class="w3-button">&laquo;</a>
+            <a href="#" class="w3-button w3-red">1</a>
+            <a href="#" class="w3-button">&raquo;</a>
+        </div>
+    </div>
+
+    <div id="nuevo_diagnos" class="w3-modal" >
+        <div class="w3-modal-content w3-animate-zoom w3-card-4" style="max-width: 650px;">
+            <header class="w3-container w3-teal">
+        <span onclick="document.getElementById('nuevo_diagnos').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+                <h3>Nuevo Diagnóstico</h3>
+            </header>
+            <div class="w3-container" id="animacion" style="display: none; height: 25em;padding-top: 25%" align="center">
+                <div class="dizzy-gillespie"></div>
+            </div>
+            <div class="w3-container" id="contenedor_analisis">
+                <p>Es importante que conteste lo más real y honesto posible para obtener resultados más acertados</p>
+                <form class="w3-container" data-ng-submit="iniciar_diagnostico()">
+                    <div class="w3-row">
+                        <div class="w3-quarter" style="padding-right: 1em">
+                            <label for="peso_d">Peso en kg: </label>
+                            <input class="w3-input w3-animate-input entrada" type="number" value="70" min="1" max="250"
+                                   oninput="actualiza_peso(value)" id="peso_d" data-ng-model="peso_d" required>
+                        </div>
+                        <div class="w3-quarter" style="padding-right: 1em">
+                            <label for="estatura_d">Estatura en cm: </label>
+                            <input class="w3-input w3-animate-input entrada" type="number" value="165" min="1" max="230"
+                                   oninput="actualiza_estatura(value)" data-ng-model="estatura_d" id="estatura_d" required>
+                        </div>
+                        <div class="w3-quarter" style="padding-right: 1em">
+                            <label for="glucosa_d">Glucosa en mg/dL: </label>
+                            <input class="w3-input w3-animate-input entrada" type="number" value="120" min="50" max="450"
+                                   data-ng-model="glucosa_d" id="glucosa_d" required>
+                        </div>
+                        <div class="w3-quarter w3-hide-small" style="background-color: aliceblue; padding-left: 1em;">
+                            Peso:<b> <output for="peso_d" id="peso">70</output></b><br>
+                            Estatura:<b><output for="estatura_d" id="estatura">165</output></b><br>
+                            IMC: <b><output id="imc">25.71</output></b>
+                        </div>
+                        <script>
+                            function actualiza_peso(vol) {
+                                document.querySelector('#peso').value = vol;
+                                var val=document.querySelector('#estatura').value/100;
+                                var resultado = (vol/(val*val)).toFixed(2);
+                                if(resultado>50) document.querySelector('#imc').value = "50 MAX";
+                                else if(resultado<10) document.querySelector('#imc').value = "10 MIN";
+                                else{document.querySelector('#imc').value = resultado}
+                            }
+                            function actualiza_estatura(vol) {
+                                document.querySelector('#estatura').value = vol;
+                                vol/=100;
+                                var val=document.querySelector('#peso').value;
+                                var resultado = (val/(vol*vol)).toFixed(2);
+                                if(resultado>50) document.querySelector('#imc').value = "50 MAX";
+                                else if(resultado<10) document.querySelector('#imc').value = "10 MIN";
+                                else{document.querySelector('#imc').value = resultado}
+                            }
+                        </script>
+                    </div>
+                    <div class="row">
+                        <div class="w3-twothird">
+                            <div>
+                                <label> En qué condición se tomó la glucosa?</label><br>
+                            </div>
+                            <input class="w3-input-inline w3-radio" type="radio" name="tiempo" value="0" data-ng-model="tiempo" id="enc_0_Y" required>
+                            <label for="enc_0_Y">En Ayunas</label>
+                            <input class="w3-input-inline w3-radio" type="radio" name="tiempo" value="1" data-ng-model="tiempo" id="enc_0_N" required>
+                            <label for="enc_0_N">Despues de comer (1-1:30 hrs)</label>
+                            <hr style="max-width: 85%;" align="center">
+                            <input class="w3-input-inline w3-radio" type="radio" name="vision" value="0" data-ng-model="vision"id="enc_1_Y" required>
+                            <label for="enc_1_Y">Si</label>
+                            <input class="w3-input-inline w3-radio" type="radio" name="vision" value="1" data-ng-model="vision" id="enc_1_N" required>
+                            <label for="enc_1_N">No - </label>
+                            <label> Has tenido visión borrosa?</label><br>
+                            <input class="w3-input-inline w3-radio" type="radio" name="sed" value="0" data-ng-model="sed" id="enc_2_Y" required>
+                            <label for="enc_2_Y">Si</label>
+                            <input class="w3-input-inline w3-radio" type="radio" name="sed" value="1" data-ng-model="sed" id="enc_2_N" required>
+                            <label for="enc_2_N">No - </label>
+                            <label> Sufres de sed excesiva?</label><br>
+                            <input class="w3-input-inline w3-radio" type="radio" name="fatiga" value="0" data-ng-model="fatiga" id="enc_3_Y" required>
+                            <label for="enc_3_Y">Si</label>
+                            <input class="w3-input-inline w3-radio" type="radio" name="fatiga" value="1" data-ng-model="fatiga" id="enc_3_N" required>
+                            <label for="enc_3_N">No - </label>
+                            <label> Tienes fatiga constante?</label><br>
+                            <input class="w3-input-inline w3-radio" type="radio" name="orina" value="0" data-ng-model="orina" id="enc_4_Y" required>
+                            <label for="enc_4_Y">Si</label>
+                            <input class="w3-input-inline w3-radio" type="radio" name="orina" value="1" data-ng-model="orina" id="enc_4_N" required>
+                            <label for="enc_4_N">No - </label>
+                            <label> Orinas muy frecuentemente?</label><br>
+                            <input class="w3-input-inline w3-radio" type="radio" name="hambre" value="0" data-ng-model="hambre" id="enc_5_Y" required>
+                            <label for="enc_5_Y">Si</label>
+                            <input class="w3-input-inline w3-radio" type="radio" name="hambre" value="1" data-ng-model="hambre" id="enc_5_N" required>
+                            <label for="enc_5_N">No - </label>
+                            <label> Tienes mucha hambre y bajas de peso?</label><br>
+                        </div>
+                        <div class="w3-third" style="text-align: justify;">
+                            <br>
+                            <input class="w3-check" type="checkbox" id="acepto_r" onchange="document.getElementById('registro').disabled=!this.checked">
+                        </div>
+                    </div>
+                    <label for="acepto_r">Acepto los <a onclick=document.getElementById('estatutos').style.display='block'
+                    style="color: steelblue;"><b>
+                        estatutos de diagnóstico automático</b></a> del análisis</label>
+                    <p></p>
+                    <div class="w3-row">
+                        <div align="right">
+                            <button id="registro" class="w3-btn" style="background-color: #007c6e; color: white;" disabled>Iniciar análisis</button><p></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="estatutos" class="w3-modal" >
+        <div class="w3-modal-content w3-animate-zoom w3-card-4" style="max-width: 400px;max-height: 500px;">
+            <header class="w3-container w3-blue-grey">
+        <span onclick="document.getElementById('estatutos').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+                <h3>Sobre el diagnóstico automático</h3>
+            </header>
+            <div class="w3-container" style="overflow-y: scroll;max-height: 400px;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, impedit nesciunt possimus provident
+                    quisquam tempore voluptates. Accusantium asperiores doloribus fugiat harum inventore magnam modi,
+                    obcaecati optio, placeat porro similique, voluptatum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, impedit nesciunt possimus provident
+                    quisquam tempore voluptates. Accusantium asperiores doloribus fugiat harum inventore magnam modi,
+                    obcaecati optio, placeat porro similique, voluptatum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, impedit nesciunt possimus provident
+                    quisquam tempore voluptates. Accusantium asperiores doloribus fugiat harum inventore magnam modi,
+                    obcaecati optio, placeat porro similique, voluptatum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, impedit nesciunt possimus provident
+                    quisquam tempore voluptates. Accusantium asperiores doloribus fugiat harum inventore magnam modi,
+                    obcaecati optio, placeat porro similique, voluptatum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, impedit nesciunt possimus provident
+                    quisquam tempore voluptates. Accusantium asperiores doloribus fugiat harum inventore magnam modi,
+                    obcaecati optio, placeat porro similique, voluptatum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, impedit nesciunt possimus provident
+                    quisquam tempore voluptates. Accusantium asperiores doloribus fugiat harum inventore magnam modi,
+                    obcaecati optio, placeat porro similique, voluptatum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, impedit nesciunt possimus provident
+                    quisquam tempore voluptates. Accusantium asperiores doloribus fugiat harum inventore magnam modi,
+                    obcaecati optio, placeat porro similique, voluptatum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, impedit nesciunt possimus provident
+                    quisquam tempore voluptates. Accusantium asperiores doloribus fugiat harum inventore magnam modi,
+                    obcaecati optio, placeat porro similique, voluptatum?</p>
+            </div>
+        </div>
+    </div>
 </div>

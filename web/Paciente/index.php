@@ -33,6 +33,11 @@ $objeto = unserialize($_SESSION['objeto']);
         .side-open{padding:0; width:100%; background-color: transparent !important; color: white !important;}
         #contenido_web{ color: #000;}
         #panel_lateral{width: 20em;}
+        .w3-quarterr{float:left;width:24.9999%}
+        .w3-input-inline{padding:8px;display:inline-block;border:none;border-bottom:1px solid #ccc;width:auto}
+        .w3-input{padding: 0;}
+        .w3-select{ padding:4px;}
+        .w3-check{ width:17px; height:17px;}
     </style>
     <script src="../../js/Controladores/Controlador_Paciente.js"></script>
     <script type="text/javascript" src="../../js/loader.js"></script>
@@ -42,7 +47,7 @@ $objeto = unserialize($_SESSION['objeto']);
 <div id="loader"></div>
     <div id="contenido_web" class="animate-bottom">
         <div class="w3-sidebar w3-bar-block w3-animate-left sidebar" id="panel_lateral">
-            <div align="center" <!--data-ng-controller="Controlador"-->>
+            <div align="center">
                 <img src="../../img/imagenes/avatar.png" alt="" style="width: 50%;padding-top: 1em" class="w3-responsive w3-circle">
                 <h2><?php echo $objeto->get_nombre()." ".$objeto->get_apellido();?></h2>
                 <p>Datos del usuario bla bla</p>
@@ -67,22 +72,27 @@ $objeto = unserialize($_SESSION['objeto']);
             </div>
             <div class="w3-container">
                     <h2>Bienvenido <?php echo $objeto->get_nombre()." ".$objeto->get_apellido();?></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda consequatur dolor inventore ipsam neque non odio repellendus, suscipit totam? Accusamus animi cupiditate dolorem eaque exercitationem impedit magni porro, quis.</p>
-                <div class="w3-row">
+                <div class="w3-row" align="center">
                     <a href="javascript:void(0)" onclick="cambia_panel(event,'Estado');">
-                        <div class="w3-quarter enlace w3-bottombar w3-hover-light-gray w3-padding w3-border-red">Estado</div>
+                        <div class="w3-quarterr enlace w3-bottombar w3-hover-light-gray w3-padding w3-border-red">Estado</div>
                     </a>
                     <a href="javascript:void(0)" onclick="cambia_panel(event,'Diagnostico');">
-                        <div class="w3-quarter enlace w3-bottombar w3-hover-light-gray w3-padding">Diagnostico</div>
+                        <div class="w3-quarterr enlace w3-bottombar w3-hover-light-gray w3-padding">
+                            <script>
+                                var mediaquery = window.matchMedia("(max-width: 600px)");
+                                if (mediaquery.matches) {document.write("DX");} else {document.write("Diagnostico");}
+                            </script>
+                        </div>
                     </a>
                     <a href="javascript:void(0)" onclick="cambia_panel(event,'Citas');">
-                        <div class="w3-quarter enlace w3-bottombar w3-hover-light-gray w3-padding">Citas</div>
+                        <div class="w3-quarterr enlace w3-bottombar w3-hover-light-gray w3-padding">Citas</div>
                     </a>
                     <a href="javascript:void(0)" onclick="cambia_panel(event,'Medicamentos');">
-                        <div class="w3-quarter enlace w3-bottombar w3-hover-light-gray w3-padding">Medicamentos</div>
+                        <div class="w3-quarterr enlace w3-bottombar w3-hover-light-gray w3-padding">Recetas</div>
                     </a>
                 </div>
-                <div id="Estado" class="w3-container contenedor" style="display: block; padding-left: 0;padding-right: 0">
+                <div id="Estado" class="w3-container contenedor" style="display: block;">
+                    <h2>Estado</h2>
                     <div data-ng-include="'estado.html'"></div>
                 </div>
                 <div id="Diagnostico" class="w3-container contenedor" style="display: none">
@@ -94,8 +104,8 @@ $objeto = unserialize($_SESSION['objeto']);
                     <div data-ng-include="'citas.html'"></div>
                 </div>
                 <div id="Medicamentos" class="w3-container contenedor" style="display: none;">
-                    <h2>Medicamentos</h2>
-                    <div data-ng-include="'medicamentos.html'"></div>
+                    <h2>Recetas</h2>
+                    <div data-ng-include="'recetas.html'"></div>
                 </div>
             </div>
         </div>

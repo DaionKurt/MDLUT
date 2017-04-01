@@ -1,95 +1,40 @@
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/angular-material.min.css">
-    <link rel="stylesheet" href="../css/icon.css">
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/angular.min.js"></script>
-    <script src="../js/angular-animate.min.js"></script>
-    <script src="../js/angular-aria.min.js"></script>
-    <script src="../js/angular-messages.min.js"></script>
-    <script src="../js/angular-material.min.js"></script>
+    <script src="../js/canvasjs.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer",
+                {
+                    title:{
+                        text: "Gaming Consoles Sold in 2012"
+                    },
+                    legend: {
+                        maxWidth: 350,
+                        itemWidth: 120
+                    },
+                    data: [
+                        {
+                            type: "pie",
+                            showInLegend: true,
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                                { y: 4181563, indexLabel: "PlayStation 3" },
+                                { y: 2175498, indexLabel: "Wii" },
+                                { y: 3125844, indexLabel: "Xbox 360" },
+                                { y: 1176121, indexLabel: "Nintendo DS"},
+                                { y: 1727161, indexLabel: "PSP" },
+                                { y: 4303364, indexLabel: "Nintendo 3DS"},
+                                { y: 1717786, indexLabel: "PS Vita"}
+                            ]
+                        }
+                    ]
+                });
+            chart.render();
+        }
+    </script>
 </head>
-<body data-ng-app="App">
-<div data-ng-controller="ControladorA">
-    <table>
-        <tr data-ng-repeat="registro in datos">
-            <td>{{ registro.Nombre}}</td>
-            <td>{{ registro.Apellido }}</td>
-            <td>{{ registro.Edad }}</td>
-            <td>{{ registro.Correo }}</td>
-        </tr>
-    </table>
-</div>
-<div data-ng-controller="ControladorB">
-    <table>
-        <tr data-ng-repeat="registro in datos">
-            <td>{{ registro.Nombre}}</td>
-            <td>{{ registro.Descripcion }}</td>
-            <td>{{ registro.Dosis }}</td>
-            <td>{{ registro.Via }}</td>
-        </tr>
-    </table>
-</div>
-<!--
-<form  data-ng-submit="registrar()">
-    <fieldset>
-        <div class="form-group">
-            <input class="form-control" ng-model="txtUsuario" placeholder="Usuario" name="email" type="text" required>
-        </div>
-        <div class="form-group">
-            <input class="form-control" ng-model="txtContrasena" placeholder="Contraseña" name="password" type="password" value=""required>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <input class="btn btn-lg btn-info btn-block" type="submit" value="Entrar">
-            </div>
-            <div class="col-md-6">
-                <input class="btn btn-lg btn-default btn-block" ng-click="limpiar()" type="reset" value="Limpiar">
-            </div>
-        </div>
-    </fieldset>
-</form>
-
-
-<form  ng-submit="entrar()">
-    <fieldset>
-        <div class="form-group">
-            <input class="form-control" ng-model="txtUsuario" placeholder="Usuario" name="email" type="text" required>
-        </div>
-        <div class="form-group">
-            <input class="form-control" ng-model="txtContrasena" placeholder="Contraseña" name="password" type="password" value=""required>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <input class="btn btn-lg btn-info btn-block" type="submit" value="Entrar">
-            </div>
-            <div class="col-md-6">
-                <input class="btn btn-lg btn-default btn-block" ng-click="limpiar()" type="reset" value="Limpiar">
-            </div>
-        </div>
-    </fieldset>
-</form>-->
-
-
-<script>
-    var app = angular.module('App', []);
-    app.controller('ControladorA', function($scope, $http) {
-        $http.get("peticionesA.php").then(function (response) {$scope.datos = response.data.registro;});
-    });
-    app.controller('ControladorB', function($scope, $http) {
-        $http.get("peticionesB.php").then(function (response) {$scope.datos = response.data.registro;});
-    });
-</script>
-
-
+<body>
+<div id="chartContainer" style="height: 500px; width: 700px;"></div>
 </body>
 </html>
