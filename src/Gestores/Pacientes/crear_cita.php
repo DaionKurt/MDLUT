@@ -17,9 +17,10 @@ $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $request = json_decode(file_get_contents("php://input"));
 $medico = $request->medico;
 $horario = $request->horario;
+$anotaciones = $request->anotaciones;
 $paciente = $_SESSION['paciente'];
 $update = "UPDATE Horario SET libre = 0 WHERE id_horario = '$horario';";
-$sql = "INSERT INTO Cita(no_medico,no_paciente,horario,anotaciones) VALUES ('$medico','$paciente','$horario','Prueba general')";
+$sql = "INSERT INTO Cita(no_medico,no_paciente,horario,anotaciones) VALUES ('$medico','$paciente','$horario','$anotaciones')";
 try{
     $stmt = $conexion->query($update);
     $stmt = $conexion->query($sql);

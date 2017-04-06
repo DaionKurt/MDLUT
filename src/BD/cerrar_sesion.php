@@ -7,6 +7,7 @@
  */
 session_start();
 unset($_SESSION['usuario']);
+unset($_SESSION['objeto']);
 if(isset($_SESSION['paciente'])){
     unset($_SESSION['paciente']);
 }

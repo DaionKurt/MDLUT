@@ -1,6 +1,5 @@
 <?php
 session_start();
-unset($_SESSION['medico']);
 if(isset($_SESSION['usuario'])){
     if(isset($_SESSION['paciente'])){
         header("location: web/Paciente/index.php");
@@ -145,7 +144,7 @@ if(isset($_SESSION['usuario'])){
         </div>
     </div>
 </div>
-<div id="registro_usuario" class="w3-modal">
+<div id="registro_usuario" class="w3-modal" data-ng-controller="RegistroUsuario">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:700px">
         <header class="w3-container w3-blue-gray">
             <span onclick="document.getElementById('registro_usuario').style.display='none'"
@@ -154,39 +153,39 @@ if(isset($_SESSION['usuario'])){
         </header>
         <div class="w3-container">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque autem deleniti doloremque iste nobis non, possimus sed!</p>
-            <form action="" class="w3-container">
+            <form class="w3-container" data-ng-submit="registrar()">
                 <div class="w3-row">
                     <div class="w3-half" style="padding-right: 1em">
                         <label for="nombre_r">Nombre</label>
-                        <input class="w3-input w3-animate-input entrada" type="text" id="nombre_r" required>
+                        <input class="w3-input w3-animate-input entrada" type="text" id="nombre_r" data-ng-model="nombre_r" required>
                     </div>
                     <div class="w3-half">
                         <label for="apellido_r">Apellido</label>
-                        <input class="w3-input w3-animate-input entrada" type="text" id="apellido_r" required>
+                        <input class="w3-input w3-animate-input entrada" type="text" id="apellido_r" data-ng-model="apellido_r" required>
                     </div>
                 </div>
                 <div class="w3-row">
                     <div class="w3-third" style="padding-right: 1em">
                         <label for="correo_r">Correo</label>
-                        <input class="w3-input w3-animate-input entrada" type="email" id="correo_r" required>
+                        <input class="w3-input w3-animate-input entrada" type="email" id="correo_r" data-ng-model="correo_r" required>
                     </div>
                     <div class="w3-third" style="padding-right: 1em">
                         <label for="usuario_r">Usuario</label>
-                        <input class="w3-input w3-animate-input entrada" type="text" id="usuario_r" required>
+                        <input class="w3-input w3-animate-input entrada" type="text" id="usuario_r" data-ng-model="usuario_r" required>
                     </div>
                     <div class="w3-third">
                         <label for="pass_r">Contraseña</label>
-                        <input class="w3-input w3-animate-input entrada" type="password" id="pass_r" required>
+                        <input class="w3-input w3-animate-input entrada" type="password" id="pass_r" data-ng-model="pass_r" required>
                     </div>
                 </div>
                 <div class="w3-row">
                     <div class="w3-quarter" style="padding-right: 1em">
                         <label for="telefono_r">Telefono</label>
-                        <input class="w3-input w3-animate-input entrada" type="tel" id="telefono_r" required>
+                        <input class="w3-input w3-animate-input entrada" type="tel" id="telefono_r" data-ng-model="telefono_r" required>
                     </div>
                     <div class="w3-quarter" style="padding-right: 1em">
                         <label for="sexo_r">Sexo</label>
-                        <select class="w3-select entrada" name="option" id="sexo_r" required>
+                        <select class="w3-select entrada" name="option" id="sexo_r" data-ng-model="sexo_r" required>
                             <option value="" disabled selected>Selecciona</option>
                             <option value="M">Mujer</option>
                             <option value="H">Hombre</option>
@@ -194,19 +193,25 @@ if(isset($_SESSION['usuario'])){
                     </div>
                     <div class="w3-quarter" style="padding-right: 1em">
                         <label for="edad_r">Edad</label>
-                        <input class="w3-input w3-animate-input entrada" type="number" min="1" max="100" id="edad_r" required>
+                        <input class="w3-input w3-animate-input entrada" type="number" min="1" max="100" id="edad_r" data-ng-model="edad_r" required>
                     </div>
                     <div class="w3-quarter">
                         <label for="fecha_r">Fecha de Nacimiento</label>
-                        <input class="w3-input w3-animate-input entrada" type="date" id="fecha_r" required>
+                        <input class="w3-input w3-animate-input entrada" type="date" id="fecha_r" data-ng-model="fecha_r" required>
                     </div>
                 </div>
                 <p></p>
                 <input class="w3-check" type="checkbox" id="acepto_r" onchange="document.getElementById('registro').disabled=!this.checked">
                 <label for="acepto_r">Acepto los <a href="#" target="_blank">términos y condiciones</a> del sistema</label>
+                <div class="w3-panel w3-red w3-display-container w3-card-2" data-ng-show="error">
+                    <p>Ups! :C hubo un error. Tal vez ya existe este usuario o el correo ya está en uso.</p>
+                </div>
+                <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
+                    <p>Tu usuario ha sido creado :D, ve a tu correo para activar tu cuenta</p>
+                </div>
                 <p></p>
                 <div align="right">
-                    <button id="registro" class="w3-btn" style="background-color: #007c6e; color: white;" disabled>Registrar usuario</button><p></p>
+                    <button id="registro" class="w3-btn" style="background-color: #007c6e; color: white;" disabled type="submit">Registrar usuario</button><p></p>
                 </div>
             </form>
         </div>

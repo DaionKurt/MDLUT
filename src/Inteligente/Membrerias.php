@@ -6,8 +6,6 @@
  * Time: 09:33 AM
  */
 
-namespace Inteligente;
-
 class Membrerias{
     public $PI = M_PI;
     public static function funcion_gamma($u,$alpha,$beta){

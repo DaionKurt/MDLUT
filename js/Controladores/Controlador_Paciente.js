@@ -26,8 +26,16 @@ app.controller('Controlador_Diagnostico', function($scope, $http) {
     $scope.iniciar_diagnostico = function() {
         document.getElementById("contenedor_analisis").style.display = "none";
         document.getElementById("animacion").style.display = "block";
-        diagnosticar($scope,$http,{});
+        diagnosticar($scope,$http,{peso:$scope.peso_d, estatura:$scope.estatura_d, glucosa:$scope.glucosa_d, tiempo:$scope.tiempo,
+            vision:$scope.vision, sed:$scope.sed, fatiga:$scope.fatiga, orina:$scope.orina, hambre:$scope.hambre});
     };
+    $scope.cargar_func = function () {
+        document.getElementById('nuevo_diagnos').style.display='none';
+        document.getElementById("contenedor_resultados").style.display = "none";
+        document.getElementById("contenedor_analisis").style.display = "block";$scope.peso_d = 70;$scope.estatura_d = 165;
+        $scope.glucosa_d = 120;$scope.tiempo = false;$scope.vision = false;$scope.sed = false;
+        $scope.fatiga = false;$scope.orina = false;$scope.hambre = false;
+    }
 });
 app.controller('Controlador_Citas', function($scope, $http) {
     $scope.correcto = false;
@@ -37,17 +45,21 @@ app.controller('Controlador_Citas', function($scope, $http) {
             function (response) {
                 $scope.citas = response.data.citas;
                 $scope.horarios = response.data.medicos;
+                $scope.existen_citas = $scope.citas.length>0;
+                $scope.existen_horarios = $scope.horarios.length>0;
                 console.log($scope.horarios);
                 $scope.ultima = $scope.citas[$scope.citas.length - 1];
             });
     };
     $scope.cargar();
     $scope.crear_cita = function() {
-        $http.post("../../src/Gestores/Pacientes/crear_cita.php",{ medico : $scope.medico.nombre.ND , horario : $scope.medico.horario })
+        console.log($scope.anotaciones);
+        $http.post("../../src/Gestores/Pacientes/crear_cita.php",{ medico : $scope.medico.nombre.ND ,
+            horario : $scope.medico.horario, anotaciones: $scope.anotaciones })
             .success(function(data, status, headers, config){
                 $scope.correcto = true;
                 $scope.cargar();
-                console.log("inserted Successfully");
+                console.log("inserted");
             })
             .error(function(data) {
                 $scope.error = true;
@@ -60,17 +72,25 @@ app.controller('Controlador_Citas', function($scope, $http) {
 });
 app.controller('Controlador_Medicamentos', function($scope, $http) {
     $http.get("../../src/Gestores/Pacientes/medicamentos.php").then(
-        function (response) {$scope.recetas = response.data.recetas; $scope.medicamentos = response.data.medicamentos;
-            $scope.ultima = $scope.recetas[$scope.recetas.length-1];});
+        function (response) {
+            $scope.recetas = response.data.recetas;
+            $scope.medicamentos = response.data.medicamentos;
+            $scope.existen_recetas = $scope.recetas.length > 0;
+            $scope.existen_medicamentos = $scope.medicamentos.length > 0;
+            if ($scope.existen_recetas) {
+                $scope.ultima = $scope.recetas[$scope.recetas.length - 1];
+            }
+        });
 });
 
 function diagnosticar($scope,$http,$params){
-    var medicos = $http({url: "../../src/BD/consultor.php", method: "GET", params: $params});
+    var medicos = $http({url: "../../src/Gestores/Pacientes/generar_diagnostico.php", method: "GET", params: $params});
     medicos.then(
         function( response ) {
-            $scope.dato = response.data.registro;
-            console.log($scope.dato);
+            $scope.dato = response.data;
             document.getElementById("animacion").style.display = "none";
+            document.getElementById("contenedor_resultados").style.display = "block";
+            $scope.cargar();
         },function( response ) {alert('error');}
     );
 }

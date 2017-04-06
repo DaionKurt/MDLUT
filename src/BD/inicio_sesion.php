@@ -9,6 +9,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 include('../Entidades/Usuario.php');
 include('../Entidades/Paciente.php');
+include('../Entidades/Medico.php');
 session_start();
 require('gestorBD.php');
 $conexion = get_connection_test();
@@ -37,13 +38,14 @@ try{
     $correo_u = $usuario['correo'];
     $activo_u = $usuario['activo'];
     $id_u = $usuario['id_usuario'];
+    $_SESSION['usuario'] = $id_u;
+    $_SESSION['edad'] = $edad_u;
     if ($paciente_s->rowCount()>=1) {
         $paciente_stm = $paciente_s->fetch(PDO::FETCH_ASSOC);
         $id_p = $paciente_stm['id_paciente'];
         $estado_p = $paciente_stm['estado_diabetico'];
         $paciente_objeto = new \Entidades\Paciente($nombre_u,$apellido_u,$sexo_u,$fecha_nacimiento_u,$telefono_u,
             $edad_u,$usuario_u,$correo_u,$activo_u,$id_u,$estado_p,$id_p);
-        $_SESSION['usuario'] = $id_u;
         $_SESSION['paciente'] = $id_p;
         $_SESSION['objeto'] = serialize($paciente_objeto);
     }
@@ -55,7 +57,6 @@ try{
         $medico_objeto = new \Entidades\Medico($nombre_u,$apellido_u,$sexo_u,$fecha_nacimiento_u,
             $telefono_u,$edad_u,$usuario_u,$correo_u,$activo_u,$id_u,$cedula_m,
             $id_m,$no_admon);
-        $_SESSION['usuario'] = $id_u;
         $_SESSION['medico'] = $id_m;
         $_SESSION['objeto'] = serialize($medico_objeto);
     }

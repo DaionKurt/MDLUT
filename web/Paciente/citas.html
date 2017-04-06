@@ -1,18 +1,32 @@
 <div data-ng-controller="Controlador_Citas" id="citas_c">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut, cum eum hic nesciunt
-        quibusdam quisquam? Amet beatae facere magnam, maxime necessitatibus odio odit placeat qui repudiandae sed
-        veniam?</p>
+    <p>Recuerda que debes acudir a consulta regularmente para mantener un nivel de vida correcto, cuida tu salud,
+    en este panel están tus citas a modo de recordatorios, no las vayas a olvidar</p>
     <div class="w3-row">
         <div class="w3-half padd-movil">
             <div class="w3-card-2">
                 <header class="w3-container w3-red">
                     <h4>Última cita registrada</h4>
                 </header>
-                <div class="w3-container">
-                        <p>{{ultima.Dia}}<br>
-                        {{ultima.Hora}}<br>
-                        {{ultima.Medico}}<br>
-                        {{ultima.Anotaciones}}</p>
+                <div class="w3-container" ng-if="existen_citas">
+                    <div class="w3-row">
+                        <div class="row">
+                            <h5>Cita para el día <b>{{ultima.Dia}}</b> </h5>
+                        </div>
+                        <div class="w3-half">
+                            <p>Hora: {{ultima.Hora}}</p>
+                        </div>
+                        <div class="w3-half">
+                            <p>Médico: <b>{{ultima.Medico}}</b></p>
+                        </div>
+                        <div class="w3-row">
+                            <p>Notas: {{ultima.Anotaciones}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="!existen_citas" align="center">
+                    <h4>Oh vaya!</h4>
+                    <p>Tal parece que aún no hay nada por mostrar aquí <br>
+                        Aún no has generado una cita</p><br>
                 </div>
                 <button onclick="document.getElementById('nueva_cita').style.display='block'";
                         class="w3-button w3-block w3-dark-grey">Crear nueva cita</button>
@@ -24,10 +38,17 @@
                     <h4>Medico actual</h4>
                 </header>
                 <div class="w3-container" style="padding-left: 0;">
-                    <img src="../../img/imagenes/avatar.png" alt="Avatar" class="w3-left w3-margin-right w3-responsive" style="width: 40%">
-                    <h5><b>{{ultima.Medico}}</b></h5>
-                    <hr>
-                    <p>Médico cirujano y partero (Universidad de Guadalajara) | Cédula no. {{ultima.Cedula}}</p>
+                    <div ng-if="existen_citas">
+                        <img src="../../img/imagenes/avatar.png" alt="Avatar" class="w3-left w3-margin-right w3-responsive" style="width: 40%">
+                        <h5 style="margin-top: 0"><b>{{ultima.Medico}}</b></h5>
+                        <hr>
+                        <p>Médico cirujano y partero (Universidad de Guadalajara) | Cédula no. {{ultima.Cedula}}</p>
+                    </div>
+                    <div ng-if="!existen_citas" align="center">
+                        <h4>Ups!</h4>
+                        <p>Aún no tienes médico actual, porque no has tenido una cita <br>
+                            Descuida, cuando registres una, esto cambiará</p><br>
+                    </div>
                 </div>
             </div>
 
@@ -36,38 +57,43 @@
 
     <div class="w3-row">
         <h3>Historial de citas</h3>
-        <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar citas"
-               id="buscar_citas" onkeyup="buscar('buscar_citas','tabla_citas')">
-        <div class="w3-responsive">
+        <div ng-if="existen_citas">
+            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar citas"
+                   id="buscar_citas" onkeyup="buscar('buscar_citas','tabla_citas')">
+            <div class="w3-responsive">
+                <br>
+                <table class="w3-table-all w3-card-2" id="tabla_citas">
+                    <tr>
+                        <th>Dia</th>
+                        <th>Hora</th>
+                        <th>Medico</th>
+                        <th>Anotaciones</th>
+                    </tr>
+                    <tr data-ng-repeat="cita in citas">
+                        <td>{{ cita.Dia}}</td>
+                        <td>{{ cita.Hora }}</td>
+                        <td>{{ cita.Medico }}</td>
+                        <td>{{ cita.Anotaciones}}</td>
+                    </tr>
+                    <!--<tr data-ng-repeat="X in citas | limitTo: 1">
+                        <td>{{citas[citas.length-1].Dia}}</td>
+                        <td>{{citas[citas.length-1].Hora}}</td>
+                        <td>{{citas[citas.length-1].Medico}}</td>
+                        <td>{{citas[citas.length-1].Anotaciones}}</td>
+                    </tr>-->
+                </table>
+            </div>
             <br>
-            <table class="w3-table-all w3-card-2" id="tabla_citas">
-                <tr>
-                    <th>Dia</th>
-                    <th>Hora</th>
-                    <th>Medico</th>
-                    <th>Anotaciones</th>
-                </tr>
-                <tr data-ng-repeat="cita in citas">
-                    <td>{{ cita.Dia}}</td>
-                    <td>{{ cita.Hora }}</td>
-                    <td>{{ cita.Medico }}</td>
-                    <td>{{ cita.Anotaciones}}</td>
-                </tr>
-                <!--<tr data-ng-repeat="X in citas | limitTo: 1">
-                    <td>{{citas[citas.length-1].Dia}}</td>
-                    <td>{{citas[citas.length-1].Hora}}</td>
-                    <td>{{citas[citas.length-1].Medico}}</td>
-                    <td>{{citas[citas.length-1].Anotaciones}}</td>
-                </tr>-->
-            </table>
+            <div class="w3-row w3-center">
+                <div class="w3-bar w3-border">
+                    <a href="#" class="w3-button">&laquo;</a>
+                    <a href="#" class="w3-button w3-red">1</a>
+                    <a href="#" class="w3-button">&raquo;</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="w3-row w3-center">
-        <div class="w3-bar w3-border">
-            <a href="#" class="w3-button">&laquo;</a>
-            <a href="#" class="w3-button w3-red">1</a>
-            <a href="#" class="w3-button">&raquo;</a>
+        <div ng-if="!existen_citas" align="center">
+            <h4 class="w3-card-2 nada">Aún no tienes citas registradas con anterioridad</h4>
         </div>
     </div>
 
@@ -90,22 +116,19 @@
                                 ng-options="horario.ND as horario.Fecha for horario in medico.nombre.horarios">
                             <option value="" disabled selected>Selecciona horario de atencion</option>
                         </select><br>
+                        <h4>Anotaciones</h4>
+                        <textarea class="boxsizingBorder" name="message" title="" data-ng-model="anotaciones">
+                        </textarea><br>
                         <div class="w3-panel w3-red w3-display-container w3-card-2" data-ng-show="error">
-                            <h4>Oh vaya! :(</h4>
                             <p>Lo siento pero hubo un error. Inténtalo de nuevo con otro horario.</p>
                         </div>
                         <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
-                            <h4>Excelente</h4>
-                            <p>Tu cita ha sido creada. Ya puedes cerrar esta ventana</p>
-                        </div>
-                        <br>
+                            <p>Excelente! Tu cita ha sido creada. Ya puedes cerrar esta ventana</p>
+                        </div><p></p>
                         <button class="w3-btn" style="background-color: #007c6e; color: white;" type="submit" >Iniciar sesión</button><p></p>
                     </form>
                 </div>
             </div>
-            <footer class="w3-container w3-teal">
-                <p>Modal Footer</p>
-            </footer>
         </div>
     </div>
 </div>

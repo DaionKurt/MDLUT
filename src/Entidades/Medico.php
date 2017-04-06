@@ -62,6 +62,8 @@ class Medico extends Usuario {
     /**
      * @return mixed
      */
+
+
     public function get_IdA(){
         return $this->id_a;
     }

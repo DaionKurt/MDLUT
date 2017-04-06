@@ -10,8 +10,7 @@ app.controller("InicioSesion",function ($scope,$http) {
     };
 });
 app.controller("RegistroUsuario",function ($scope,$http) {
-    $scope.rsJSON = [ ];
-    $scope.iniciar = function() {
+    $scope.registrar = function() {
         registrar_usuario($http,$scope);
     };
     $scope.limpiar = function() {
@@ -32,6 +31,7 @@ function consultar_usuario($http,$scope){
                 console.log("Inicio incorrecto");
             }else{
                 $scope.rsJSON = data.usuario;
+                console.log($scope.rsJSON);
                 console.log("Usuario encontrado");
                 window.location = "index.php";
             }
@@ -41,19 +41,18 @@ function consultar_usuario($http,$scope){
         });
 }
 function registrar_usuario($http,$scope){
-    $http.post('src/BD/registro_usuario.php',{ nombre : $scope.nombre, apellido : $scope.apellido,
-        correo: $scope.correo, usuario : $scope.usuario , pass : $scope.pass, telefono: $scope.telefono,
-        sexo: $scope.sexo, edad: $scope.edad, fecha_nacimiento: $scope.fecha_nacimiento})
+    $scope.correcto = false;
+    $scope.error = false;
+    $http.post('src/BD/registro_usuario.php',{ nombre : $scope.nombre_r, apellido : $scope.apellido_r,
+        correo: $scope.correo_r, usuario : $scope.usuario_r , pass : $scope.pass_r, telefono: $scope.telefono_r,
+        sexo: $scope.sexo_r, edad: $scope.edad_r, fecha_nacimiento: $scope.fecha_r})
         .success(function(data) {
-            if (typeof(data.usuario) === "undefined"){
-                limpia_formulario($scope);
-                console.log("Registro fallido");
-            }else{
-                $scope.rsJSON = data.usuario;
-                console.log("Registro correcto");
-            }
+            limpia_formulario($scope);
+            $scope.correcto = true;
+            console.log("Registro correcto");
         })
         .error(function(data) {
+            $scope.error = true;
             console.log('Error: ' + data);
         });
 }

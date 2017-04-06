@@ -97,9 +97,11 @@ body,html{  height:100%;  color:#777;  line-height:1.8;  }
 @keyframes fadein{0%{opacity:0}100%{opacity:1}}
 .panel-info{min-height: 11em;}
 .medico-actual{max-width: 80%}
+.nada{width:50%;min-height:2em;}
 @media only screen and (max-device-width: 1024px) {
     .medico-actual{max-width: 100%}
     .panel-info{min-height:inherit;}
+    .nada{width:100%;}
 }
 .dizzy-gillespie {
     filter: saturate(3);
@@ -145,4 +147,43 @@ body,html{  height:100%;  color:#777;  line-height:1.8;  }
 @keyframes spin {
     0% {transform: rotate(0deg)}
     100% {transform: rotate(-360deg)}
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    min-width: 7em;
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 140%;
+    opacity: 0;
+    transition: opacity .5s;
+    font-family: "Calibri", sans-serif;
+    font-size: .7em;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+
 }

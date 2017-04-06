@@ -1,100 +1,111 @@
 <div data-ng-controller="Controlador_Medicamentos">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut, cum eum hic nesciunt
-        quibusdam quisquam? Amet beatae facere magnam, maxime necessitatibus odio odit placeat qui repudiandae sed
-        veniam?</p>
+    <p>Tu gestión de medicamentos es muy importante para mantener una vida controlada, no olvides surtir tus recetas y
+    atender las indicaciones de dosis</p>
     <div class="w3-row">
-        <div class="w3-half padd-movil">
+    <!--<div class="w3-half padd-movil">
             <div class="w3-card-2">
                 <header class="w3-container w3-yellow">
                     <h4>Recetas sin surtir</h4>
                 </header>
-                <div class="w3-container">
-                    <div align="center"><h5>Parece que todo está al día</h5><p>:)</p></div>
-                   <!-- <p>{{ultima.Descripcion}}<br>
-                        {{ultima.Fecha_expediente}}<br>
-                        {{ultima.Fecha_limite}}</p>-->
+                <div class="w3-container" ng-if="existen_recetas"><br>
+                   <div class="w3-row">
+                       <div class="w3-half">
+                           <b>Fecha expedición:</b> {{ultima.Fecha_expediente}}
+                       </div>
+                       <div class="w3-half">
+                           <b>Fecha caducidad:</b> {{ultima.Fecha_limite}}
+                       </div>
+                   </div>
+                    <div class="w3-row">
+                        <p><b>Descripción: </b>{{ultima.Descripcion}}</p>
+                    </div>
+                </div>
+                <div ng-if="!existen_recetas" align="center">
+                    <h4>Parece que todo está al día :)</h4>
+                    <p>No tienes recetas pendientes</p><br>
                 </div>
             </div>
         </div>
         <div class="w3-half" align="center">
             <h4>No olvides que las recetas tienen fecha de caducidad</h4>
-            <button class="w3-button w3-green w3-hover-teal"
+            <button data-ng-disabled="!existen_recetas" class="w3-button w3-green w3-hover-teal"
                     onclick="document.getElementById('descargar_recetas').style.display='block'">Descargar recetas</button>
-            <button class="w3-button w3-green w3-hover-teal"
-                    onclick="document.getElementById('descargar_recetas').style.display='block'">Marcar todas como surtidas</button>
-            <p style="text-align: center"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            <br>Animi corporis eius, eos in molestias nihil nobis quidem rerum</p>
-        </div>
+            <p style="text-align: center"> <p>Tus recetas tienen caducidad, súrtelas lo más pronto posible
+            <br>Si necesitas alguna puedes descargarla aquí</p>
+        </div>-->
     </div>
 
     <div class="w3-row">
-        <div class="w3-half padd-movil">
+        <div class="w3-half padd-movil" >
             <h3>Historial de recetas</h3>
-            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar recetas"
-                   id="buscar_recetas" onkeyup="buscar('buscar_recetas','tabla_recetas')">
-            <div class="w3-responsive">
-                <br>
-                <table class="w3-table-all w3-card-2" id="tabla_recetas">
-                    <tr>
-                        <th>Descripcion</th>
-                        <th>Fecha expediente</th>
-                        <th>Fecha limite</th>
-                    </tr>
-                    <tr data-ng-repeat="receta in recetas">
-                        <td>{{ receta.Descripcion}}</td>
-                        <td>{{ receta.Fecha_expediente }}</td>
-                        <td>{{ receta.Fecha_limite }}</td>
-                    </tr>
-                    <tr data-ng-repeat="X in recetas | limitTo: 1">
-                        <td>{{recetas[recetas.length-1].Descripcion}}</td>
-                        <td>{{recetas[recetas.length-1].Fecha_expediente}}</td>
-                        <td>{{recetas[recetas.length-1].Fecha_limite}}</td>
-                    </tr>
-                </table>
-            </div>
-            <br>
-            <div class="w3-row w3-center">
-                <div class="w3-bar w3-border">
-                    <a href="#" class="w3-button">&laquo;</a>
-                    <a href="#" class="w3-button w3-red">1</a>
-                    <a href="#" class="w3-button">&raquo;</a>
+            <div ng-if="existen_recetas">
+                <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar recetas"
+                       id="buscar_recetas" onkeyup="buscar('buscar_recetas','tabla_recetas')">
+                <div class="w3-responsive">
+                    <br>
+                    <table class="w3-table-all w3-card-2" id="tabla_recetas">
+                        <tr>
+                            <th>Descripcion</th>
+                            <th>Fecha expediente</th>
+                            <th>Fecha limite</th>
+                            <th>Descargar</th>
+                        </tr>
+                        <tr class="w3-hover-light-blue" data-ng-repeat="receta in recetas">
+                            <td>{{ receta.Descripcion}}</td>
+                            <td>{{ receta.Fecha_expediente }}</td>
+                            <td>{{ receta.Fecha_limite }}</td>
+                            <td align="center">
+                                <button class="w3-btn w3-blue" style="padding: 4px 8px;" ><i class="fa fa-download"></i></button>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
+                <br>
+                <div class="w3-row w3-center">
+                    <div class="w3-bar w3-border">
+                        <a href="#" class="w3-button">&laquo;</a>
+                        <a href="#" class="w3-button w3-red">1</a>
+                        <a href="#" class="w3-button">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!existen_recetas" align="center">
+                <h4 class="w3-card-2 nada">Aún no tienes recetas registradas</h4>
             </div>
         </div>
         <div class="w3-half">
             <h3>Medicamentos recetados</h3>
-            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar medicamentos"
-                   id="buscar_med" onkeyup="buscar('buscar_med','tabla_med')">
-            <div class="w3-responsive">
-                <br>
-                <table class="w3-table-all w3-card-2" id="tabla_med">
-                    <tr>
-                        <th>Medicamento</th>
-                        <th>Informacion</th>
-                        <th>Dosis</th>
-                        <th>Via</th>
-                    </tr>
-                    <tr data-ng-repeat="medicamento in medicamentos">
-                        <td>{{ medicamento.Medicamento}}</td>
-                        <td>{{ medicamento.Informacion }}</td>
-                        <td>{{ medicamento.Dosis }}</td>
-                        <td>{{ medicamento.Via}}</td>
-                    </tr>
-                    <tr data-ng-repeat="X in medicamentos | limitTo: 1">
-                        <td>{{medicamentos[medicamentos.length-1].Medicamento}}</td>
-                        <td>{{medicamentos[medicamentos.length-1].Informacion}}</td>
-                        <td>{{medicamentos[medicamentos.length-1].Dosis}}</td>
-                        <td>{{medicamentos[medicamentos.length-1].Via}}</td>
-                    </tr>
-                </table>
-            </div>
-            <br>
-            <div class="w3-row w3-center">
-                <div class="w3-bar w3-border">
-                    <a href="#" class="w3-button">&laquo;</a>
-                    <a href="#" class="w3-button w3-red">1</a>
-                    <a href="#" class="w3-button">&raquo;</a>
+            <div ng-if="existen_medicamentos">
+                <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar medicamentos"
+                       id="buscar_med" onkeyup="buscar('buscar_med','tabla_med')">
+                <div class="w3-responsive">
+                    <br>
+                    <table class="w3-table-all w3-card-2" id="tabla_med">
+                        <tr>
+                            <th>Medicamento</th>
+                            <th>Informacion</th>
+                            <th>Dosis</th>
+                            <th>Via</th>
+                        </tr>
+                        <tr class="w3-hover-light-blue" data-ng-repeat="medicamento in medicamentos">
+                            <td>{{ medicamento.Medicamento}}</td>
+                            <td>{{ medicamento.Informacion }}</td>
+                            <td>{{ medicamento.Dosis }}</td>
+                            <td>{{ medicamento.Via}}</td>
+                        </tr>
+                    </table>
                 </div>
+                <br>
+                <div class="w3-row w3-center">
+                    <div class="w3-bar w3-border">
+                        <a href="#" class="w3-button">&laquo;</a>
+                        <a href="#" class="w3-button w3-red">1</a>
+                        <a href="#" class="w3-button">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!existen_medicamentos" align="center">
+                <h4 class="w3-card-2 nada">Aún no tienes medicamentos</h4>
             </div>
         </div>
     </div>

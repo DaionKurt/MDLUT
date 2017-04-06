@@ -13,15 +13,23 @@ session_start();
 require('gestorBD.php');
 $conexion = get_connection_test();
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 $request = json_decode(file_get_contents("php://input"));
-$medico = $request->medico;
-$horario = $request->horario;
-$paciente = $_SESSION['paciente'];
-$update = "UPDATE Horario SET libre = 0 WHERE id_horario = '$horario';";
-$sql = "INSERT INTO Cita(no_medico,no_paciente,horario,anotaciones) VALUES ('$medico','$paciente','$horario','Prueba general')";
+$nombre = $request->nombre;
+$apellido = $request->apellido;
+$correo = $request->correo;
+$usuario = $request->usuario;
+$pass = $request->pass;
+$telefono = $request->telefono;
+$sexo = $request->sexo;
+$edad = $request->edad;
+$fecha_nacimiento = $request->fecha_nacimiento;
+$aux_a = substr($fecha_nacimiento,0,4);
+$aux_b = substr($fecha_nacimiento,5,2);
+$aux_c = substr($fecha_nacimiento,8,2);
+$fecha_nacimiento = $aux_c."/".$aux_b."/".$aux_a;
+$sql = "INSERT INTO Usuario(nombre,apellido,sexo,fecha_nacimiento,telefono,edad,usuario,correo,pass)
+ VALUES ('$nombre','$apellido','$sexo','$fecha_nacimiento','$telefono','$edad','$usuario','$correo','$pass');";
 try{
-    $stmt = $conexion->query($update);
     $stmt = $conexion->query($sql);
     $conexion = null;
 }catch(PDOException $e){

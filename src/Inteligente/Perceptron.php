@@ -1,5 +1,6 @@
 <?php
 
+
 class Perceptron{
     protected $vectorLength;
     protected $bias;
@@ -69,7 +70,6 @@ class Perceptron{
         }
         $testResult = $this->dotProduct($this->weightVector, $inputVector) + $this->bias;
         $this->output = $testResult > 0 ? 1 : 0;
-        echo $testResult;
         return $this->output;
     }
 

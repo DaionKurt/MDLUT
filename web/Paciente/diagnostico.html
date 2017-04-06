@@ -1,19 +1,32 @@
 <div data-ng-controller="Controlador_Diagnostico" >
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut, cum eum hic nesciunt
-        quibusdam quisquam? Amet beatae facere magnam, maxime necessitatibus odio odit placeat qui repudiandae sed
-        veniam?</p>
+    <p>Aquí podrás encontrar tus diagnósticos previos, información variada sobre los mismos, pero lo mejor, nuestra
+    herramienta de análisis automático, cuidarte es un arte, ten en cuenta tus resultados</p>
     <div class="w3-row">
         <div class="w3-half padd-movil">
             <div class="w3-card-2">
                 <header class="w3-container w3-green">
                     <h4>Último diagnóstico</h4>
                 </header>
-                <div class="w3-container">
-                        <p>{{ultimo.Estado}}<br>
-                        {{ultimo.IMC}}<br>
-                        {{ultimo.Glucosa}}<br>
-                        {{ultimo.Cat_g}}<br>
-                        {{ultimo.Certeza}}</p>
+                <div class="w3-container" ng-if="existen">
+                    <div class="w3-row">
+                        <h5>Estado actual: <b>{{ultimo.Estado}}</b></h5>
+                    </div>
+                    <div class="w3-row">
+                        <div class="w3-half">
+                            <p>IMC: {{ultimo.IMC}}</p>
+                            <p>Nivel de glucosa: {{ultimo.Glucosa}}</p>
+                        </div>
+                        <div class="w3-half">
+                            <p>Tu glucosa es <b>{{ultimo.Cat_g}}</b></p>
+                            <p>Con una certeza del {{ultimo.Certeza}}% </p>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+                <div ng-if="!existen" align="center">
+                    <h4>Oh vaya!</h4>
+                    <p>Tal parece que aún no hay nada por mostrar aquí <br>
+                    Por qué no intentas crear un nuevo diagnóstico?</p><br>
                 </div>
             </div>
         </div>
@@ -21,50 +34,52 @@
             <h4>¿Estás listo para un diagnóstico reciente?</h4>
             <button class="w3-button w3-blue w3-hover-blue-gray"
                     onclick="document.getElementById('nuevo_diagnos').style.display='block'">Generar nuevo diagnóstico</button>
-            <p style="text-align: center"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            <br>Animi corporis eius, eos in molestias nihil nobis quidem rerum</p>
+            <p style="text-align: center"> <p> Nuestra herramienta de diagnóstico trata de ser veráz
+            <br>Pero nunca suplantará a un médico, acude regularmente con él</p>
         </div>
     </div>
     <div class="w3-row">
         <h3>Historial de diagnósticos</h3>
-        <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar diagnóstico"
-               id="buscar_dx" onkeyup="buscar('buscar_dx','tabla_diagnosticos')">
-        <div class="w3-responsive">
+        <div ng-if="existen">
+            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar diagnóstico"
+                   id="buscar_dx" onkeyup="buscar('buscar_dx','tabla_diagnosticos')">
+            <div class="w3-responsive">
+                <br>
+                <table class="w3-table-all w3-card-2" id="tabla_diagnosticos">
+                    <tr>
+                        <th>Estado diabético</th>
+                        <th>IMC</th>
+                        <th>Nivel de Glucosa</th>
+                        <th>Glucosa</th>
+                        <th>% de Certeza</th>
+                    </tr>
+                    <tr class="w3-hover-light-blue" data-ng-repeat="diagnostico in diagnosticos" ng-if="existen">
+                        <td>{{ diagnostico.Estado}}</td>
+                        <td>{{ diagnostico.IMC }}</td>
+                        <td>{{ diagnostico.Glucosa }}</td>
+                        <td>{{ diagnostico.Cat_g }}</td>
+                        <td>{{ diagnostico.Certeza}}</td>
+                    </tr>
+                    <!--<tr class="w3-hover-light-blue" data-ng-repeat="X in diagnosticos | limitTo: 1">
+                        <td>{{diagnosticos[diagnosticos.length-1].Estado}}</td>
+                        <td>{{diagnosticos[diagnosticos.length-1].IMC}}</td>
+                        <td>{{diagnosticos[diagnosticos.length-1].Glucosa}}</td>
+                        <td>{{diagnosticos[diagnosticos.length-1].Cat_g}}</td>
+                        <td>{{diagnosticos[diagnosticos.length-1].Certeza}}</td>
+                    </tr>-->
+                </table>
+            </div>
             <br>
-            <table class="w3-table-all w3-card-2" id="tabla_diagnosticos">
-                <tr>
-                    <th>Estado diabético</th>
-                    <th>IMC</th>
-                    <th>Nivel de Glucosa</th>
-                    <th>Glucosa</th>
-                    <th>% de Certeza</th>
-                </tr>
-                <tr class="w3-hover-light-blue" data-ng-repeat="diagnostico in diagnosticos" ng-if="existen">
-                    <td>{{ diagnostico.Estado}}</td>
-                    <td>{{ diagnostico.IMC }}</td>
-                    <td>{{ diagnostico.Glucosa }}</td>
-                    <td>{{ diagnostico.Cat_g }}</td>
-                    <td>{{ diagnostico.Certeza}}</td>
-                </tr>
-                <!--<tr class="w3-hover-light-blue" data-ng-repeat="X in diagnosticos | limitTo: 1">
-                    <td>{{diagnosticos[diagnosticos.length-1].Estado}}</td>
-                    <td>{{diagnosticos[diagnosticos.length-1].IMC}}</td>
-                    <td>{{diagnosticos[diagnosticos.length-1].Glucosa}}</td>
-                    <td>{{diagnosticos[diagnosticos.length-1].Cat_g}}</td>
-                    <td>{{diagnosticos[diagnosticos.length-1].Certeza}}</td>
-                </tr>-->
-            </table>
-            <div ng-if="!existen">
-                Aun no hay nada
+            <div class="w3-row w3-center">
+                <div class="w3-bar w3-border">
+                    <a href="#" class="w3-button">&laquo;</a>
+                    <a href="#" class="w3-button w3-red">1</a>
+                    <a href="#" class="w3-button">&raquo;</a>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
-    <div class="w3-row w3-center">
-        <div class="w3-bar w3-border">
-            <a href="#" class="w3-button">&laquo;</a>
-            <a href="#" class="w3-button w3-red">1</a>
-            <a href="#" class="w3-button">&raquo;</a>
+        <div ng-if="!existen" align="center">
+            <h4 class="w3-card-2 nada">Aún no tienes un diagnóstico registrado con anterioridad</h4>
         </div>
     </div>
 
@@ -76,7 +91,26 @@
                 <h3>Nuevo Diagnóstico</h3>
             </header>
             <div class="w3-container" id="animacion" style="display: none; height: 25em;padding-top: 25%" align="center">
-                <div class="dizzy-gillespie"></div>
+                <div class="dizzy-gillespie">
+                </div>
+            </div>
+            <div class="w3-container" id="contenedor_resultados" style="display: none;">
+                <div class="row">
+                    <h4>Resultados del análisis</h4>
+                    <div class="w3-half"><p>Resultado Dataset: <b>{{dato.resultado?"Diabético":"No Diabético"}}</b></p></div>
+                    <div class="w3-half"><p>Resultado Fuzzy: <b>{{dato.result}}</b></p></div>
+                    <p>Certeza del análisis: {{dato.certeza*100}}%</p>
+                    <div class="w3-panel w3-red w3-display-container w3-card-2" ng-if="dato.resultado">
+                        <p>Tu resultado no es bueno, considera el acudir a un médico para un diagnóstico confirmatorio</p>
+                    </div>
+                    <div class="w3-panel w3-blue w3-display-container w3-card-2" ng-if="!dato.resultado">
+                        <p>Muy bien, parece que todo está en orden</p>
+                    </div>
+                    <div align="right">
+                        <button class="w3-button w3-teal" data-ng-click="cargar_func()">Da clic aquí para finalizar</button>
+                    </div>
+                    <br>
+                </div>
             </div>
             <div class="w3-container" id="contenedor_analisis">
                 <p>Es importante que conteste lo más real y honesto posible para obtener resultados más acertados</p>
@@ -127,34 +161,34 @@
                             <div>
                                 <label> En qué condición se tomó la glucosa?</label><br>
                             </div>
-                            <input class="w3-input-inline w3-radio" type="radio" name="tiempo" value="0" data-ng-model="tiempo" id="enc_0_Y" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="tiempo" value="1" data-ng-model="tiempo" id="enc_0_Y" required>
                             <label for="enc_0_Y">En Ayunas</label>
-                            <input class="w3-input-inline w3-radio" type="radio" name="tiempo" value="1" data-ng-model="tiempo" id="enc_0_N" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="tiempo" value="0" data-ng-model="tiempo" id="enc_0_N" required>
                             <label for="enc_0_N">Despues de comer (1-1:30 hrs)</label>
                             <hr style="max-width: 85%;" align="center">
-                            <input class="w3-input-inline w3-radio" type="radio" name="vision" value="0" data-ng-model="vision"id="enc_1_Y" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="vision" ng-value="1" data-ng-model="vision"id="enc_1_Y" required>
                             <label for="enc_1_Y">Si</label>
-                            <input class="w3-input-inline w3-radio" type="radio" name="vision" value="1" data-ng-model="vision" id="enc_1_N" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="vision" ng-value="0" data-ng-model="vision" id="enc_1_N" required>
                             <label for="enc_1_N">No - </label>
                             <label> Has tenido visión borrosa?</label><br>
-                            <input class="w3-input-inline w3-radio" type="radio" name="sed" value="0" data-ng-model="sed" id="enc_2_Y" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="sed" ng-value="1" data-ng-model="sed" id="enc_2_Y" required>
                             <label for="enc_2_Y">Si</label>
-                            <input class="w3-input-inline w3-radio" type="radio" name="sed" value="1" data-ng-model="sed" id="enc_2_N" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="sed" ng-value="0" data-ng-model="sed" id="enc_2_N" required>
                             <label for="enc_2_N">No - </label>
                             <label> Sufres de sed excesiva?</label><br>
-                            <input class="w3-input-inline w3-radio" type="radio" name="fatiga" value="0" data-ng-model="fatiga" id="enc_3_Y" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="fatiga" ng-value="1" data-ng-model="fatiga" id="enc_3_Y" required>
                             <label for="enc_3_Y">Si</label>
-                            <input class="w3-input-inline w3-radio" type="radio" name="fatiga" value="1" data-ng-model="fatiga" id="enc_3_N" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="fatiga" ng-value="0" data-ng-model="fatiga" id="enc_3_N" required>
                             <label for="enc_3_N">No - </label>
                             <label> Tienes fatiga constante?</label><br>
-                            <input class="w3-input-inline w3-radio" type="radio" name="orina" value="0" data-ng-model="orina" id="enc_4_Y" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="orina" ng-value="1" data-ng-model="orina" id="enc_4_Y" required>
                             <label for="enc_4_Y">Si</label>
-                            <input class="w3-input-inline w3-radio" type="radio" name="orina" value="1" data-ng-model="orina" id="enc_4_N" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="orina" ng-value="0" data-ng-model="orina" id="enc_4_N" required>
                             <label for="enc_4_N">No - </label>
                             <label> Orinas muy frecuentemente?</label><br>
-                            <input class="w3-input-inline w3-radio" type="radio" name="hambre" value="0" data-ng-model="hambre" id="enc_5_Y" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="hambre" ng-value="1" data-ng-model="hambre" id="enc_5_Y" required>
                             <label for="enc_5_Y">Si</label>
-                            <input class="w3-input-inline w3-radio" type="radio" name="hambre" value="1" data-ng-model="hambre" id="enc_5_N" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="hambre" ng-value="0" data-ng-model="hambre" id="enc_5_N" required>
                             <label for="enc_5_N">No - </label>
                             <label> Tienes mucha hambre y bajas de peso?</label><br>
                         </div>
