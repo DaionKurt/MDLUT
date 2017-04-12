@@ -13,21 +13,27 @@ include('../Entidades/Medico.php');
 session_start();
 require('gestorBD.php');
 $conexion = get_connection_test();
-$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $JSON       = file_get_contents("php://input");
 $request    = json_decode($JSON);
 $usuario    = $request->usuario;
-$pass = $request->pass;
-$sql =     "SELECT * FROM usuario WHERE usuario.usuario = '$usuario' AND usuario.pass= '$pass'";
-$paciente ="SELECT paciente.id_paciente ,paciente.estado_diabetico FROM usuario INNER JOIN paciente ON 
-        usuario.id_usuario=paciente.no_usuario AND usuario.usuario= '$usuario'";
-$medico =  "SELECT medico.id_medico ,medico.no_cedula, medico.no_admon FROM usuario INNER JOIN medico ON 
-        usuario.id_usuario=medico.no_usuario AND usuario.usuario= '$usuario'";
+$pass       = $request->pass;
+
+$sentencia=$conexion->prepare("SELECT * FROM usuario WHERE usuario.usuario = :usuario AND usuario.pass = :pass");
+$sentencia->bindParam(':usuario', $usuario, PDO::PARAM_STR);
+$sentencia->bindParam(':pass', $pass, PDO::PARAM_STR);
+
+$sentencia_p=$conexion->prepare("SELECT paciente.id_paciente ,paciente.estado_diabetico FROM usuario INNER JOIN paciente ON 
+        usuario.id_usuario=paciente.no_usuario AND usuario.usuario=:usuario");
+$sentencia_p->bindParam(':usuario', $usuario, PDO::PARAM_STR);
+
+$sentencia_m=$conexion->prepare("SELECT medico.id_medico ,medico.no_cedula, medico.no_admon FROM usuario INNER JOIN medico ON 
+        usuario.id_usuario=medico.no_usuario AND usuario.usuario=:usuario");
+$sentencia_m->bindParam(':usuario', $usuario, PDO::PARAM_STR);
 try{
-    $stmt = $conexion->query($sql);
-    $paciente_s = $conexion->query($paciente);
-    $medico_s = $conexion->query($medico);
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    $sentencia->execute();
+    $sentencia_p->execute();
+    $sentencia_m->execute();
+    $usuario = $sentencia->fetch(PDO::FETCH_ASSOC);
     $nombre_u = $usuario['nombre'];
     $apellido_u = $usuario['apellido'];
     $sexo_u = $usuario['sexo'];
@@ -40,8 +46,8 @@ try{
     $id_u = $usuario['id_usuario'];
     $_SESSION['usuario'] = $id_u;
     $_SESSION['edad'] = $edad_u;
-    if ($paciente_s->rowCount()>=1) {
-        $paciente_stm = $paciente_s->fetch(PDO::FETCH_ASSOC);
+    if ($sentencia_p->rowCount()>=1) {
+        $paciente_stm = $sentencia_p->fetch(PDO::FETCH_ASSOC);
         $id_p = $paciente_stm['id_paciente'];
         $estado_p = $paciente_stm['estado_diabetico'];
         $paciente_objeto = new \Entidades\Paciente($nombre_u,$apellido_u,$sexo_u,$fecha_nacimiento_u,$telefono_u,
@@ -49,8 +55,8 @@ try{
         $_SESSION['paciente'] = $id_p;
         $_SESSION['objeto'] = serialize($paciente_objeto);
     }
-    if($medico_s->rowCount()>=1){
-        $medico_stm = $medico_s->fetch(PDO::FETCH_ASSOC);
+    if($sentencia_m->rowCount()>=1){
+        $medico_stm = $sentencia_m->fetch(PDO::FETCH_ASSOC);
         $id_m = $medico_stm['id_medico'];
         $no_admon = $medico_stm['no_admon'];
         $cedula_m = $medico_stm['no_cedula'];

@@ -10,5 +10,6 @@ function get_connection(){
         'sfuuvgea_root', 'host_01*chiles&beer');
 }
 function get_connection_test(){
-    return new PDO('mysql:host=localhost;dbname=diaman;charset=utf8mb4', 'root', 'root');
+    return new PDO('mysql:host=localhost;dbname=diaman;charset=utf8mb4', 'root', 'root',
+        [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 }

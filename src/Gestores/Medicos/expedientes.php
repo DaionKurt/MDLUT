@@ -7,7 +7,7 @@
  */
 require "Administrador.php";
 session_start();
-$medico = $_SESSION['medico'];
+$medico  = $_SESSION['medico'];
 $usuario = $_SESSION['usuario'];
 $administrador = new Administrador($medico,$usuario);
 echo $administrador->get_expedientes();
