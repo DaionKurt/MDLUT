@@ -36,20 +36,35 @@ if(isset($_SESSION['usuario'])){
         .w3-input{padding: 0;}
         .w3-select{ padding:4px;}
         .w3-check{ width:17px; height:17px;}
+        .mySlides {display:none;}
+        .blue{
+            color: #fff;
+            background:linear-gradient(135deg,rgba(23, 151, 225,.9),rgba(89, 196, 98,0.9)),url("img/imagenes/diabetes.jpg");
+            background-size:cover;
+            background-attachment: fixed;
+        }
+        .orange{
+            color: #fff;
+            background:linear-gradient(135deg,rgba(243, 83, 105,.9),rgba(252, 216, 114,0.9)),url("img/imagenes/diabetes.jpg");
+            background-size:cover;
+            background-attachment: fixed;
+        }
     </style>
 </head>
 <body>
 <div class="w3-top">
-    <div class="w3-bar" id="navegacion">
+    <div class="w3-bar w3-card" id="navegacion">
         <a href="#inicio" class="w3-bar-item w3-button">Inicio</a>
         <a href="#nosotros" class="w3-bar-item w3-button w3-hide-small">Nosotros</a>
         <a href="#info" class="w3-bar-item w3-button w3-hide-small">Información</a>
+        <a href="#instituciones" class="w3-bar-item w3-button w3-hide-small">Instituciones</a>
         <a href="#acerca" class="w3-bar-item w3-button w3-hide-small">Acerca de</a>
         <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleFunction()">&#9776;</a>
     </div>
     <div id="menor" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
         <a href="#nosotros" class="w3-bar-item w3-button">Nosotros</a>
         <a href="#info" class="w3-bar-item w3-button">Información</a>
+        <a href="#instituciones" class="w3-bar-item w3-button">Instituciones</a>
         <a href="#acerca" class="w3-bar-item w3-button">Acerca de</a>
     </div>
 </div>
@@ -76,47 +91,161 @@ if(isset($_SESSION['usuario'])){
     <div class="w3-col s12 m8 w3-center w3-content w3-container w3-padding-64">
         <h3 class="w3-center">Qué es el sistema</h3>
         <p class="w3-center"><em>Cuida tu diabetes</em></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. In velit esse culla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
             qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <br>
         <div class="w3-row">
             <div class="w3-quarter">
-                <i class="fa fa-line-chart" style="font-size:36px"></i>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
+                <i class="fa fa-line-chart slideanim" style="font-size:36px"></i>
+                <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
             </div>
             <div class="w3-quarter">
-                <i class="fa fa fa-venus-mars" style="font-size:36px"></i>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
+                <i class="fa fa fa-venus-mars slideanim" style="font-size:36px"></i>
+                <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
             </div>
             <div class="w3-quarter">
-                <i class="fa fa-user-md" style="font-size:36px"></i>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
+                <i class="fa fa-user-md slideanim" style="font-size:36px"></i>
+                <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
             </div>
             <div class="w3-quarter">
-                <i class="fa fa-hospital-o" style="font-size:36px"></i>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
+                <i class="fa fa-hospital-o slideanim" style="font-size:36px"></i>
+                <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="w3-blue-gray">
+<div class="blue elementos-moviles">
     <div class="w3-content w3-container w3-padding-64 w3-center" id="info" style="z-index: 2;">
         <h3>La Diabetes</h3>
         <p><em>Qué es? datos de relevancia</em></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+        <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
             qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="w3-content w3-display-container w3-section slideanim" style="max-width:500px">
+            <div class="w3-display-container mySlides w3-card-4">
+                <img class="w3-animate-left" src="imagenes/BG1.png" style="min-height:100%; width:100%; margin-bottom: -1em"">
+                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-blue">
+                    Chequeo constante
+                </div>
+            </div>
+            <div class="w3-display-container mySlides w3-card-4">
+                <img class="w3-animate-left" src="imagenes/BG2.jpg" style="min-height:100%; width:100%; margin-bottom: -1em"">
+                <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-orange" style="color: white !important;">
+                    Buena alimentación
+                </div>
+            </div>
+            <div class="w3-display-container mySlides w3-card-4">
+                <img class="w3-animate-left" src="imagenes/BG3.jpg" style="min-height:100%; width:100%; margin-bottom: -1em">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-green">
+                    Ejercicio regular
+                </div>
+            </div>
+        </div>
+        <script>
+            var myIndex = 0;
+            carousel();
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}
+                x[myIndex-1].style.display = "block";
+                setTimeout(carousel, 9000); // Change image every 2 seconds
+            }
+        </script>
+    </div>
+</div>
+
+<div class="w3-white elementos-moviles">
+    <div class="w3-content w3-container w3-padding-64" id="instituciones" style="z-index: 2;">
+        <h3 style="max-width: 300px; padding-left: 1em" class="w3-blue-grey">Instituciones relacionadas</h3>
         <div class="w3-row">
-            <div class="w3-third w3-red" style="width: 33.3%; height: 15em;">< Imagen ><!--<img src="img_lights.jpg">--></div>
-            <div class="w3-third w3-blue" style="width: 33.3%; height: 15em;">< Imagen ></div>
-            <div class="w3-third w3-green" style="width: 33.3%; height: 15em;">< Imagen ></div>
+            <p style="text-align: justify">Desde el año 2000, la diabetes mellitus en México es la primera causa de
+            muerte entre las mujeres y la segunda entre los hombres. En 2010, esta enfermedad causó cerca de 83 000
+            muertes en el país. Es por esto que desde entonces se han generado instituciones que pueden asesorarte,
+            apoyarte y brindarte toda la información necesaria para que conozcas a fondo de la diabetes, cómo prevenirla
+            y cómo vivir con ella</p>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-third">
+                <img src="imagenes/FMD.png" alt="" style="max-width: 100%" class="w3-responsive slideanim">
+                <p style="text-align: justify">La Federación Mexicana de Diabetes, A.C. (por sus siglas FMD) es una
+                    Asociación Civil que vela por los intereses de las personas que viven con esta condición. La FMD
+                    ofrece atención a pacientes, tanto en el ámbito de la salud como en el de apoyo.</p>
+                <div align="center">
+                    <a class="w3-btn w3-blue slideanim" href="http://fmdiabetes.org/">Sitio web</a><br>
+                </div>
+            </div>
+            <div class="w3-third">
+                <img src="imagenes/AMD.png" alt="" style="max-width: 100%" class="w3-responsive slideanim">
+                <p style="text-align: justify">La Asociación Mexicana de Diabetes es una Institución que brinda atención,
+                    educación y capacitación sobre el cuidado de la diabetes a las personas que viven con este padecimiento
+                    y a sus familiares, con la finalidad de prevenir complicaciones y procurarles una mejor calidad de vida. </p>
+                <div align="center">
+                    <a class="w3-btn w3-red slideanim" href="http://amdiabetes.org/">Sitio web</a><br>
+                </div>
+            </div>
+            <div class="w3-third">
+                <img src="imagenes/ANS.png" alt="" style="max-width: 100%" class="w3-responsive slideanim">
+                <p style="text-align: justify">Como una extensión del Instituto Nacional de Salud Pública, existe un
+                módulo de atención dedicado al paciente con diabetes, que permite su orientación y cuidados para
+                llevar una vida saludable dentro de los parámetros, así como asistencia médica gratuita, y grupos de apoyo.
+                </p>
+                <div align="center">
+                    <a class="w3-btn w3-green slideanim" href="https://www.insp.mx/avisos/3652-diabetes-en-mexico.html">Sitio web</a><br>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row">
+            <div class="w3-third">
+
+            </div>
+            <div class="w3-third">
+
+            </div>
+            <div class="w3-third">
+
+            </div>
         </div>
     </div>
 </div>
 
-
+<div class="orange elementos-moviles">
+    <div class="w3-content w3-container w3-padding-64 w3-center" id="acerca" style="z-index: 2;">
+        <h3>La Diabetes</h3>
+        <p><em>Qué es? datos de relevancia</em></p>
+        <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+            qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="w3-row">
+            <div class="w3-third w3-card-4 slideanim" style="overflow: hidden;">
+                <img src="imagenes/IMG1.jpg" alt="" style="width:100%; margin-bottom: -1em">
+            </div>
+            <div class="w3-third w3-card-4 slideanim" style="overflow: hidden;">
+                <img src="imagenes/IMG2.jpg" alt="" style="width:100%; margin-bottom: -1em">
+            </div>
+            <div class="w3-third w3-card-4 slideanim" style="overflow: hidden;">
+                <img src="imagenes/IMG3.jpg" alt=""  style="width:100%; margin-bottom: -1em">
+            </div>
+        </div>
+    </div>
+</div>
+<footer style="min-height: 5em;background-color: #262626;color:rgba(238, 238, 238, 0.61) !important;border-top: 1px solid #22c4d6;">
+    <div class="w3-row" style="margin-left: 4em">
+        <div class="w3-half">
+            <p>© Derechos Reservados 2017. Diabetes Manager and Analyzer | Versión 1.0 <br>
+                <i class="fa fa-street-view"></i> Carlos A. Fernández</p>
+        </div>
+        <div class="w3-half">
+            <p><i class="fa fa-wrench"></i>
+                Si tienes algún problema con el sistema favor de reportarlo a: <br>carlosfdez@outlook.com</p>
+        </div>
+    </div>
+</footer>
 
 <div id="inicio_sesion" class="w3-modal" data-ng-controller="InicioSesion">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">

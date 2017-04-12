@@ -1,0 +1,66 @@
+<div data-ng-controller="Controlador_Estado" style="padding-top: 0">
+    <p>Este es tu panel principal, concentramos información que creemos, es de tu interés, si necesitas información más
+        detallada, puedes navegar en los páneles de consultas</p>
+    <div class="w3-row">
+        <div class="w3-half panel-info">
+            <div class="w3-card-2 marg-movil panel-info">
+                <header class="w3-container w3-blue">
+                    <h4>Información actual</h4>
+                </header>
+                <div class="w3-content w3-container panel-info">
+                    <h4><b><i class="fa fa-drivers-license-o"></i> Datos del paciente</b></h4>
+                    <div class="w3-row">
+                        <div class="w3-half">
+                            <p>Nombre: {{informacion.Nombre+" "+informacion.Apellido}}</p>
+                            <p>Sexo: {{informacion.Sexo=='M'?'Femenino':'Masculino'}}</p>
+                            <p>Grado: {{informacion.Grado}}</p>
+                            <p>Universidad: {{informacion.Universidad}}</p>
+                        </div>
+                        <div class="w3-half">
+                            <p>Fecha de Nacimiento: {{informacion.Fecha}}</p>
+                            <p>Teléfono: <b>{{informacion.Telefono}}</b></p>
+                            <p>No. de cédula: {{informacion.Cedula}}</p>
+                            <p>Especialidad: {{informacion.Especialidad}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-half">
+            <div class="w3-bar w3-black">
+                <button class="w3-bar-item w3-button" onclick="cambia_tab('S_Citas')">Nuevas citas</button>
+                <button class="w3-bar-item w3-button" onclick="cambia_tab('S_Pacientes')">Nuevos pacientes</button>
+                <button class="w3-bar-item w3-button" onclick="cambia_tab('S_Medicamentos')">Nuevos medicamentos</button>
+            </div>
+            <div id="S_Citas" class="w3-container tab w3-animate-bottom" style="border-bottom: 1px solid #000;
+            border-left: 1px solid #000;border-right: 1px solid #000">
+                <h2>Nuevas citas</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut ex recusandae rem rerum. Adipisci
+                    aliquid corporis deserunt dicta ipsum officia quae quasi similique? Amet ducimus eos esse vel veniam.</p>
+            </div>
+
+            <div id="S_Pacientes" class="w3-container tab w3-animate-bottom" style="display:none;
+            border-bottom: 1px solid #000;border-left: 1px solid #000;border-right: 1px solid #000">
+                <h2>Nuevos pacientes</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut ex recusandae rem rerum. Adipisci
+                    aliquid corporis deserunt dicta ipsum officia quae quasi similique? Amet ducimus eos esse vel veniam.</p>            </div>
+
+            <div id="S_Medicamentos" class="w3-container tab w3-animate-bottom" style="display:none;
+            border-bottom: 1px solid #000;border-left: 1px solid #000;border-right: 1px solid #000">
+                <h2>Nuevos medicamentos</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut ex recusandae rem rerum. Adipisci
+                    aliquid corporis deserunt dicta ipsum officia quae quasi similique? Amet ducimus eos esse vel veniam.</p>            </div>
+            <script>
+                function cambia_tab(categoria) {
+                    var i;
+                    var x = document.getElementsByClassName("tab");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    document.getElementById(categoria).style.display = "block";
+                }
+            </script>
+        </div>
+    </div>
+    <br>
+</div>

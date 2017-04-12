@@ -75,12 +75,6 @@
                         <td>{{ cita.Medico }}</td>
                         <td>{{ cita.Anotaciones}}</td>
                     </tr>
-                    <!--<tr data-ng-repeat="X in citas | limitTo: 1">
-                        <td>{{citas[citas.length-1].Dia}}</td>
-                        <td>{{citas[citas.length-1].Hora}}</td>
-                        <td>{{citas[citas.length-1].Medico}}</td>
-                        <td>{{citas[citas.length-1].Anotaciones}}</td>
-                    </tr>-->
                 </table>
             </div>
             <br>
@@ -125,7 +119,9 @@
                         <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
                             <p>Excelente! Tu cita ha sido creada. Ya puedes cerrar esta ventana</p>
                         </div><p></p>
-                        <button class="w3-btn" style="background-color: #007c6e; color: white;" type="submit" >Iniciar sesión</button><p></p>
+                        <div align="right">
+                            <button class="w3-btn" style="background-color: #007c6e; color: white;" type="submit" >Crear cita</button>
+                        </div><p></p>
                     </form>
                 </div>
             </div>

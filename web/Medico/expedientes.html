@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div data-ng-controller="Controlador_Expedientes">
+    <p>Recuerda que debes acudir a consulta regularmente para mantener un nivel de vida correcto, cuida tu salud,
+        en este panel están tus citas a modo de recordatorios, no las vayas a olvidar</p>
 
-</body>
-</html>
+    <h3>Historial de citas</h3>
+    <!--<div ng-if="existen_citas">-->
+    <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar citas"
+           id="buscar_citas" onkeyup="buscar('buscar_citas','tabla_citas')">
+    <div class="w3-responsive">
+        <br>
+        <table class="w3-table-all w3-card-2" id="tabla_citas">
+            <tr>
+                <th>Dia</th>
+                <th>Hora</th>
+                <th>Medico</th>
+                <th>Anotaciones</th>
+            </tr>
+            <tr data-ng-repeat="paciente in pacientes">
+                <td>{{ paciente.Nombre}}</td>
+                <td>{{ paciente.Edad }}</td>
+                <td>
+                    <div  data-ng-repeat="diagnostico in paciente.Diagnosticos">
+                        {{diagnostico.Estado+" | "+diagnostico.IMC}}<br>
+                    </div>
+                </td>
+                <td>
+                    <button ng-click="modal('Modal'+$index)" class="w3-button w3-black">
+                        {{ paciente.Nombre}}</button>
+
+                    <div id="Modal{{$index}}" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <header class="w3-container w3-teal">
+                              <span ng-click="cerrar_modal('Modal'+$index)"
+                                    class="w3-button w3-display-topright">&times;</span>
+                                <h2>Modal Header</h2>
+                            </header>
+                            <div class="w3-container">
+                                <div  data-ng-repeat="diagnostico in paciente.Diagnosticos">
+                                    {{diagnostico.Estado+" | "+diagnostico.IMC}}<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div class="w3-row w3-center">
+        <div class="w3-bar w3-border">
+            <a href="#" class="w3-button">&laquo;</a>
+            <a href="#" class="w3-button w3-red">1</a>
+            <a href="#" class="w3-button">&raquo;</a>
+        </div>
+    </div>
+    <!--</div>
+    <div ng-if="!existen_citas" align="center">
+        <h4 class="w3-card-2 nada">Aún no tienes citas registradas con anterioridad</h4>
+    </div>-->
+</div>

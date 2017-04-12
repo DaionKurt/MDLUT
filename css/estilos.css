@@ -1,3 +1,4 @@
+*{font-family:"Calibri",sans-serif;}
 body,h1,h2,h3,h4,h5,h6{font-family:"Calibri",sans-serif;}
 body,html{  height:100%;  color:#777;  line-height:1.8;  }
 .fondo-parallax{
@@ -50,6 +51,22 @@ body,html{  height:100%;  color:#777;  line-height:1.8;  }
 @media only screen and (max-device-width: 1024px) {
     .elementos-moviles{ height: auto;}
 }
+
+#loader2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid limegreen;
+    border-bottom: 16px solid limegreen;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
 #loader {
     position: absolute;
     left: 50%;
@@ -98,10 +115,20 @@ body,html{  height:100%;  color:#777;  line-height:1.8;  }
 .panel-info{min-height: 11em;}
 .medico-actual{max-width: 80%}
 .nada{width:50%;min-height:2em;}
+.image-modal{  width: 30%;  }
+.configuraciones{
+    height: calc(100% - 8.9em);
+    height: -webkit-calc(100% - 8.9em);
+    height: -moz-calc(100% - 8.9em);
+}
 @media only screen and (max-device-width: 1024px) {
     .medico-actual{max-width: 100%}
     .panel-info{min-height:inherit;}
     .nada{width:100%;}
+    .image-modal{ width: 90%;}
+    .configuraciones{
+        height: auto;
+    }
 }
 .dizzy-gillespie {
     filter: saturate(3);
@@ -186,4 +213,37 @@ body,html{  height:100%;  color:#777;  line-height:1.8;  }
     visibility: visible;
     opacity: 1;
 
+}
+.input-config{
+    margin-top: -0.5em;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid #007c6e;
+    font-size: 1.1em;
+    padding-left: 1em;
+}
+.input-config:focus{
+    outline: none;
+    border-left: 1px solid aquamarine;
+    border-bottom: 2px solid aquamarine;
+}
+.input-config:active{
+    border-left: 1px solid #007c6e;
+}
+.slideanim {visibility:hidden;}
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    visibility: visible;
+}
+@keyframes slide {
+    0% {opacity: 0; transform: translateY(70%);}
+    100% {  opacity: 1;  transform: translateY(0%);  }
+}
+@-webkit-keyframes slide {
+    0% {  opacity: 0;  -webkit-transform: translateY(70%);  }
+    100% {  opacity: 1;  -webkit-transform: translateY(0%);  }
 }

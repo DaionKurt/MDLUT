@@ -36,10 +36,15 @@ function cambia_panel(event,identificador) {
     document.getElementById(identificador).style.display = "block";
     event.currentTarget.firstElementChild.className+=" w3-border-red";
 }
-
-var elemento;
+function carga_config() {
+    setTimeout(muestra_configuraciones, 500);
+}
+function muestra_configuraciones() {
+    document.getElementById("loader2").style.display = "none";
+    document.getElementById("contenido_web").style.display = "block";
+}
 function carga() {
-    elemento = setTimeout(muestra_contenido, 1000);
+    setTimeout(muestra_contenido, 700);
 }
 function muestra_contenido() {
     document.getElementById("loader").style.display = "none";
@@ -62,3 +67,15 @@ function buscar(busqueda,tabla){
         }
     }
 }
+
+$(document).ready(function(){
+    $(window).scroll(function() {
+        $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+                $(this).addClass("slide");
+            }
+        });
+    });
+});

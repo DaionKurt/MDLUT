@@ -7,8 +7,8 @@
  */
 require "Administrador.php";
 session_start();
-$paciente = $_SESSION['paciente'];
+$medico = $_SESSION['medico'];
 $usuario = $_SESSION['usuario'];
-$administrador = new Administrador($paciente,$usuario);
-echo $administrador->get_medicamentos();
+$administrador = new Administrador($medico,$usuario);
+echo $administrador->get_informacion();
 $administrador = null;

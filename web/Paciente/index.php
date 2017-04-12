@@ -49,7 +49,7 @@ $objeto = unserialize($_SESSION['objeto']);
     <script type="text/javascript" src="../../js/loader.js"></script>
     <script type="text/javascript" src="../../js/Graficos/graficos.js"></script>
 </head>
-<body data-ng-app="App" onload="carga()">
+<body data-ng-app="Pacientes" onload="carga()">
 <div id="loader"></div>
     <div id="contenido_web" class="animate-bottom">
         <div class="w3-sidebar w3-bar-block w3-animate-left sidebar" id="panel_lateral">
@@ -61,9 +61,10 @@ $objeto = unserialize($_SESSION['objeto']);
             </div>
             <span onclick="cerrar_panel();" class="w3-button w3-hov w3-display-topright w3-xlarge" id="cerrar"
             style="background-color: #00acc1;">&times;</span>
-            <a href="#" class="w3-bar-item w3-button" style="text-align: center"
-            <a href="#" class="w3-bar-item w3-button" style="text-align: center">Configuración <i class="	fa fa-gears"></i></a>
-            <a class="w3-bar-item w3-button" style="text-align: center" onclick="cerrar_panel()">Cerrar sesión <i class="fa fa-sign-out"></i></a>
+            <a href="../Usuario/configuraciones.php" class="w3-bar-item w3-button" style="text-align: center">
+                Configuración <i class="fa fa-gears"></i></a>
+            <a class="w3-bar-item w3-button" style="text-align: center"
+               href="../../src/BD/cerrar_sesion.php">Cerrar sesión <i class="fa fa-sign-out"></i></a>
         </div>
         <div style="height: 100%;position: fixed;width: 3em; background-color: #37474f" align="center">
             <button class="w3-button w3-white w3-xxlarge side-open" onclick="abrir_panel()">&#9776;</button>
@@ -182,7 +183,6 @@ $objeto = unserialize($_SESSION['objeto']);
                     <li>No fumar</li>
                     <li>Levantarse unos minutos después de un periodo prolongado de estar sentado</li>
                     <li>Acudir periódicamente al médico para realizarse pruebas de glucosa en sangre</li>
-                    <li></li>
                 </ol>
                 Los factores relacionados con el estilo de vida pueden modificarse con el objetivo de mejorar la salud
                 de las personas y disminuir las posibilidades de desarrollar diabetes. Estas intervenciones pueden
