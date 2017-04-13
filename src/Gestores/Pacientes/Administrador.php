@@ -25,7 +25,8 @@ class Administrador{
         $this->conexion = null;
     }
     function get_datos_grafico(){
-        $sentencia = $this->conexion->prepare("SELECT * FROM diagnostico WHERE diagnostico.no_paciente = :paciente");
+        $sentencia = $this->conexion->prepare("SELECT diagnostico.imc,diagnostico.niv_glucosa
+                FROM diagnostico WHERE diagnostico.no_paciente = :paciente");
         $elementos = '{"cols": [
                 {"id":"","label":"DX","pattern":"","type":"string"},
                 {"id":"","label":"Glucosa","pattern":"","type":"number"},
@@ -48,7 +49,7 @@ class Administrador{
     }
     function get_citas(){
         $sentencia = $this->conexion->prepare("
-        SELECT * FROM Usuario 
+        SELECT horario.dia,horario.hora,cita.anotaciones,usuario.nombre,usuario.apellido,medico.no_cedula FROM Usuario 
         INNER JOIN Medico   ON Usuario.id_usuario = Medico.no_usuario 
         INNER JOIN Cita     ON cita.no_medico     = Medico.id_medico 
         INNER JOIN Horario  ON horario.id_horario = cita.horario 
@@ -105,7 +106,8 @@ class Administrador{
     }
     function get_diagnosticos(){
         $sentencia = $this->conexion->prepare("
-          SELECT * FROM Diagnostico 
+          SELECT diagnostico.estado,diagnostico.imc,diagnostico.fecha,diagnostico.niv_glucosa,diagnostico.cat_glucosa,
+          diagnostico.porc_certeza FROM Diagnostico 
           INNER JOIN Paciente WHERE Diagnostico.no_paciente = :paciente AND Paciente.id_paciente = :paciente_s");
         $sentencia->bindParam(':paciente'  ,$this->paciente_IDX,PDO::PARAM_INT);
         $sentencia->bindParam(':paciente_s',$this->paciente_IDX,PDO::PARAM_INT);
@@ -114,11 +116,12 @@ class Administrador{
             $salida = "";
             while($rs = $sentencia->fetch(PDO::FETCH_ASSOC)) {
                 if ($salida != "") {$salida .= ",";}
-                $salida .= '{"Estado":"' .$rs["estado"]   .'",';
-                $salida .= '"IMC":"'     .$rs["imc"] .'",';
-                $salida .= '"Glucosa":"' .$rs["niv_glucosa"]     .'",';
-                $salida .= '"Cat_g":"'   .$rs["cat_glucosa"]     .'",';
-                $salida .= '"Certeza":"' .$rs["porc_certeza"]     .'"}';
+                $salida .= '{"Estado":"' .$rs["estado"]         .'",';
+                $salida .= '"IMC":"'     .$rs["imc"]            .'",';
+                $salida .= '"Fecha":"'   .$rs["fecha"]          .'",';
+                $salida .= '"Glucosa":"' .$rs["niv_glucosa"]    .'",';
+                $salida .= '"Cat_g":"'   .$rs["cat_glucosa"]    .'",';
+                $salida .= '"Certeza":"' .$rs["porc_certeza"]   .'"}';
             }
             $salida ='{"diagnosticos":['.$salida.']}';
             return $salida;
@@ -128,7 +131,8 @@ class Administrador{
     }
     function get_informacion(){
         $sentencia = $this->conexion->prepare("
-          SELECT * FROM usuario 
+          SELECT usuario.nombre,usuario.apellido,usuario.sexo,usuario.fecha_nacimiento,usuario.telefono,
+               usuario.edad,usuario.usuario,usuario.correo,paciente.estado_diabetico FROM usuario 
           INNER JOIN paciente ON usuario.id_usuario=paciente.no_usuario AND usuario.id_usuario = :usuario");
         $sentencia->bindParam(':usuario',$this->usuario_IDX,PDO::PARAM_INT);
         try{
@@ -152,7 +156,8 @@ class Administrador{
         }
     }
     function get_medicamentos(){
-        $sentencia_r = $this->conexion->prepare("SELECT * FROM receta WHERE receta.no_paciente = :paciente");
+        $sentencia_r = $this->conexion->prepare("SELECT receta.descripcion,receta.fecha_expedicion,receta.fecha_limite
+                                    FROM receta WHERE receta.no_paciente = :paciente");
         $sentencia_r->bindParam(':paciente',$this->paciente_IDX,PDO::PARAM_INT);
         $sentencia_m = $this->conexion->prepare("
         SELECT DISTINCT(medicamento.nombre),medicamento.informacion,medicamento.dosis,medicamento.via_administracion FROM medicamento 

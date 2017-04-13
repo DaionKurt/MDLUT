@@ -59,6 +59,7 @@ if(isset($_SESSION['usuario'])){
         <a href="#info" class="w3-bar-item w3-button w3-hide-small">Información</a>
         <a href="#instituciones" class="w3-bar-item w3-button w3-hide-small">Instituciones</a>
         <a href="#acerca" class="w3-bar-item w3-button w3-hide-small">Acerca de</a>
+        <a href="registro_medico.html" class="w3-bar-item w3-button w3-hide-small w3-right w3-blue">¿Eres médico?</a>
         <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleFunction()">&#9776;</a>
     </div>
     <div id="menor" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
@@ -66,6 +67,7 @@ if(isset($_SESSION['usuario'])){
         <a href="#info" class="w3-bar-item w3-button">Información</a>
         <a href="#instituciones" class="w3-bar-item w3-button">Instituciones</a>
         <a href="#acerca" class="w3-bar-item w3-button">Acerca de</a>
+        <a href="registro_medico.html" class="w3-bar-item w3-button w3-hide-small w3-right w3-blue">¿Eres médico?</a>
     </div>
 </div>
 <div class="fondo-parallax fondo-principal w3-display-container w3-animate-opacity" id="inicio">
@@ -84,33 +86,43 @@ if(isset($_SESSION['usuario'])){
 <div class="w3-row elementos-moviles" id="nosotros">
     <div class="w3-col m4 w3-center w3-hide-small" style="height:100%;">
         <div class="imagen-lateral w3-dark-grey" style="height:100%;">
-            <img src="http://lorempixel.com/400/800/city/" style="margin-bottom: 0;">
+            <img src="img/imagenes/TST.jpg" style="margin-bottom: 0;">
             <!--<pre>< Imagen ></pre>-->
         </div>
     </div>
     <div class="w3-col s12 m8 w3-center w3-content w3-container w3-padding-64">
-        <h3 class="w3-center">Qué es el sistema</h3>
-        <p class="w3-center"><em>Cuida tu diabetes</em></p>
-        <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. In velit esse culla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-            qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h3 class="w3-center">Diaman</h3>
+        <p class="w3-center"><em>Una respuesta a las necesidades del diabético</em></p>
+        <p class="slideanim">Sabemos que la diabetes es una enfermedad que se ha extendido y ha podido proliferar en todos
+        los campos de edad, y en todos los lugares del mundo, muchas personas no saben que lo padecen y muchos más no saben
+        cómo pueden vivir con esto o exactamente cómo la diabetes puede afectar su vida. Diaman, el analizador y gestor de
+        la diabetes, permite al paciente llevar un control más fidedigno, y haciendolo más consciente de su estado, pero....
+        qué ofrecemos?</p>
         <br>
         <div class="w3-row">
-            <div class="w3-quarter">
-                <i class="fa fa-line-chart slideanim" style="font-size:36px"></i>
-                <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
+            <div class="w3-third">
+                <i class="fa fa-flask slideanim" style="font-size:36px"></i>
+                <h5>Diagnóstico automático</h5>
+                <p class="slideanim">
+                    Una herramienta de diagnóstico y seguimiento para detección de la diabetes, que permite dar a conocer
+                    la condición y con qué certeza se otorga este diagnóstico
+                </p>
             </div>
-            <div class="w3-quarter">
-                <i class="fa fa fa-venus-mars slideanim" style="font-size:36px"></i>
-                <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
-            </div>
-            <div class="w3-quarter">
+            <div class="w3-third">
                 <i class="fa fa-user-md slideanim" style="font-size:36px"></i>
-                <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
+                <h5>Atención médica</h5>
+                <p class="slideanim">
+                    Un enlace con médicos calificados que pueden darle atención, ayuda e información sobre su condición
+                    de diabético o si no es diabético, cómo prevenirla
+                </p>
             </div>
-            <div class="w3-quarter">
-                <i class="fa fa-hospital-o slideanim" style="font-size:36px"></i>
-                <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam doloribus impedit libero reiciendis repudiandae! Animi atque dolore ea fuga illo iste maiores minima nobis perspiciatis sed, sit tempora temporibus?</p>
+            <div class="w3-third">
+                <i class="fa fa-database slideanim" style="font-size:36px"></i>
+                <h5>Gestión de información</h5>
+                <p class="slideanim">
+                    Control y administración de su información de diagnósticos, consultas y seguimiento de su condición
+                    o de su gestión de prevención, todo centralizado en un solo lugar
+                </p>
             </div>
         </div>
     </div>
@@ -120,8 +132,14 @@ if(isset($_SESSION['usuario'])){
     <div class="w3-content w3-container w3-padding-64 w3-center" id="info" style="z-index: 2;">
         <h3>La Diabetes</h3>
         <p><em>Qué es? datos de relevancia</em></p>
-        <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-            qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="slideanim">La diabetes es una afección crónica que se desencadena cuando el organismo pierde su
+            capacidad de producir suficiente insulina o de utilizarla con eficacia. La insulina es una hormona que
+            permite que la glucosa de los alimentos pase a las células del organismo,
+            en donde se convierte en energía para que funcionen los músculos y los tejidos. Como resultado, una persona
+            con diabetes no absorbe la glucosa adecuadamente, de modo que ésta queda circulando en la sangre
+            y dañando los tejidos con el paso del tiempo. Este deterioro causa complicaciones para la salud potencialmente letales.
+            Puedes combatirla o prevenirla con...
+        </p>
         <div class="w3-content w3-display-container w3-section slideanim" style="max-width:500px">
             <div class="w3-display-container mySlides w3-card-4">
                 <img class="w3-animate-left" src="imagenes/BG1.png" style="min-height:100%; width:100%; margin-bottom: -1em"">
@@ -216,11 +234,17 @@ if(isset($_SESSION['usuario'])){
 
 <div class="orange elementos-moviles">
     <div class="w3-content w3-container w3-padding-64 w3-center" id="acerca" style="z-index: 2;">
-        <h3>La Diabetes</h3>
-        <p><em>Qué es? datos de relevancia</em></p>
-        <p class="slideanim">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-            qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h3>Diabetes que analizamos</h3>
+        <p><em>Qué es y cómo actua la diabetes mellitus tipo 2?</em></p>
+        <p class="slideanim">
+            La diabetes tipo 2 es el tipo más común de diabetes. Suele aparecer en adultos, pero cada vez más hay más
+            casos de niños y adolescentes. En la diabetes tipo 2, el organismo puede producir insulina pero, o bien no
+            es suficiente, o el organismo no responde a sus efectos, provocando una acumulación de glucosa en la sangre.
+            Las personas con diabetes tipo 2 podrían pasar mucho tiempo sin saber de su enfermedad debido a que los
+            síntomas podrían tardar años en aparecer o en reconocerse, tiempo durante el cual el organismo se va deteriorando
+            debido al exceso de glucosa en sangre. A muchas personas se les diagnostica tan sólo cuando las complicaciones
+            diabéticas se hacen muy evidentes
+        </p>
         <div class="w3-row">
             <div class="w3-third w3-card-4 slideanim" style="overflow: hidden;">
                 <img src="imagenes/IMG1.jpg" alt="" style="width:100%; margin-bottom: -1em">
@@ -250,12 +274,12 @@ if(isset($_SESSION['usuario'])){
 <div id="inicio_sesion" class="w3-modal" data-ng-controller="InicioSesion">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
         <header class="w3-container w3-teal">
-            <span onclick="document.getElementById('inicio_sesion').style.display='none'"
+            <span ng-click="cerrar_ventana_inicio()"
                   class="w3-button w3-display-topright w3-xlarge" id="cerrar">&times;</span>
-            <h2>Inicio de sesión</h2>
+            <h2><i class="fa fa-sign-in"></i> Inicio de sesión</h2>
         </header>
         <div class="w3-container">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque autem deleniti doloremque iste nobis non, possimus sed!</p>
+            <p>Inicia tu sesión de paciente para poder ingresar a los paneles de información</p>
             <form class="w3-container" data-ng-submit="iniciar()">
                 <label for="usuario">Usuario</label>
                 <input class="w3-input w3-animate-input entrada" type="text" id="usuario" data-ng-model="usuario" required><p></p>
@@ -264,6 +288,10 @@ if(isset($_SESSION['usuario'])){
                 <div class="w3-panel w3-red w3-display-container w3-card-2" data-ng-hide="inicio_correcto">
                     <h3>Oh vaya! :(</h3>
                     <p>Lo siento pero los datos proporcionados no son correctos. Inténtalo de nuevo.</p>
+                </div>
+                <div class="w3-panel w3-deep-orange w3-display-container w3-card-2" data-ng-hide="usuario_activo">
+                    <h3>Oh vaya! :(</h3>
+                    <p>Tu usuario no está activo</p>
                 </div>
                 <div align="right">
                     <button class="w3-btn" style="background-color: #007c6e; color: white;" type="reset" data-ng-click="limpiar()">Limpiar campos</button>
@@ -278,10 +306,10 @@ if(isset($_SESSION['usuario'])){
         <header class="w3-container w3-blue-gray">
             <span onclick="document.getElementById('registro_usuario').style.display='none'"
                   class="w3-button w3-display-topright w3-xlarge">&times;</span>
-            <h2>Registro de Usuario</h2>
+            <h2><i class="fa fa-arrow-up"></i> Registro de Usuario</h2>
         </header>
         <div class="w3-container">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque autem deleniti doloremque iste nobis non, possimus sed!</p>
+            <p>Estamos felices de que te vayas a unir a nuestro sistema, por favor registrate para obtener acceso al sistema</p>
             <form class="w3-container" data-ng-submit="registrar()">
                 <div class="w3-row">
                     <div class="w3-half" style="padding-right: 1em">
@@ -316,8 +344,8 @@ if(isset($_SESSION['usuario'])){
                         <label for="sexo_r">Sexo</label>
                         <select class="w3-select entrada" name="option" id="sexo_r" data-ng-model="sexo_r" required>
                             <option value="" disabled selected>Selecciona</option>
-                            <option value="M">Mujer</option>
-                            <option value="H">Hombre</option>
+                            <option value="F">Mujer</option>
+                            <option value="M">Hombre</option>
                         </select>
                     </div>
                     <div class="w3-quarter" style="padding-right: 1em">
@@ -331,7 +359,7 @@ if(isset($_SESSION['usuario'])){
                 </div>
                 <p></p>
                 <input class="w3-check" type="checkbox" id="acepto_r" onchange="document.getElementById('registro').disabled=!this.checked">
-                <label for="acepto_r">Acepto los <a href="#" target="_blank">términos y condiciones</a> del sistema</label>
+                <label for="acepto_r">Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a> del sistema</label>
                 <div class="w3-panel w3-red w3-display-container w3-card-2" data-ng-show="error">
                     <p>Ups! :C hubo un error. Tal vez ya existe este usuario o el correo ya está en uso.</p>
                 </div>

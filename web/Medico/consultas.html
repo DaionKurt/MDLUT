@@ -1,0 +1,131 @@
+<div data-ng-controller="Controlador_Citas">
+    <p>Aquí se encuentra tu control de consultas diarias, así como las consultas registradas para días posteriores, recuerda
+    que debes darle atención a todas, un paciente contento es un paciente sano</p>
+    <div class="w3-row">
+        <div class="w3-half padd-movil">
+            <div class="w3-card-2">
+                <header class="w3-container w3-red">
+                    <h4>Consultas para hoy {{hoy}}</h4>
+                </header>
+                    <div class="w3-container" style="padding: 0;min-height: 20em; overflow-y: auto"><!--ng-if="existen_citas"-->
+                        <div class="w3-bar w3-blue-grey">
+                            <div ng-repeat="cita in filtered = (citas | filter:filtro)">
+                                <button class="w3-bar-item w3-button" ng-click="cambia_cita('C_'+$index)">{{cita.Hora}}</button>
+                            </div>
+                        </div>
+                        <div ng-if="filtered.length<=0" align="center">
+                            <h4 class="nada"><br><br><br>No tienes ninguna consulta programada para hoy</h4><br>
+                        </div>
+                        <div id="C_{{$index}}" class="w3-container cita w3-animate-opacity" style="display: none"
+                             ng-style="$index==0 && {'display':'block'}"
+                             ng-repeat="cita in citas | filter:filtro">
+                            <h2 class="w3-hide-medium w3-hide-large">Consulta de las {{cita.Hora}}</h2>
+                            <h2 class="w3-hide-small"><i class="fa fa-clock-o"></i> Consulta de las {{cita.Hora}} hrs</h2>
+
+                            <ul>
+                                <li style="font-size: large">{{cita.Paciente}} <b>|</b> Edad: {{cita.Edad}}
+                                    <b>|</b> Estado: {{cita.Estado}}</li>
+                                <li><h4 style="display: inline">Anotaciones: </h4><p style="display: inline;">{{cita.Anotaciones}}</p></li>
+                                <li style="font-size: large">Teléfono de contacto: {{cita.Telefono}}</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="w3-half padd-movil">
+            <div class="w3-card-2">
+                <header class="w3-container w3-green">
+                    <h4>Todas las consultas registradas</h4>
+                </header>
+                    <div class="w3-container" style="padding: 0;min-height: 20em; overflow-y: auto"><!--ng-if="existen_citas"-->
+                        <div ng-repeat="cita in citas">
+                            <button id="boton_Cita{{$index}}"
+                                    ng-click="cambio('Cita'+$index)" class="w3-button w3-block w3-left-align w3-light-gray">
+                                {{cita.Dia}} - {{cita.Paciente}}</button>
+                            <div id="Cita{{$index}}" class="cita_c w3-container w3-hide w3-animate-opacity">
+                                <p> {{cita.Hora}} hrs <b>|</b> {{cita.Anotaciones}}</p>
+                            </div>
+                        </div>
+                        <div ng-if="!existen_citas" align="center" style="min-height: 20em;">
+                            <h4 class="nada" style="margin: 0;"><br><br><br>No tienes ninguna consulta pendiente</h4><br>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row">
+        <h3>Historial de consultas</h3>
+        <div ng-if="existen_citas">
+            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar consulta"
+                   id="buscar_consulta" onkeyup="buscar('buscar_consulta','tabla_consultas')">
+            <div class="w3-responsive">
+                <br>
+                <table class="w3-table-all w3-card-2" id="tabla_consultas">
+                    <tr>
+                        <th><i class="fa fa-calendar-check-o"></i> Dia</th>
+                        <th><i class="fa fa-clock-o"></i> Hora</th>
+                        <th><i class="fa fa-user-circle-o"></i> Paciente</th>
+                        <th><i class="fa fa-mobile"></i> Telefono</th>
+                        <th><i class="fa fa-sticky-note-o"></i> Anotaciones</th>
+                    </tr>
+                    <tr data-ng-repeat="cita in citas">
+                        <td>{{ cita.Dia}}</td>
+                        <td>{{ cita.Hora }}</td>
+                        <td>{{ cita.Paciente }}</td>
+                        <td>{{ cita.Telefono }}</td>
+                        <td>{{ cita.Anotaciones}}</td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="w3-row w3-center">
+                <div class="w3-bar w3-border">
+                    <a href="#" class="w3-button">&laquo;</a>
+                    <a href="#" class="w3-button w3-red">1</a>
+                    <a href="#" class="w3-button">&raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div ng-if="!existen_citas" align="center">
+            <h4 class="w3-card-2 nada">Aún no tienes citas registradas con anterioridad</h4><br>
+        </div>
+    </div>
+
+
+    <div id="nueva_cita" class="w3-modal" >
+        <div class="w3-modal-content w3-animate-zoom w3-card-4" style="max-width: 600px;">
+            <header class="w3-container w3-teal">
+        <span onclick="document.getElementById('nueva_cita').style.display='none';" ng-click="limpia()"
+              class="w3-button w3-display-topright">&times;</span>
+                <h2>Nueva cita</h2>
+            </header>
+            <div class="w3-container">
+                <div class="w3-row">
+                    <form data-ng-submit="crear_cita()">
+                        <h3>Selecciona médico y fecha</h3>
+                        <select class="w3-select" ng-model="medico.nombre" data-ng-options="medico.Nombre for medico in horarios" title="">
+                            <option value="" disabled selected>Selecciona medico</option>
+                        </select><br><br>
+                        <select class="w3-select" ng-model="medico.horario" data-ng-if="medico.nombre" title=""
+                                ng-options="horario.ND as horario.Fecha for horario in medico.nombre.horarios">
+                            <option value="" disabled selected>Selecciona horario de atencion</option>
+                        </select><br>
+                        <h4>Anotaciones</h4>
+                        <textarea class="boxsizingBorder" name="message" title="" data-ng-model="anotaciones">
+                        </textarea><br>
+                        <div class="w3-panel w3-red w3-display-container w3-card-2" data-ng-show="error">
+                            <p>Lo siento pero hubo un error. Inténtalo de nuevo con otro horario.</p>
+                        </div>
+                        <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
+                            <p>Excelente! Tu cita ha sido creada. Ya puedes cerrar esta ventana</p>
+                        </div><p></p>
+                        <div align="right">
+                            <button class="w3-btn" style="background-color: #007c6e; color: white;" type="submit" >Crear cita</button>
+                        </div><p></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

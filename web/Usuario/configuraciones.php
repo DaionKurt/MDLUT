@@ -63,11 +63,26 @@ if(!isset($_SESSION['usuario']))
             <div class="w3-row">
                 <h1 style="padding-left: 1em"><i class="fa fa-gear"></i> Configuraciones</h1>
                 <div class="w3-quarter" align="center">
-                    <img src="../../img/imagenes/avatar.png"
+                    <img src="../../img/perfiles/<?php echo $_SESSION['imagen']?>"
                          onclick="document.getElementById('fotografia').style.display='block'"
                          alt="" class="w3-responsive w3-circle imagen-perfil">
-                    <button class="w3-btn fa fa-camera-retro w3-large w3-blue" ng-click="editar_pass()"><p style="display: inline;
-                    font-family: 'Calibri', sans-serif"> Editar foto</p></button>
+                    <div ng-show="edicion_foto">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="fileToUpload" style="font-size: small"><br><br>
+                            <button type="submit" value="Upload"
+                                    class="w3-btn fa fa-camera-retro w3-large w3-green" style="min-width: 8em">
+                                <p style="display: inline; font-family: 'Calibri', sans-serif">Subir</p>
+                            </button>
+                        </form>
+                        <button class="w3-btn fa fa-camera-retro w3-large w3-red" ng-click="cancelar_foto()" style="min-width: 8em">
+                            <p style="display: inline; font-family: 'Calibri', sans-serif" ng-click="editar_foto()">Cancelar</p>
+                        </button>
+                    </div>
+                    <div ng-hide="edicion_foto">
+                        <button class="w3-btn fa fa-camera-retro w3-large w3-blue" ng-click="editar_foto()">
+                            <p style="display: inline; font-family: 'Calibri', sans-serif" ng-click="editar_foto()">Editar foto</p>
+                        </button>
+                    </div>
                 </div>
                 <div class="w3-half" style="padding-left: 1em">
                     <h1>{{informacion.Nombre+" "+informacion.Apellido }}</h1>
@@ -162,7 +177,7 @@ if(!isset($_SESSION['usuario']))
     </div>
     <div id="fotografia" class="w3-modal" onclick="this.style.display='none'" align="center">
         <span class="w3-button w3-hover-red w3-xxlarge w3-display-topright">×</span>
-        <img class="image-modal w3-animate-zoom" src="../../img/imagenes/avatar.png">
+        <img class="image-modal w3-animate-zoom" src="../../img/perfiles/<?php echo $_SESSION['imagen']?>">
     </div>
 <script src="../../js/post_scripts.js"></script>
 </body>

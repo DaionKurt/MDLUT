@@ -18,18 +18,18 @@
                             </div>
                             <div class="w3-half">
                                 <p>Fecha de Nacimiento: {{informacion.Fecha}}</p>
-                                <p>Estado actual de diabetes: <b>{{informacion.Estado}}</b></p>
+                                <p>Estado actual de diabetes: <b ng-style="informacion.Estado === 'Diabético' && {'color':'red'}
+                                 || informacion.Estado === 'No Diabético' && {'color':'blue'}" style="color:goldenrod;">
+                                    {{informacion.Estado}}</b></p>
                             </div>
                         </div>
                     </div>
                     <div class="slides w3-container animacion-in">
-                        <h4><b>Ultimo diagnóstico realizado</b></h4>
-                        <p>{{regis.nombre}}</p>
+                        <h4><i class="fa fa-envelope"></i><b> Mensajes recientes</b></h4>
+                        <p>Por el momento no hay ningún mensaje pendiente</p>
+                        <p>Todo está bien :)</p>
                     </div>
-                    <div class="slides w3-container animacion-in">
-                        <h4><b>Próxima cita</b></h4>
-                        <p>We plan to sell trips to the moon in the 2020s</p>
-                    </div>
+
                 </div>
                 <div class="w3-center">
                     <button class="w3-button" onclick="mueve_carrusel(-1)">&#10094; Anterior</button>

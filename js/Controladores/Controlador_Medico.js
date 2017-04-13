@@ -19,7 +19,7 @@ app.controller('Controlador_Citas', function($scope, $http) {
         }).then(function correcto(response) {
                 $scope.citas = response.data.citas;
                 $scope.existen_citas = $scope.citas.length>0;
-                $scope.ultima = $scope.citas[$scope.citas.length - 1];
+                $scope.hoy = $scope.dame_fecha_actual();
             }
             ,function error(response) {
                 console.log('Error: ' + response);
@@ -46,15 +46,17 @@ app.controller('Controlador_Citas', function($scope, $http) {
         }
         document.getElementById(categoria).style.display = "block";
     };
-    $scope.filtro = function (x) {
+    $scope.dame_fecha_actual = function(){
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1;
         var yyyy = today.getFullYear();
         if(dd<10) {dd='0'+dd}
         if(mm<10){mm='0'+mm}
-        today = dd+'/'+mm+'/'+yyyy;
-        return x.Dia===today;
+        return dd+'/'+mm+'/'+yyyy;
+    };
+    $scope.filtro = function (x) {
+        return x.Dia===$scope.hoy;
     };
 });
 app.controller('Controlador_Expedientes', function($scope, $http) {
@@ -64,6 +66,7 @@ app.controller('Controlador_Expedientes', function($scope, $http) {
             url: "../../src/Gestores/Medicos/expedientes.php"
         }).then(function correcto(response) {
                 $scope.pacientes = response.data.pacientes;
+                $scope.existen_pacientes = $scope.pacientes.length>0;
                 console.log($scope.pacientes);
             }
             ,function error(response) {
@@ -79,12 +82,24 @@ app.controller('Controlador_Expedientes', function($scope, $http) {
     }
 });
 app.controller('Controlador_Horarios',function ($scope,$http){
+    $scope.dame_fecha_actual = function(){
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if(dd<10) {dd='0'+dd}
+        if(mm<10){mm='0'+mm}
+        return yyyy+'-'+mm+'-'+dd;
+    };
     $scope.cargar = function () {
         $http({
             method: "GET",
             url: "../../src/Gestores/Medicos/horarios.php"
         }).then(function correcto(response) {
                 $scope.horarios = response.data.horarios;
+                $scope.hoy = $scope.dame_fecha_actual();
+                $scope.existen_horarios = $scope.horarios.length>0;
+                console.log($scope.hoy);
                 console.log($scope.horarios);
             }
             ,function error(response) {

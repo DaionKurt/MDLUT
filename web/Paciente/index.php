@@ -55,7 +55,8 @@ $objeto = unserialize($_SESSION['objeto']);
         <div class="w3-sidebar w3-bar-block w3-animate-left sidebar" id="panel_lateral">
             <div align="center">
                 <h2 style="background-color: #00acc1;margin-top: 0;padding-bottom: .3em;">Paciente</h2>
-                <img src="../../img/imagenes/avatar.png" alt="" style="width: 50%;padding-top: 1em" class="w3-responsive w3-circle">
+                <img src="../../img/perfiles/<?php echo $_SESSION['imagen']?>"
+                     alt="" style="width: 50%;padding-top: 1em" class="w3-responsive w3-circle">
                 <h2><?php echo $objeto->get_nombre()." ".$objeto->get_apellido();?></h2>
                 <p style="background-color: #546e7a;"><?php echo $objeto->get_correo()."<br>".$objeto->get_usuario()?></p>
             </div>

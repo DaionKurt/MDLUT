@@ -27,29 +27,28 @@
             </div>
         </div>
         <div class="w3-half">
-            <div class="w3-bar w3-black">
-                <button class="w3-bar-item w3-button" onclick="cambia_tab('S_Citas')">Nuevas citas</button>
-                <button class="w3-bar-item w3-button" onclick="cambia_tab('S_Pacientes')">Nuevos pacientes</button>
-                <button class="w3-bar-item w3-button" onclick="cambia_tab('S_Medicamentos')">Nuevos medicamentos</button>
+            <div class="w3-bar w3-red" align="center">
+                <button class="w3-bar-item w3-button" onclick="cambia_tab('Novedades')">Novedades</button>
+                <button class="w3-bar-item w3-button" onclick="cambia_tab('Datos')">Datos relevantes</button>
+                <button class="w3-bar-item w3-button" onclick="cambia_tab('Investigacion')">Investigación</button>
             </div>
-            <div id="S_Citas" class="w3-container tab w3-animate-bottom" style="border-bottom: 1px solid #000;
-            border-left: 1px solid #000;border-right: 1px solid #000">
-                <h2>Nuevas citas</h2>
+            <div id="Novedades" class="w3-container w3-card tab w3-animate-bottom">
+                <h2><i class="fa fa-newspaper-o"></i> Novedades</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut ex recusandae rem rerum. Adipisci
                     aliquid corporis deserunt dicta ipsum officia quae quasi similique? Amet ducimus eos esse vel veniam.</p>
             </div>
 
-            <div id="S_Pacientes" class="w3-container tab w3-animate-bottom" style="display:none;
-            border-bottom: 1px solid #000;border-left: 1px solid #000;border-right: 1px solid #000">
-                <h2>Nuevos pacientes</h2>
+            <div id="Datos" class="w3-container w3-card tab w3-animate-bottom" style="display:none;">
+                <h2><i class="fa fa-question-circle"></i> Datos relevantes</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut ex recusandae rem rerum. Adipisci
-                    aliquid corporis deserunt dicta ipsum officia quae quasi similique? Amet ducimus eos esse vel veniam.</p>            </div>
+                    aliquid corporis deserunt dicta ipsum officia quae quasi similique? Amet ducimus eos esse vel veniam.</p>
+            </div>
 
-            <div id="S_Medicamentos" class="w3-container tab w3-animate-bottom" style="display:none;
-            border-bottom: 1px solid #000;border-left: 1px solid #000;border-right: 1px solid #000">
-                <h2>Nuevos medicamentos</h2>
+            <div id="Investigacion" class="w3-container w3-card tab w3-animate-bottom" style="display:none;">
+                <h2><i class="fa fa-flask"></i> Investigación</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut ex recusandae rem rerum. Adipisci
-                    aliquid corporis deserunt dicta ipsum officia quae quasi similique? Amet ducimus eos esse vel veniam.</p>            </div>
+                    aliquid corporis deserunt dicta ipsum officia quae quasi similique? Amet ducimus eos esse vel veniam.</p>
+            </div>
             <script>
                 function cambia_tab(categoria) {
                     var i;

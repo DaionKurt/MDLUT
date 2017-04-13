@@ -53,7 +53,7 @@ $objeto = unserialize($_SESSION['objeto']);
     <div class="w3-sidebar w3-bar-block w3-animate-left sidebar" id="panel_lateral">
         <div align="center">
             <h2 style="background-color: #a20b03;margin-top: 0;padding-bottom: .3em;">Medico</h2>
-            <img src="../../img/imagenes/avatar.png" alt="" style="width: 50%;padding-top: 1em" class="w3-responsive w3-circle">
+            <img src="../../img/perfiles/<?php echo $_SESSION['imagen']?>" alt="" style="width: 50%;padding-top: 1em" class="w3-responsive w3-circle">
             <h2><?php echo $objeto->get_nombre()." ".$objeto->get_apellido();?></h2>
             <p style="background-color: #546e7a;"><?php echo $objeto->get_correo()."<br>".$objeto->get_usuario()?></p>
         </div>
@@ -87,16 +87,16 @@ $objeto = unserialize($_SESSION['objeto']);
                         <i class="fa fa-plus-square w3-hide-small"></i> </div>
                 </a>
                 <a href="javascript:void(0)" onclick="cambia_panel(event,'Diagnostico');">
-                    <div class="w3-quarterr enlace w3-bottombar w3-hover-light-gray w3-padding">Citas
-                        <i class="fa fa-user-md w3-hide-small"></i></div>
+                    <div class="w3-quarterr enlace w3-bottombar w3-hover-light-gray w3-padding">Consultas
+                        <i class="fa fa-address-book-o w3-hide-small"></i></div>
                 </a>
                 <a href="javascript:void(0)" onclick="cambia_panel(event,'Citas');">
                     <div class="w3-quarterr enlace w3-bottombar w3-hover-light-gray w3-padding">Expedientes
-                        <i class="fa fa-address-book-o w3-hide-small"></i></div>
+                        <i class="fa fa-file-text-o w3-hide-small"></i></div>
                 </a>
                 <a href="javascript:void(0)" onclick="cambia_panel(event,'Medicamentos');">
                     <div class="w3-quarterr enlace w3-bottombar w3-hover-light-gray w3-padding">Horarios
-                        <i class="fa fa-th-large w3-hide-small"></i></div>
+                        <i class="fa fa-history w3-hide-small"></i></div>
                 </a>
             </div>
             <div id="Estado" class="w3-container contenedor" style="display: block;">
@@ -104,15 +104,15 @@ $objeto = unserialize($_SESSION['objeto']);
                 <div data-ng-include="'estado.html'"></div>
             </div>
             <div id="Diagnostico" class="w3-container contenedor" style="display: none">
-                <h2> <i class="fa fa-user-md"></i> Citas</h2>
-                <div data-ng-include="'citas.html'"></div>
+                <h2> <i class="fa fa-address-book-o"></i> Consultas</h2>
+                <div data-ng-include="'consultas.html'"></div>
             </div>
             <div id="Citas" class="w3-container contenedor" style="display: none;">
-                <h2><i class="fa fa-address-book-o"></i> Expedientes</h2>
+                <h2><i class="fa fa-file-text-o"></i> Expedientes</h2>
                 <div data-ng-include="'expedientes.html'"></div>
             </div>
             <div id="Medicamentos" class="w3-container contenedor" style="display: none;">
-                <h2><i class="fa fa-th-large"></i> Horarios</h2>
+                <h2><i class="fa fa-history"></i> Horarios</h2>
                 <div data-ng-include="'horarios.html'"></div>
             </div>
         </div>

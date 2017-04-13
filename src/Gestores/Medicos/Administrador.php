@@ -26,12 +26,13 @@ class Administrador{
     }
     function get_citas(){
         $sentencia = $this->conexion->prepare("
-              SELECT * FROM cita
+              SELECT horario.hora,horario.dia,cita.anotaciones,paciente.estado_diabetico,usuario.nombre,usuario.apellido,
+               usuario.edad, usuario.telefono FROM cita
               INNER JOIN paciente ON cita.no_paciente    = paciente.id_paciente
               INNER JOIN usuario  ON paciente.no_usuario = usuario.id_usuario
               INNER JOIN horario  ON cita.horario        = horario.id_horario
               INNER JOIN medico   ON medico.id_medico    = cita.no_medico
-              WHERE medico.id_medico = :medico");
+              WHERE medico.id_medico = :medico ORDER BY dia,hora");
         $sentencia->bindParam(':medico',$this->medico_IDX,PDO::PARAM_INT);
 
         try{
@@ -62,10 +63,12 @@ class Administrador{
             $salida = "";
             for($i=1;$i<=$j;++$i){
                 $sentencia = "
-                    SELECT * FROM diagnostico
+                    SELECT diagnostico.estado,diagnostico.niv_glucosa,diagnostico.cat_glucosa,diagnostico.fecha,
+                     diagnostico.porc_certeza,diagnostico.imc, usuario.nombre,usuario.apellido,usuario.sexo,
+                     usuario.correo,usuario.edad,paciente.estado_diabetico FROM diagnostico
                     INNER JOIN paciente ON diagnostico.no_paciente = paciente.id_paciente
                     INNER JOIN usuario  ON paciente.no_usuario     = usuario.id_usuario
-                    WHERE diagnostico.no_paciente = '$i' ORDER BY no_paciente";
+                    WHERE diagnostico.no_paciente = '$i' ORDER BY no_paciente,fecha";
                 $result = $this->conexion->query($sentencia);
                 $k = 1;
                 $entre = false;
@@ -74,11 +77,18 @@ class Administrador{
                     if ($salida != "") {$salida .= ",";}
                     if ($k == 1) {
                         $salida .= '{"Nombre":"'. $rs["nombre"] . ' ' . $rs["apellido"] . '",';
+                        $salida .= '"Correo":"' . $rs["correo"] . '",';
+                        $salida .= '"Sexo":"'   . $rs["sexo"]   . '",';
+                        $salida .= '"Edo":"'    . $rs["estado_diabetico"] . '",';
                         $salida .= '"Edad":"'   . $rs["edad"]   . '","Diagnosticos":[';
                         $k++;
                     }
-                    $salida .= '{"Estado":"'. $rs["estado"] . '",';
-                    $salida .= '"IMC":"'    . $rs["imc"]    . '"}';
+                    $salida .= '{"Estado":"'    . $rs["estado"]         . '",';
+                    $salida .= '"N_Glucosa":"'  . $rs["niv_glucosa"]    . '",';
+                    $salida .= '"C_Glucosa":"'  . $rs["cat_glucosa"]    . '",';
+                    $salida .= '"Fecha":"'      . $rs["fecha"]          . '",';
+                    $salida .= '"Certeza":"'    . $rs["porc_certeza"]   . '",';
+                    $salida .= '"IMC":"'        . $rs["imc"]            . '"}';
                 }
                 if ($entre) $salida .= "]}";
             }
@@ -90,7 +100,9 @@ class Administrador{
     }
     function get_informacion(){
         $sentencia = $this->conexion->prepare("
-              SELECT * FROM usuario INNER JOIN medico ON usuario.id_usuario=medico.no_usuario WHERE medico.id_medico = :medico");
+              SELECT usuario.nombre,usuario.apellido,usuario.sexo,usuario.fecha_nacimiento,usuario.telefono,
+               usuario.edad,usuario.usuario,usuario.correo, medico.no_cedula,medico.grado,medico.especialidad,medico.universidad
+               FROM usuario INNER JOIN medico ON usuario.id_usuario=medico.no_usuario WHERE medico.id_medico = :medico");
         $sentencia->bindParam(':medico',$this->medico_IDX,PDO::PARAM_INT);
         try{
             $sentencia->execute();
@@ -116,7 +128,8 @@ class Administrador{
         }
     }
     function get_horarios(){
-        $sentencia = $this->conexion->prepare("SELECT * FROM horario WHERE medico = :medico");
+        $sentencia = $this->conexion->prepare("SELECT horario.dia,horario.hora,horario.libre
+                              FROM horario WHERE medico = :medico");
         $sentencia->bindParam(':medico',$this->medico_IDX,PDO::PARAM_INT);
         try{
             $sentencia->execute();

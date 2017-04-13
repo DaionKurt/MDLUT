@@ -1,35 +1,27 @@
 <div data-ng-controller="Controlador_Citas" id="citas_c">
     <p>Recuerda que debes acudir a consulta regularmente para mantener un nivel de vida correcto, cuida tu salud,
-    en este panel están tus citas a modo de recordatorios, no las vayas a olvidar</p>
+    en este panel están tus consultas a modo de recordatorios, no las vayas a olvidar</p>
     <div class="w3-row">
         <div class="w3-half padd-movil">
             <div class="w3-card-2">
                 <header class="w3-container w3-red">
-                    <h4>Última cita registrada</h4>
+                    <h4>Última consulta registrada</h4>
                 </header>
                 <div class="w3-container" ng-if="existen_citas">
-                    <div class="w3-row">
-                        <div class="row">
-                            <h5>Cita para el día <b>{{ultima.Dia}}</b> </h5>
-                        </div>
-                        <div class="w3-half">
-                            <p>Hora: {{ultima.Hora}}</p>
-                        </div>
-                        <div class="w3-half">
-                            <p>Médico: <b>{{ultima.Medico}}</b></p>
-                        </div>
-                        <div class="w3-row">
-                            <p>Notas: {{ultima.Anotaciones}}</p>
-                        </div>
-                    </div>
+                    <h4 class="w3-hide-small"><i class="fa fa-clock-o"></i> Consulta para el {{ultima.Dia}}</h4>
+                    <ul>
+                        <li style="font-size: large">Hora: {{ultima.Hora}} <b>|</b> Pendiente
+                        <li><h5 style="display: inline">Anotaciones: </h5><p style="display: inline;">{{ultima.Anotaciones}}</p></li>
+                        <li>Médico: {{ultima.Medico}}</li>
+                    </ul>
                 </div>
                 <div ng-if="!existen_citas" align="center">
                     <h4>Oh vaya!</h4>
                     <p>Tal parece que aún no hay nada por mostrar aquí <br>
-                        Aún no has generado una cita</p><br>
+                        Aún no has generado una consula</p><br>
                 </div>
                 <button onclick="document.getElementById('nueva_cita').style.display='block'";
-                        class="w3-button w3-block w3-dark-grey">Crear nueva cita</button>
+                        class="w3-button w3-block w3-dark-grey">Crear nueva consula</button>
             </div>
         </div>
         <div class="w3-half" align="center">
@@ -46,8 +38,8 @@
                     </div>
                     <div ng-if="!existen_citas" align="center">
                         <h4>Ups!</h4>
-                        <p>Aún no tienes médico actual, porque no has tenido una cita <br>
-                            Descuida, cuando registres una, esto cambiará</p><br>
+                        <p>Aún no tienes médico actual, porque no has tenido una consulta <br>
+                            Descuida, cuando registres una, esto cambiará</p><br><br>
                     </div>
                 </div>
             </div>
@@ -56,20 +48,20 @@
     </div>
 
     <div class="w3-row">
-        <h3>Historial de citas</h3>
+        <h3>Historial de consultas</h3>
         <div ng-if="existen_citas">
-            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar citas"
-                   id="buscar_citas" onkeyup="buscar('buscar_citas','tabla_citas')">
+            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar consulta"
+                   id="buscar_consulta" onkeyup="buscar('buscar_consulta','tabla_consultas')">
             <div class="w3-responsive">
                 <br>
-                <table class="w3-table-all w3-card-2" id="tabla_citas">
+                <table class="w3-table-all w3-card-2" id="tabla_consultas">
                     <tr>
                         <th>Dia</th>
                         <th>Hora</th>
                         <th>Medico</th>
                         <th>Anotaciones</th>
                     </tr>
-                    <tr data-ng-repeat="cita in citas">
+                    <tr class="w3-hover-light-blue" data-ng-repeat="cita in citas">
                         <td>{{ cita.Dia}}</td>
                         <td>{{ cita.Hora }}</td>
                         <td>{{ cita.Medico }}</td>
@@ -87,7 +79,7 @@
             </div>
         </div>
         <div ng-if="!existen_citas" align="center">
-            <h4 class="w3-card-2 nada">Aún no tienes citas registradas con anterioridad</h4>
+            <h4 class="w3-card-2 nada">Aún no tienes consultas registradas con anterioridad</h4><br>
         </div>
     </div>
 
@@ -97,7 +89,7 @@
             <header class="w3-container w3-teal">
         <span onclick="document.getElementById('nueva_cita').style.display='none';" ng-click="limpia()"
               class="w3-button w3-display-topright">&times;</span>
-                <h2>Nueva cita</h2>
+                <h2>Nueva consulta</h2>
             </header>
             <div class="w3-container">
                 <div class="w3-row">
@@ -117,10 +109,10 @@
                             <p>Lo siento pero hubo un error. Inténtalo de nuevo con otro horario.</p>
                         </div>
                         <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
-                            <p>Excelente! Tu cita ha sido creada. Ya puedes cerrar esta ventana</p>
+                            <p>Excelente! Tu consulta ha sido creada. Ya puedes cerrar esta ventana</p>
                         </div><p></p>
                         <div align="right">
-                            <button class="w3-btn" style="background-color: #007c6e; color: white;" type="submit" >Crear cita</button>
+                            <button class="w3-btn" style="background-color: #007c6e; color: white;" type="submit" >Crear consulta</button>
                         </div><p></p>
                     </form>
                 </div>

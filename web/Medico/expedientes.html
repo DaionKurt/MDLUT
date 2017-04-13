@@ -1,43 +1,69 @@
 <div data-ng-controller="Controlador_Expedientes">
-    <p>Recuerda que debes acudir a consulta regularmente para mantener un nivel de vida correcto, cuida tu salud,
-        en este panel están tus citas a modo de recordatorios, no las vayas a olvidar</p>
+    <p>Aquí podrás encontrar todos los expedientes de los pacientes del sistema, con los datos necesarios para
+    proveer un servicio competente con base en los resultados de diagnósticos previos</p>
 
-    <h3>Historial de citas</h3>
-    <!--<div ng-if="existen_citas">-->
-    <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar citas"
-           id="buscar_citas" onkeyup="buscar('buscar_citas','tabla_citas')">
+    <h3>Todos los expedientes </h3>
+    <div ng-if="existen_pacientes">
+    <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar paciente"
+           id="buscar_expedientes" onkeyup="buscar('buscar_expedientes','tabla_expedientes')">
     <div class="w3-responsive">
         <br>
-        <table class="w3-table-all w3-card-2" id="tabla_citas">
+        <table class="w3-table-all w3-card-2" id="tabla_expedientes">
             <tr>
-                <th>Dia</th>
-                <th>Hora</th>
-                <th>Medico</th>
-                <th>Anotaciones</th>
+                <th>Nombre</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>Expediente</th>
             </tr>
             <tr data-ng-repeat="paciente in pacientes">
                 <td>{{ paciente.Nombre}}</td>
+                <td>{{ paciente.Sexo=='M'?"Masculino":"Femenino" }}</td>
                 <td>{{ paciente.Edad }}</td>
+                <td>{{ paciente.Correo }}</td>
+
                 <td>
-                    <div  data-ng-repeat="diagnostico in paciente.Diagnosticos">
-                        {{diagnostico.Estado+" | "+diagnostico.IMC}}<br>
-                    </div>
-                </td>
-                <td>
-                    <button ng-click="modal('Modal'+$index)" class="w3-button w3-black">
-                        {{ paciente.Nombre}}</button>
+                    <button ng-click="modal('Modal'+$index)" class="w3-button w3-green">
+                        Datos de {{ paciente.Nombre}}</button>
 
                     <div id="Modal{{$index}}" class="w3-modal">
-                        <div class="w3-modal-content">
-                            <header class="w3-container w3-teal">
+                        <div class="w3-modal-content w3-animate-zoom" style="overflow-y: auto; max-height: 30em">
+                            <header class="w3-container w3-blue">
                               <span ng-click="cerrar_modal('Modal'+$index)"
                                     class="w3-button w3-display-topright">&times;</span>
-                                <h2>Modal Header</h2>
+                                <h2>Expediente de {{paciente.Nombre}}</h2>
                             </header>
                             <div class="w3-container">
-                                <div  data-ng-repeat="diagnostico in paciente.Diagnosticos">
-                                    {{diagnostico.Estado+" | "+diagnostico.IMC}}<br>
-                                </div>
+                                <h4>Información personal</h4>
+                                <img src="../../img/imagenes/avatar.png" class="w3-left w3-circle w3-margin-right" style="width:50px">
+                                <span class="w3-large">{{paciente.Nombre}} <b> | </b>
+                                </span>
+                                <span ng-style="paciente.Edo === 'Diabético' && {'color':'red'}  ||
+                                 paciente.Edo === 'No Diabético' && {'color':'blue'}" style="color:goldenrod">
+                                    {{paciente.Edo | uppercase}}
+                                </span><br>
+                                <span>Sexo: {{ paciente.Sexo=='M'?"Masculino":"Femenino" }} <b> | </b> Edad: {{paciente.Edad}}</span>
+                                <hr>
+                                <h4>Diagnósticos previos</h4>
+                                <table class="w3-table-all">
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Estado</th>
+                                        <th>IMC</th>
+                                        <th>N_Glucosa</th>
+                                        <th>C_Glucosa</th>
+                                        <th>Certeza</th>
+                                    </tr>
+                                    <tr data-ng-repeat="diagnostico in paciente.Diagnosticos">
+                                        <td>{{diagnostico.Fecha}}</td>
+                                        <td>{{diagnostico.Estado}}</td>
+                                        <td>{{diagnostico.IMC}}</td>
+                                        <td>{{diagnostico.N_Glucosa}}</td>
+                                        <td>{{diagnostico.C_Glucosa}}</td>
+                                        <td>{{diagnostico.Certeza}}</td>
+                                    </tr>
+                                </table>
+                                <br>
                             </div>
                         </div>
                     </div>
@@ -53,8 +79,8 @@
             <a href="#" class="w3-button">&raquo;</a>
         </div>
     </div>
-    <!--</div>
-    <div ng-if="!existen_citas" align="center">
-        <h4 class="w3-card-2 nada">Aún no tienes citas registradas con anterioridad</h4>
-    </div>-->
+    </div>
+    <div ng-if="!existen_pacientes" align="center">
+        <h4 class="w3-card-2 nada">Aún no existen pacientes con registros</h4><br><br><br><br><br>
+    </div>
 </div>

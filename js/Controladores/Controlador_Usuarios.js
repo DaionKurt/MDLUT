@@ -22,8 +22,15 @@ app.controller('Datos_sesion',function ($scope, $http) {
     $scope.cargar($scope.sesion===1?"../../src/Gestores/Medicos/informacion.php":"../../src/Gestores/Pacientes/informacion.php");
     $scope.edicion = false;
     $scope.error = false;
+    $scope.edicion_foto = false;
+    $scope.editar_foto = function () {
+        $scope.edicion_foto = true;
+    };
     $scope.editar_pass = function() {
         $scope.edicion = true;
+    };
+    $scope.cancelar_foto = function () {
+        $scope.edicion_foto = false;
     };
     $scope.inhabilitar_edicion = function() {
         $scope.edicion = false;

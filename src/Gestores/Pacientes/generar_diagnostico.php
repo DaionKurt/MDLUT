@@ -26,6 +26,7 @@ $orina = $_GET['orina'];
 $hambre = $_GET['hambre'];
 $paciente = $_SESSION['paciente'];
 $edad = $_SESSION['edad'];
+$fecha = $_GET['fecha'];
 $estatura/=100;
 $imc = $peso/($estatura*$estatura);
 /*echo '{"peso":'.$peso.',"estatura":'.$estatura.',"glucosa":'.$glucosa.',"tiempo":'.$tiempo.',"vision":'.$vision.',"sed":'.$sed.',"fatiga":'.$fatiga.',"orina":'.$orina. ',"hambre":'.$hambre.'}';
@@ -61,8 +62,8 @@ $nivMemCondicion=$fuzzy->inferirCondicionDifusaCuantitativo($edadDifusa, $glucos
 $fuzzy->muestraNivMemMay("Membresías Condición",$fuzzy->getNivsMemCondicionDiabetico());
 $condicionNitido=$fuzzy->desfuzzificar($condicionDifusa,$nivMemCondicion);
 $string.='"result":'.json_encode($condicionDifusa).',"certeza":'.$nivMemCondicion.'}';
-$sql = "INSERT INTO diagnostico(no_paciente,estado,imc,niv_glucosa,cat_glucosa,porc_certeza)
- VALUES ('$paciente','$condicionDifusa','$imc','$glucosa','$glucosaDifusa','$nivMemCondicion')";
+$sql = "INSERT INTO diagnostico(no_paciente,estado,imc,niv_glucosa,cat_glucosa,porc_certeza,fecha)
+ VALUES ('$paciente','$condicionDifusa','$imc','$glucosa','$glucosaDifusa','$nivMemCondicion','$fecha')";
 try{
     $stmt = $conexion->query($sql);
     echo $string;

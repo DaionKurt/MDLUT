@@ -1,33 +1,49 @@
 <div data-ng-controller="Controlador_Horarios">
+    <p>Aquí podrás registrar los horarios disponibles para atención a clientes, recuerda que estas no son citas médicas
+    convencionales, sino espacios de atención a dudas, considera horarios libres</p>
     <div class="w3-row">
-        <div class="w3-half">
+        <div class="w3-half padd-movil">
             <form data-ng-submit="registrar_horario()">
                 <label for="dia">Dia</label>
-                <input class="w3-input w3-animate-input entrada" type="date" id="dia" data-ng-model="dia" required><p></p>
+                <input class="w3-input w3-animate-input entrada" min="{{hoy}}" type="date" id="dia" data-ng-model="dia" required><p></p>
                 <label for="hora">Hora</label>
-                <input class="w3-input w3-animate-input entrada" type="time" id="hora" required><p></p>
-                <button class="w3-btn" style="background-color: #007c6e; color: white;" type="submit">Iniciar sesión</button><p></p>
+                <input class="w3-input w3-animate-input entrada" type="time" id="hora" min="08:00:00" max="20:00:00" step="1800"
+                       required><p></p>
+                <div align="right">
+                    <button class="w3-btn w3-green" type="submit">Registrar horario</button><p></p>
+                </div>
             </form>
+        </div>
+        <div class="w3-half" style="padding-left: 1em">
+            <h4 class="w3-blue w3-round-medium" style="padding-left: 1em">Qué debes hacer en tus consultas?</h4>
+            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
+            Atender todas las inquitudes del paciente <br>
+            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
+            Hacer notar que vivir con diabétes no es el fin del mundo <br>
+            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
+            Reconocer los patrones de diagnósticos para dar resultados correctos <br>
+            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
+            Indicar el camino correcto a seguir para un paciente con diabétes <br>
         </div>
     </div>
     <div class="w3-row">
-        <h3>Historial de citas</h3>
-        <!--<div ng-if="existen_citas">-->
+        <h3>Horarios actuales</h3>
+        <div ng-if="existen_horarios">
         <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar citas"
-               id="buscar_citas" onkeyup="buscar('buscar_citas','tabla_citas')">
+               id="buscar_horario" onkeyup="buscar('buscar_horario','tabla_horarios')">
         <div class="w3-responsive">
             <br>
-            <table class="w3-table-all w3-card-2" id="tabla_citas">
+            <table class="w3-table-all w3-card-2" id="tabla_horarios">
                 <tr>
                     <th>Dia</th>
                     <th>Hora</th>
-                    <th>Medico</th>
-                    <th>Anotaciones</th>
+                    <th>Estado</th>
                 </tr>
                 <tr data-ng-repeat="horario in horarios">
                     <td>{{ horario.Dia}}</td>
                     <td>{{ horario.Hora }}</td>
-                    <td>{{ horario.Libre==1?"Disponible":"Ocupado" }}</td>
+                    <td ng-style="horario.Libre==1 && {'color':'green'}" style="color:red">
+                        {{ horario.Libre==1?"Disponible":"Ocupado" }}</td>
                 </tr>
             </table>
         </div>
@@ -39,9 +55,9 @@
                 <a href="#" class="w3-button">&raquo;</a>
             </div>
         </div>
-        <!--</div>
-        <div ng-if="!existen_citas" align="center">
-            <h4 class="w3-card-2 nada">Aún no tienes citas registradas con anterioridad</h4>
-        </div>-->
+        </div>
+        <div ng-if="!existen_horarios" align="center">
+            <h4 class="w3-card-2 nada">Aún no tienes horarios de atención disponibles</h4><br>
+        </div>
     </div>
 </div>

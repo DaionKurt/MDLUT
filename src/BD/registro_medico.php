@@ -19,6 +19,10 @@ $telefono   = $request->telefono;
 $sexo       = $request->sexo;
 $edad       = $request->edad;
 $fecha_n    = $request->fecha_nacimiento;
+$grado         = $request->grado;
+$universidad   = $request->universidad;
+$cedula        = $request->cedula;
+$especialidad  = $request->especialidad;
 $imagen     = $sexo=="M"?"hombre.png":"mujer.png";
 
 $aux_a   = substr($fecha_n,0,4);
@@ -41,7 +45,6 @@ $sentencia->bindParam(':edad'       , $edad,    PDO::PARAM_INT);
 $sentencia->bindParam(':usuario'    , $usuario, PDO::PARAM_STR);
 $sentencia->bindParam(':correo'     , $correo,  PDO::PARAM_STR);
 $sentencia->bindParam(':pass'       , $pass,    PDO::PARAM_STR);
-
 
 
 try{
@@ -69,8 +72,8 @@ try{
       <p>Hola '.$nombre.' '.$apellido.',<br>Bienvenido!<br></p>
       <p>Nos da mucho gusto que formes parte de nuestro sistema: Diaman, esperamos te sea de mucha utilidad.</p>
       <p>Para finalizar el proceso de creación de tu cuenta, te pedimos des click en el siguiente link:</p>
-      <a class="link" href="http://localhost:63342/Proyecto%20Modular/verificacion.php?id=' . $id . '&code=' . $clave
-        . '&email='.$correo.'&user='.$usuario.'">
+      <a class="link" href="http://localhost:63342/Proyecto%20Modular/verificacion_m.php?id=' . $id . '&code=' . $clave
+        . '&email='.$correo.'&user='.$usuario.'&gr='.$grado.'&un='.$universidad.'&no='.$cedula.'&es='.$especialidad.'">
         Enlace de activación</a> 
       <p>Esto activará tu cuenta y podrás hacer uso del sistema</p>
       <p>Esperamos disfrutes del sitio y nos gustaría escuchar tus experiencias</p>

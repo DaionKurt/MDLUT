@@ -34,40 +34,47 @@ try{
     $sentencia_p->execute();
     $sentencia_m->execute();
     $usuario = $sentencia->fetch(PDO::FETCH_ASSOC);
-    $nombre_u = $usuario['nombre'];
-    $apellido_u = $usuario['apellido'];
-    $sexo_u = $usuario['sexo'];
-    $fecha_nacimiento_u = $usuario['fecha_nacimiento'];
-    $telefono_u = $usuario['fecha_nacimiento'];
-    $edad_u = $usuario['edad'];
-    $usuario_u = $usuario['usuario'];
-    $correo_u = $usuario['correo'];
     $activo_u = $usuario['activo'];
-    $id_u = $usuario['id_usuario'];
-    $_SESSION['usuario'] = $id_u;
-    $_SESSION['edad'] = $edad_u;
-    if ($sentencia_p->rowCount()>=1) {
-        $paciente_stm = $sentencia_p->fetch(PDO::FETCH_ASSOC);
-        $id_p = $paciente_stm['id_paciente'];
-        $estado_p = $paciente_stm['estado_diabetico'];
-        $paciente_objeto = new \Entidades\Paciente($nombre_u,$apellido_u,$sexo_u,$fecha_nacimiento_u,$telefono_u,
-            $edad_u,$usuario_u,$correo_u,$activo_u,$id_u,$estado_p,$id_p);
-        $_SESSION['paciente'] = $id_p;
-        $_SESSION['objeto'] = serialize($paciente_objeto);
-    }
-    if($sentencia_m->rowCount()>=1){
-        $medico_stm = $sentencia_m->fetch(PDO::FETCH_ASSOC);
-        $id_m = $medico_stm['id_medico'];
-        $no_admon = $medico_stm['no_admon'];
-        $cedula_m = $medico_stm['no_cedula'];
-        $medico_objeto = new \Entidades\Medico($nombre_u,$apellido_u,$sexo_u,$fecha_nacimiento_u,
-            $telefono_u,$edad_u,$usuario_u,$correo_u,$activo_u,$id_u,$cedula_m,
-            $id_m,$no_admon);
-        $_SESSION['medico'] = $id_m;
-        $_SESSION['objeto'] = serialize($medico_objeto);
+    if($activo_u) {
+        $nombre_u = $usuario['nombre'];
+        $apellido_u = $usuario['apellido'];
+        $sexo_u = $usuario['sexo'];
+        $fecha_nacimiento_u = $usuario['fecha_nacimiento'];
+        $telefono_u = $usuario['fecha_nacimiento'];
+        $edad_u = $usuario['edad'];
+        $usuario_u = $usuario['usuario'];
+        $correo_u = $usuario['correo'];
+        $id_u = $usuario['id_usuario'];
+        $img = $usuario['imagen'];
+
+        $_SESSION['usuario'] = $id_u;
+        $_SESSION['edad'] = $edad_u;
+        $_SESSION['imagen'] = $img;
+        if ($sentencia_p->rowCount() >= 1) {
+            $paciente_stm = $sentencia_p->fetch(PDO::FETCH_ASSOC);
+            $id_p = $paciente_stm['id_paciente'];
+            $estado_p = $paciente_stm['estado_diabetico'];
+            $paciente_objeto = new \Entidades\Paciente($nombre_u, $apellido_u, $sexo_u, $fecha_nacimiento_u, $telefono_u,
+                $edad_u, $usuario_u, $correo_u, $activo_u, $id_u, $estado_p, $id_p);
+            $_SESSION['paciente'] = $id_p;
+            $_SESSION['objeto'] = serialize($paciente_objeto);
+        }
+        if ($sentencia_m->rowCount() >= 1) {
+            $medico_stm = $sentencia_m->fetch(PDO::FETCH_ASSOC);
+            $id_m = $medico_stm['id_medico'];
+            $no_admon = $medico_stm['no_admon'];
+            $cedula_m = $medico_stm['no_cedula'];
+            $medico_objeto = new \Entidades\Medico($nombre_u, $apellido_u, $sexo_u, $fecha_nacimiento_u,
+                $telefono_u, $edad_u, $usuario_u, $correo_u, $activo_u, $id_u, $cedula_m,
+                $id_m, $no_admon);
+            $_SESSION['medico'] = $id_m;
+            $_SESSION['objeto'] = serialize($medico_objeto);
+        }
+        echo json_encode($usuario);
+    }else if($activo_u==0 && $sentencia->rowCount()>0){
+        echo '{"Activo":"NO"}';
     }
     $conexion = null;
-    echo  json_encode($usuario);
 }catch(PDOException $e){
     echo '{"error":{"error":'. $e->getMessage() .'}}';
 }

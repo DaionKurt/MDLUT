@@ -31,6 +31,15 @@ app.controller('Controlador_Diagnostico', function($scope, $http) {
         );
     };
     $scope.cargar();
+    $scope.dame_fecha_actual = function(){
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if(dd<10) {dd='0'+dd}
+        if(mm<10){mm='0'+mm}
+        return dd+'/'+mm+'/'+yyyy;
+    };
     $scope.iniciar_diagnostico = function() {
         document.getElementById("contenedor_analisis").style.display = "none";
         document.getElementById("animacion").style.display = "block";
@@ -43,7 +52,8 @@ app.controller('Controlador_Diagnostico', function($scope, $http) {
             sed:$scope.sed,
             fatiga:$scope.fatiga,
             orina:$scope.orina,
-            hambre:$scope.hambre});
+            hambre:$scope.hambre,
+            fecha:$scope.dame_fecha_actual()});
     };
     $scope.cargar_func = function () {
         document.getElementById('nuevo_diagnos').style.display='none';

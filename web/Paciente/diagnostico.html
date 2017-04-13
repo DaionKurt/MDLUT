@@ -7,20 +7,18 @@
                 <header class="w3-container w3-green">
                     <h4>Último diagnóstico</h4>
                 </header>
-                <div class="w3-container" ng-if="existen">
-                    <div class="w3-row">
-                        <h5>Estado actual: <b>{{ultimo.Estado}}</b></h5>
-                    </div>
-                    <div class="w3-row">
-                        <div class="w3-half">
-                            <p>IMC: {{ultimo.IMC}}</p>
-                            <p>Nivel de glucosa: {{ultimo.Glucosa}}</p>
-                        </div>
-                        <div class="w3-half">
-                            <p>Tu glucosa es <b>{{ultimo.Cat_g}}</b></p>
-                            <p>Con una certeza del {{ultimo.Certeza}}% </p>
-                        </div>
-                    </div>
+                <div class="w3-container" ng-if="existen"><br>
+                    <h4 style="display: inline;"> Estado actual: </h4>
+                    <span ng-style="ultimo.Estado === 'Diabético' && {'color':'red'}  ||
+                           ultimo.Estado === 'No Diabético' && {'color':'blue'}" style="color:goldenrod;font-size: large">
+                       {{ultimo.Estado | uppercase}}
+                                </span>
+                    <ul>
+                        <li style="font-size: large">{{ultimo.Estado}} <b>|</b> Con una certeza del {{ultimo.Certeza}}%</li>
+                        <li style="font-size: large">Nivel de glucosa: {{ultimo.Glucosa}} mg/dl <b>|</b> Tu glucosa es {{ultimo.Cat_g}}</li>
+                        <li>IMC: {{ultimo.IMC}}</li>
+                    </ul>
+
                     <p></p>
                 </div>
                 <div ng-if="!existen" align="center">
@@ -47,6 +45,7 @@
                 <br>
                 <table class="w3-table-all w3-card-2" id="tabla_diagnosticos">
                     <tr>
+                        <th>Fecha</th>
                         <th>Estado diabético</th>
                         <th>IMC</th>
                         <th>Nivel de Glucosa</th>
@@ -54,6 +53,7 @@
                         <th>% de Certeza</th>
                     </tr>
                     <tr class="w3-hover-light-blue" data-ng-repeat="diagnostico in diagnosticos" ng-if="existen">
+                        <td>{{ diagnostico.Fecha}}</td>
                         <td>{{ diagnostico.Estado}}</td>
                         <td>{{ diagnostico.IMC }}</td>
                         <td>{{ diagnostico.Glucosa }}</td>
@@ -72,7 +72,7 @@
             </div>
         </div>
         <div ng-if="!existen" align="center">
-            <h4 class="w3-card-2 nada">Aún no tienes un diagnóstico registrado con anterioridad</h4>
+            <h4 class="w3-card-2 nada">Aún no tienes un diagnóstico registrado con anterioridad</h4><br>
         </div>
     </div>
 
