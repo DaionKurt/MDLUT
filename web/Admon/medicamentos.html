@@ -1,10 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div data-ng-controller="Controlador_Medicinas">
+    <div class="w3-row">
+        <div class="w3-half padd-movil">
+            <form data-ng-submit="registrar_medicamento()">
+                <label for="nombre_m">Nombre</label>
+                <input class="w3-input w3-animate-input entrada" type="text" id="nombre_m" data-ng-model="nombre_m" required><p></p>
+                <label for="informacion_m">Información</label>
+                <input class="w3-input w3-animate-input entrada" type="text" id="informacion_m" data-ng-model="informacion_m" required><p></p>
+                <label for="dosis_m">Dosis</label>
+                <input class="w3-input w3-animate-input entrada" type="text" id="dosis_m" data-ng-model="dosis_m" required><p></p>
+                <label for="via_administracion_m">Via de administración</label>
+                <input class="w3-input w3-animate-input entrada" type="text" id="via_administracion_m" data-ng-model="via_administracion_m" required><p></p>
+                <div align="right">
+                    <button class="w3-btn w3-green" type="submit">Registrar medicamento</button><p></p>
+                </div>
+            </form>
+        </div>
+        <div class="w3-half" style="padding-left: 1em">
+            <h4 class="w3-blue w3-round-medium" style="padding-left: 1em">Qué debes hacer en tus consultas?</h4>
+            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
+            Atender todas las inquitudes del paciente <br>
+            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
+            Hacer notar que vivir con diabétes no es el fin del mundo <br>
+            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
+            Reconocer los patrones de diagnósticos para dar resultados correctos <br>
+            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
+            Indicar el camino correcto a seguir para un paciente con diabétes <br>
+        </div>
+    </div>
+    <div class="w3-row">
+        <h3>Medicamentos actuales</h3>
+        <div ng-if="existen_medicamentos">
+            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar medicamento"
+                   id="buscar_medicina" onkeyup="buscar('buscar_medicina','tabla_medicinas')">
+            <div class="w3-responsive">
+                <br>
+                <table class="w3-table-all w3-card-2" id="tabla_medicinas">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Información</th>
+                        <th>Dosis</th>
+                        <th>Vía de administración</th>
+                    </tr>
+                    <tr data-ng-repeat="medicamento in medicamentos">
+                        <td>{{ medicamento.Nombre}}</td>
+                        <td>{{ medicamento.Informacion }}</td>
+                        <td>{{ medicamento.Dosis }}</td>
+                        <td>{{ medicamento.Via }}</td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="w3-row w3-center">
+                <div class="w3-bar w3-border">
+                    <a href="#" class="w3-button">&laquo;</a>
+                    <a href="#" class="w3-button w3-red">1</a>
+                    <a href="#" class="w3-button">&raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div ng-if="!existen_medicamentos" align="center">
+            <h4 class="w3-card-2 nada">Aún no tienes horarios de atención disponibles</h4><br>
+        </div>
+    </div>
+</div>

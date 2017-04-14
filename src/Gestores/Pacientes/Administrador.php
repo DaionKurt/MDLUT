@@ -131,7 +131,7 @@ class Administrador{
     }
     function get_informacion(){
         $sentencia = $this->conexion->prepare("
-          SELECT usuario.nombre,usuario.apellido,usuario.sexo,usuario.fecha_nacimiento,usuario.telefono,
+          SELECT usuario.id_usuario,usuario.nombre,usuario.apellido,usuario.sexo,usuario.fecha_nacimiento,usuario.telefono,
                usuario.edad,usuario.usuario,usuario.correo,paciente.estado_diabetico FROM usuario 
           INNER JOIN paciente ON usuario.id_usuario=paciente.no_usuario AND usuario.id_usuario = :usuario");
         $sentencia->bindParam(':usuario',$this->usuario_IDX,PDO::PARAM_INT);
@@ -143,6 +143,7 @@ class Administrador{
                 $salida .= '{"Nombre":"' .$rs["nombre"]   .'",';
                 $salida .= '"Apellido":"'.$rs["apellido"] .'",';
                 $salida .= '"Sexo":"'    .$rs["sexo"]     .'",';
+                $salida .= '"IDX":"' . $rs["id_usuario"] . '",';
                 $salida .= '"Fecha":"'   .$rs["fecha_nacimiento"]     .'",';
                 $salida .= '"Telefono":"'.$rs["telefono"]     .'",';
                 $salida .= '"Edad":"'    .$rs["edad"]     .'",';

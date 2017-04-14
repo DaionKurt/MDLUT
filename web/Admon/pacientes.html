@@ -1,10 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div data-ng-controller="Controlador_Pacientes">
+    <h3>Todos los pacientes</h3>
+    <div ng-if="existen_pacientes">
+        <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar medico"
+               id="buscar_pacientes" onkeyup="buscar('buscar_pacientes','tabla_pacientes')">
+        <div class="w3-responsive">
+            <br>
+            <table class="w3-table-all w3-card-2" id="tabla_pacientes">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Sexo</th>
+                    <th>Edad</th>
+                    <th>Correo</th>
+                    <th>Información</th>
+                    <th>EDX</th>
+                </tr>
+                <tr data-ng-repeat="paciente in pacientes">
+                    <td>{{ paciente.Nombre}}</td>
+                    <td>{{ paciente.Sexo=='M'?"Masculino":"Femenino" }}</td>
+                    <td>{{ paciente.Edad }}</td>
+                    <td>{{ paciente.Correo }}</td>
 
-</body>
-</html>
+                    <td>
+                        <button ng-click="modal('ModalC'+$index)" class="w3-button w3-green">
+                            Datos de {{ paciente.Nombre}}</button>
+                        <div id="ModalC{{$index}}" class="w3-modal">
+                            <div class="w3-modal-content w3-animate-zoom" style="overflow-y: auto; max-height: 35em">
+                                <header class="w3-container w3-blue">
+                              <span ng-click="cerrar_modal('ModalC'+$index)"
+                                    class="w3-button w3-display-topright">&times;</span>
+                                    <h4>Datos administrativos de {{paciente.Nombre}}</h4>
+                                </header>
+                                <div class="w3-container">
+                                    <div class="w3-row">
+                                        <div class="w3-quarter">
+                                            <img src="../../img/perfiles/{{paciente.Imagen}}" class="w3-left w3-margin-right w3-card"
+                                                 style="width:100%;margin: 1em">
+                                        </div>
+                                        <div class="w3-threequarter" style="padding-left: 2em">
+                                            <h4>Datos personales</h4>
+                                            <table class="w3-table-all">
+                                                <tr>
+                                                    <th>Sexo</th>
+                                                    <th>Edad</th>
+                                                    <th>Fecha de nacimiento</th>
+                                                    <th>Correo</th>
+                                                    <th>Teléfono</th>
+                                                    <th>EDX</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>{{paciente.Sexo=='M'?"Masculino":"Femenino" }}</td>
+                                                    <td>{{paciente.Edad}}</td>
+                                                    <td>{{paciente.Fecha}}</td>
+                                                    <td>{{paciente.Correo}}</td>
+                                                    <td>{{paciente.Telefono}}</td>
+                                                    <td> <div align="right">
+                                                        <button ng-click="eliminar(paciente.IDX)" class="w3-button w3-deep-orange">
+                                                            Dar de baja</button>
+                                                    </div></td>
+                                                </tr>
+                                            </table>
+                                            <p style="display:inline;">Estado: <span style="color: blue;">ACTIVO</span>
+                                            <b> | </b> Estado diabético: <span ng-style="paciente.Estado === 'Diabético' && {'color':'red'}  ||
+                                 paciente.Estado === 'No Diabético' && {'color':'blue'}" style="color:goldenrod">
+                                                {{paciente.Estado | uppercase}}
+                                                </span></p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button ng-click="eliminar(paciente.IDX)" class="w3-button w3-red">
+                            Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="w3-row w3-center">
+            <div class="w3-bar w3-border">
+                <a href="#" class="w3-button">&laquo;</a>
+                <a href="#" class="w3-button w3-red">1</a>
+                <a href="#" class="w3-button">&raquo;</a>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!existen_pacientes" align="center">
+        <h4 class="w3-card-2 nada">Aún no existen pacientes con registros</h4><br><br><br><br><br>
+    </div>
+</div>

@@ -25,6 +25,21 @@ app.controller("RegistroUsuario",function ($scope,$http) {
         limpia_formulario($scope);
     };
 });
+app.controller("IngresoAdmon",function ($scope,$http) {
+    $scope.inicio_correcto = true;
+    $scope.rsJSON = [];
+    $scope.iniciar = function() {
+        consultar_admon($http,$scope);
+        $scope.inicio_correcto = true;
+    };
+    $scope.limpiar = function() {
+        limpia_formulario($scope);
+    };
+    $scope.cerrar_ventana_inicio = function () {
+        document.getElementById('ingreso_admon').style.display='none';
+        $scope.inicio_correcto = true;
+    }
+});
 var aor = angular.module("Register",[]);
 aor.controller("RegistroMedico",function ($scope,$http) {
     $scope.correcto = false;
@@ -32,6 +47,11 @@ aor.controller("RegistroMedico",function ($scope,$http) {
     $scope.registrar = function() {
         registrar_medico($http,$scope);
     };
+    $scope.cerrar_ventana_inicio = function () {
+        document.getElementById('inicio_sesion').style.display='none';
+        $scope.error = true;
+        $scope.correcto = true;
+    }
 });
 
 function registrar_medico($http,$scope){
@@ -59,6 +79,24 @@ function registrar_medico($http,$scope){
         $scope.correcto = true;
     }, function error(response) {
         $scope.error = true;
+    });
+}
+
+function consultar_admon($http,$scope) {
+    $http({
+        method: 'POST',
+        url: 'src/BD/sesion_administrador.php',
+        data: {usuario:$scope.usuario,
+            pass:$scope.pass}
+    }).then(function correcto(response) {
+        if (typeof(response.data.usuario) === "undefined"){
+            limpia_formulario($scope);
+            $scope.inicio_correcto = false;
+        }else{
+            window.location = "index.php";
+        }
+    }, function error(response) {
+        console.log('Error: ' + response);
     });
 }
 

@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Diaman | Inicio</title>
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/estilos.css">
@@ -17,90 +20,108 @@
     <script src="js/scripts.js"></script>
     <script src="js/Controladores/Controlador.js"></script>
 </head>
-<body data-ng-app="Register">
-<div class="w3-container" data-ng-controller="RegistroMedico">
-    <p>Estamos felices de que te vayas a unir a nuestro sistema, por favor registrate para obtener acceso al sistema</p>
-    <form class="w3-container" data-ng-submit="registrar()">
-        <div class="w3-row">
-            <div class="w3-half" style="padding-right: 1em">
-                <label for="nombre_r">Nombre</label>
-                <input class="w3-input w3-animate-input entrada" type="text" id="nombre_r" data-ng-model="nombre_r" required>
+<body data-ng-app="Register" style="background:linear-gradient(135deg,rgba(23, 151, 225,.9),rgba(89, 196, 98,0.9));
+ background-size: cover;background-attachment: fixed">
+<div class="" data-ng-controller="RegistroMedico">
+    <div align="center" class="w3-row w3-card-2" style="background-color: #fcfcfc;position:absolute;">
+        <a data-ng-href="index.php" class=" w3-left w3-green w3-button w3-large"><i class="fa fa-reply"></i> Regresar</a>
+    </div>
+    <div class="w3-hide-medium w3-hide-large">
+        <br><br>
+    </div>
+    <div class="w3-row">
+        <div class="w3-quarter"><p></p></div>
+        <div class="w3-half w3-card w3-white" style="padding-left: 1em;padding-top: 1em;max-height:40em;overflow-y: auto">
+            <div align="center">
+                <img src="img/imagenes/Logo%20horizontal%20con%20texto.png" alt="" class="w3-responsive w3-animate-zoom" style="height: 7em;">
             </div>
-            <div class="w3-half">
-                <label for="apellido_r">Apellido</label>
-                <input class="w3-input w3-animate-input entrada" type="text" id="apellido_r" data-ng-model="apellido_r" required>
-            </div>
+            <h4>Registro de Médico</h4>
+            <p>Estamos felices de que te vayas a unir a nuestro sistema, por favor registrate para obtener acceso al sistema</p>
+            <form class="w3-container" data-ng-submit="registrar()">
+                <div class="w3-row">
+                    <div class="w3-half" style="padding-right: 1em">
+                        <label for="nombre_r">Nombre</label>
+                        <input class="w3-input w3-animate-input entrada" type="text" id="nombre_r" data-ng-model="nombre_r" required>
+                    </div>
+                    <div class="w3-half">
+                        <label for="apellido_r">Apellido</label>
+                        <input class="w3-input w3-animate-input entrada" type="text" id="apellido_r" data-ng-model="apellido_r" required>
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-third" style="padding-right: 1em">
+                        <label for="correo_r">Correo</label>
+                        <input class="w3-input w3-animate-input entrada" type="email" id="correo_r" data-ng-model="correo_r" required>
+                    </div>
+                    <div class="w3-third" style="padding-right: 1em">
+                        <label for="usuario_r">Usuario</label>
+                        <input class="w3-input w3-animate-input entrada" type="text" id="usuario_r" data-ng-model="usuario_r" required>
+                    </div>
+                    <div class="w3-third">
+                        <label for="pass_r">Contraseña</label>
+                        <input class="w3-input w3-animate-input entrada" type="password" id="pass_r" data-ng-model="pass_r" required>
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-quarter" style="padding-right: 1em">
+                        <label for="telefono_r">Telefono</label>
+                        <input class="w3-input w3-animate-input entrada" type="tel" id="telefono_r" data-ng-model="telefono_r" required>
+                    </div>
+                    <div class="w3-quarter" style="padding-right: 1em">
+                        <label for="sexo_r">Sexo</label>
+                        <select class="w3-select entrada" name="option" id="sexo_r" data-ng-model="sexo_r" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="F">Mujer</option>
+                            <option value="M">Hombre</option>
+                        </select>
+                    </div>
+                    <div class="w3-quarter" style="padding-right: 1em">
+                        <label for="edad_r">Edad</label>
+                        <input class="w3-input w3-animate-input entrada" type="number" min="1" max="100" id="edad_r" data-ng-model="edad_r" required>
+                    </div>
+                    <div class="w3-quarter">
+                        <label for="fecha_r">Fecha de Nacimiento</label>
+                        <input class="w3-input w3-animate-input entrada" type="date" id="fecha_r" data-ng-model="fecha_r" required>
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-half" style="padding-right: 1em">
+                        <label for="grado_r">Grado</label>
+                        <input class="w3-input w3-animate-input entrada" type="tel" id="grado_r" data-ng-model="grado_r" required>
+                    </div>
+                    <div class="w3-half" style="padding-right: 1em">
+                        <label for="universidad_r">Universidad</label>
+                        <input class="w3-input w3-animate-input entrada" type="text" id="universidad_r" data-ng-model="universidad_r" required>
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-half" style="padding-right: 1em">
+                        <label for="cedula_r">No. de cédula</label>
+                        <input class="w3-input w3-animate-input entrada" type="tel" id="cedula_r" data-ng-model="cedula_r" required>
+                    </div>
+                    <div class="w3-half" style="padding-right: 1em">
+                        <label for="especialidad_r">Especialidad</label>
+                        <input class="w3-input w3-animate-input entrada" type="text" id="especialidad_r" data-ng-model="especialidad_r" required>
+                    </div>
+                </div>
+                <p></p>
+                <input class="w3-check" type="checkbox" id="acepto_r" onchange="document.getElementById('registro').disabled=!this.checked">
+                <label for="acepto_r">Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a> del sistema</label>
+                <div class="w3-panel w3-red w3-display-container w3-card-2" data-ng-show="error">
+                    <p>Ups! :C hubo un error. Tal vez ya existe este usuario o el correo ya está en uso.</p>
+                </div>
+                <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
+                    <p>Tu usuario ha sido creado :D, ve a tu correo para activar tu cuenta</p>
+                </div>
+                <p></p>
+                <div align="right">
+                    <button id="registro" class="w3-btn" style="background-color: #007c6e; color: white;" disabled type="submit">Registrar usuario</button><p></p>
+                </div>
+            </form>
         </div>
-        <div class="w3-row">
-            <div class="w3-third" style="padding-right: 1em">
-                <label for="correo_r">Correo</label>
-                <input class="w3-input w3-animate-input entrada" type="email" id="correo_r" data-ng-model="correo_r" required>
-            </div>
-            <div class="w3-third" style="padding-right: 1em">
-                <label for="usuario_r">Usuario</label>
-                <input class="w3-input w3-animate-input entrada" type="text" id="usuario_r" data-ng-model="usuario_r" required>
-            </div>
-            <div class="w3-third">
-                <label for="pass_r">Contraseña</label>
-                <input class="w3-input w3-animate-input entrada" type="password" id="pass_r" data-ng-model="pass_r" required>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-quarter" style="padding-right: 1em">
-                <label for="telefono_r">Telefono</label>
-                <input class="w3-input w3-animate-input entrada" type="tel" id="telefono_r" data-ng-model="telefono_r" required>
-            </div>
-            <div class="w3-quarter" style="padding-right: 1em">
-                <label for="sexo_r">Sexo</label>
-                <select class="w3-select entrada" name="option" id="sexo_r" data-ng-model="sexo_r" required>
-                    <option value="" disabled selected>Selecciona</option>
-                    <option value="F">Mujer</option>
-                    <option value="M">Hombre</option>
-                </select>
-            </div>
-            <div class="w3-quarter" style="padding-right: 1em">
-                <label for="edad_r">Edad</label>
-                <input class="w3-input w3-animate-input entrada" type="number" min="1" max="100" id="edad_r" data-ng-model="edad_r" required>
-            </div>
-            <div class="w3-quarter">
-                <label for="fecha_r">Fecha de Nacimiento</label>
-                <input class="w3-input w3-animate-input entrada" type="date" id="fecha_r" data-ng-model="fecha_r" required>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-half" style="padding-right: 1em">
-                <label for="grado_r">Grado</label>
-                <input class="w3-input w3-animate-input entrada" type="tel" id="grado_r" data-ng-model="grado_r" required>
-            </div>
-            <div class="w3-half" style="padding-right: 1em">
-                <label for="universidad_r">Universidad</label>
-                <input class="w3-input w3-animate-input entrada" type="text" id="universidad_r" data-ng-model="universidad_r" required>
-            </div>
-        </div>
-        <div class="w3-row">
-            <div class="w3-half" style="padding-right: 1em">
-                <label for="cedula_r">No. de cédula</label>
-                <input class="w3-input w3-animate-input entrada" type="tel" id="cedula_r" data-ng-model="cedula_r" required>
-            </div>
-            <div class="w3-half" style="padding-right: 1em">
-                <label for="especialidad_r">Especialidad</label>
-                <input class="w3-input w3-animate-input entrada" type="text" id="especialidad_r" data-ng-model="especialidad_r" required>
-            </div>
-        </div>
-        <p></p>
-        <input class="w3-check" type="checkbox" id="acepto_r" onchange="document.getElementById('registro').disabled=!this.checked">
-        <label for="acepto_r">Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a> del sistema</label>
-        <div class="w3-panel w3-red w3-display-container w3-card-2" data-ng-show="error">
-            <p>Ups! :C hubo un error. Tal vez ya existe este usuario o el correo ya está en uso.</p>
-        </div>
-        <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
-            <p>Tu usuario ha sido creado :D, ve a tu correo para activar tu cuenta</p>
-        </div>
-        <p></p>
-        <div align="right">
-            <button id="registro" class="w3-btn" style="background-color: #007c6e; color: white;" disabled type="submit">Registrar usuario</button><p></p>
-        </div>
-    </form>
+
+    </div>
+
 </div>
 </body>
 </html>

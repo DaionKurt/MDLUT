@@ -126,6 +126,10 @@ if(!isset($_SESSION['usuario']))
                     <p><i class="fa fa-calendar"></i> Fecha de nacimiento: {{informacion.Fecha}}</p>
                     <p><i class="fa fa-id-badge"></i> Edad: {{informacion.Edad}}</p>
                 </div>
+                <div ng-hide="edicion" class="w3-quarter" style="padding-top: 1em;padding-left: 1em">
+                    <button class="w3-btn fa fa-pencil w3-large w3-red" ng-click="elimina()"><p style="display: inline;
+                    font-family: 'Calibri', sans-serif"> Eliminar cuenta</p></button>
+                </div>
 
             </div>
             <br><br>

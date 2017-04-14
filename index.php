@@ -1,12 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['usuario'])){
-    if(isset($_SESSION['paciente'])){
-        header("location: web/Paciente/index.php");
-    }
-    if(isset($_SESSION['medico'])){
-        header("location: web/Medico/index.php");
-    }
+    if(isset($_SESSION['paciente'])){header("location: web/Paciente/index.php");}
+    if(isset($_SESSION['medico'])){  header("location: web/Medico/index.php");}
+    if(isset($_SESSION['admon'])){   header("location: web/Admon/index.php");}
 }
 ?>
 <!doctype html>
@@ -63,11 +60,11 @@ if(isset($_SESSION['usuario'])){
         <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleFunction()">&#9776;</a>
     </div>
     <div id="menor" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-        <a href="#nosotros" class="w3-bar-item w3-button">Nosotros</a>
-        <a href="#info" class="w3-bar-item w3-button">Información</a>
-        <a href="#instituciones" class="w3-bar-item w3-button">Instituciones</a>
-        <a href="#acerca" class="w3-bar-item w3-button">Acerca de</a>
-        <a href="registro_medico.html" class="w3-bar-item w3-button w3-hide-small w3-right w3-blue">¿Eres médico?</a>
+        <a href="#nosotros" class="w3-bar-item w3-button"  onclick="toggleFunction()">Nosotros</a>
+        <a href="#info" class="w3-bar-item w3-button"  onclick="toggleFunction()">Información</a>
+        <a href="#instituciones" class="w3-bar-item w3-button"  onclick="toggleFunction()">Instituciones</a>
+        <a href="#acerca" class="w3-bar-item w3-button"  onclick="toggleFunction()">Acerca de</a>
+        <a href="registro_medico.html" class="w3-bar-item w3-butto w3-right w3-blue">¿Eres médico?</a>
     </div>
 </div>
 <div class="fondo-parallax fondo-principal w3-display-container w3-animate-opacity" id="inicio">
@@ -269,8 +266,43 @@ if(isset($_SESSION['usuario'])){
                 Si tienes algún problema con el sistema favor de reportarlo a: <br>carlosfdez@outlook.com</p>
         </div>
     </div>
+    <div class="row" style="margin-left: 4em">
+        Ingreso restringido: <b> | </b>
+        <a class="w3-btn" onclick="document.getElementById('ingreso_admon').style.display='block'"><i class="fa fa-shield"></i> Iniciar sesión de
+        Administrador</a>
+    </div>
+    <br>
 </footer>
 
+
+<div id="ingreso_admon" class="w3-modal" data-ng-controller="IngresoAdmon">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width: 450px">
+        <header class="w3-container w3-amber">
+             <span ng-click="cerrar_ventana_inicio()"
+                   class="w3-button w3-display-topright" id="cerrar">&times;</span>
+            <h4><i class="fa fa-shield"></i> Administrador - Ingresar credenciales </h4>
+        </header>
+        <div class="w3-container">
+            <div class="w3-panel w3-deep-orange">
+                <p>ATENCIÓN: Esta sección es solo para administradores</p>
+            </div>
+            <form data-ng-submit="iniciar()">
+                <label for="usuario">Usuario</label>
+                <input class="w3-input w3-animate-input entrada" type="text" id="usuario" data-ng-model="usuario" required><p></p>
+                <label for="pass">Contraseña</label>
+                <input class="w3-input w3-animate-input entrada" type="password" id="pass" data-ng-model="pass" required><p></p>
+                <div class="w3-panel w3-red w3-display-container w3-card-2" data-ng-hide="inicio_correcto">
+                    <h3>Oh vaya! :(</h3>
+                    <p>Lo siento pero los datos proporcionados no son correctos. Inténtalo de nuevo.</p>
+                </div>
+                <div align="right">
+                    <button class="w3-btn w3-khaki" type="reset" data-ng-click="limpiar()">Limpiar campos</button>
+                    <button class="w3-btn w3-khaki" type="submit">Iniciar sesión</button><p></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <div id="inicio_sesion" class="w3-modal" data-ng-controller="InicioSesion">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
         <header class="w3-container w3-teal">

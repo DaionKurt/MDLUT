@@ -63,7 +63,7 @@ app.controller('Controlador_Expedientes', function($scope, $http) {
     $scope.cargar = function () {
         $http({
             method: "GET",
-            url: "../../src/Gestores/Medicos/expedientes.php"
+            url: "../../src/Gestores/Medicos/medicos.php"
         }).then(function correcto(response) {
                 $scope.pacientes = response.data.pacientes;
                 $scope.existen_pacientes = $scope.pacientes.length>0;

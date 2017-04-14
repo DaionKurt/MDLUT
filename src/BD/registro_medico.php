@@ -51,12 +51,13 @@ try{
     $sentencia->execute();
     $id = $conexion->lastInsertId();
 
-    $verificacion=$conexion->prepare("INSERT INTO Usuario_Pendiente(id_usuario,usuario,correo,clave) 
-                                                VALUES (:id,:usuario,:correo,:clave)");
-    $verificacion->bindParam(':id'         , $id,      PDO::PARAM_STR);
-    $verificacion->bindParam(':usuario'    , $usuario, PDO::PARAM_STR);
-    $verificacion->bindParam(':correo'     , $correo,  PDO::PARAM_STR);
-    $verificacion->bindParam(':clave'      , $clave,   PDO::PARAM_STR );
+    $verificacion=$conexion->prepare("INSERT INTO Medico_pendiente(no_usuario,no_cedula,grado,especialidad,universidad) 
+                       VALUES (:id,:cedula,:grado,:especialidad,:universidad)");
+    $verificacion->bindParam(':id'          , $id,      PDO::PARAM_STR);
+    $verificacion->bindParam(':cedula'      , $cedula, PDO::PARAM_STR);
+    $verificacion->bindParam(':grado'       , $grado,  PDO::PARAM_STR);
+    $verificacion->bindParam(':especialidad', $especialidad,   PDO::PARAM_STR );
+    $verificacion->bindParam(':universidad' , $universidad,   PDO::PARAM_STR );
     $verificacion->execute();
 
     $message = '
@@ -71,17 +72,13 @@ try{
     <body>
       <p>Hola '.$nombre.' '.$apellido.',<br>Bienvenido!<br></p>
       <p>Nos da mucho gusto que formes parte de nuestro sistema: Diaman, esperamos te sea de mucha utilidad.</p>
-      <p>Para finalizar el proceso de creación de tu cuenta, te pedimos des click en el siguiente link:</p>
-      <a class="link" href="http://localhost:63342/Proyecto%20Modular/verificacion_m.php?id=' . $id . '&code=' . $clave
-        . '&email='.$correo.'&user='.$usuario.'&gr='.$grado.'&un='.$universidad.'&no='.$cedula.'&es='.$especialidad.'">
-        Enlace de activación</a> 
-      <p>Esto activará tu cuenta y podrás hacer uso del sistema</p>
+      <p>Al ser un médico, se requiere primero que un administrador te evalue y posteriormente active tu cuenta de médico</p>
       <p>Esperamos disfrutes del sitio y nos gustaría escuchar tus experiencias</p>
       <hr><p>Diaman <br> Diabetes Manager and Analyer</p>
     </body>
     </html>';
     $to=$correo;
-    $subject="Activación de cuenta para Diaman";
+    $subject="Cuenta de médico en Diaman";
 
     $headers[] = 'MIME-Version: 1.0';
     $headers[] = 'Content-type: text/html; charset=UTF-8';

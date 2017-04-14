@@ -5,7 +5,105 @@
  * Date: 11/04/2017
  * Time: 10:27 AM
  */
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+require "../../BD/gestorBD.php";
+$conexion = get_connection_test();
+
+$IDX = 6;
+$eliminar = $conexion->prepare("DELETE FROM usuario WHERE id_usuario = :IDX");
+$eliminar->bindParam(':IDX',$IDX,PDO::PARAM_INT);
+$eliminar->execute();
 /*
+$clave = 1;
+
+
+$obtener = $conexion->prepare("SELECT * FROM medico_pendiente WHERE no_usuario = :IDX");
+$obtener->bindParam(':IDX',$IDX,PDO::PARAM_INT);
+$obtener->execute();
+$rs = $obtener->fetch(PDO::FETCH_ASSOC);
+$cedula = $rs['no_cedula'];
+$grado = $rs['grado'];
+$especialidad = $rs['especialidad'];
+$universidad = $rs['universidad'];
+
+$activar = $conexion->prepare("INSERT INTO medico(no_usuario,no_admon,no_cedula,grado,especialidad,universidad)
+          VALUES (:usuario,:admon,:cedula,:grado,:especialidad,:universidad)");
+$activar->bindParam(':usuario',$IDX,PDO::PARAM_INT);
+$activar->bindParam(':admon',$clave,PDO::PARAM_STR);
+$activar->bindParam(':cedula',$cedula,PDO::PARAM_STR);
+$activar->bindParam(':grado',$grado,PDO::PARAM_STR);
+$activar->bindParam(':especialidad',$especialidad,PDO::PARAM_STR);
+$activar->bindParam(':universidad',$universidad,PDO::PARAM_STR);
+$activar->execute();
+
+$eliminar = $conexion->prepare("DELETE FROM medico_pendiente WHERE no_usuario = :IDX");
+$eliminar->bindParam(':IDX',$IDX,PDO::PARAM_INT);
+$eliminar->execute();
+
+$actualizar = $conexion->prepare("UPDATE usuario SET activo=1 WHERE id_usuario=:id");
+$actualizar->bindParam(':id',$IDX,PDO::PARAM_INT);
+$actualizar->execute();
+*/
+/*
+$sentencia = $conexion->prepare("
+                SELECT usuario.nombre,usuario.apellido,usuario.sexo,usuario.fecha_nacimiento,usuario.imagen,
+                 usuario.telefono, usuario.edad, usuario.correo, medico.no_cedula, medico.grado,
+                 medico.especialidad, medico.universidad FROM medico
+                INNER JOIN usuario ON usuario.id_usuario = medico.no_usuario
+                WHERE activo = 1 ORDER BY apellido;");
+$pendientes = $conexion->prepare("
+                SELECT usuario.nombre,usuario.apellido,usuario.sexo,usuario.fecha_nacimiento,usuario.imagen,
+                 usuario.telefono, usuario.edad, usuario.correo, medico.no_cedula, medico.grado,
+                 medico.especialidad, medico.universidad FROM medico
+                INNER JOIN usuario ON usuario.id_usuario = medico.no_usuario
+                WHERE activo = 0 ORDER BY apellido;");
+try {
+    $sentencia->execute();
+    $pendientes->execute();
+    $salida = "";
+    while ($rs = $sentencia->fetch(PDO::FETCH_ASSOC)) {
+        if ($salida != "") {
+            $salida .= ",";
+        }
+        $salida .= '{"Medico":"' . $rs["nombre"] . ' ' . $rs["apellido"] . '",';
+        $salida .= '"Sexo":"' . $rs["sexo"] . '",';
+        $salida .= '"Fecha":"' . $rs["fecha_nacimiento"] . '",';
+        $salida .= '"Imagen":"' . $rs["imagen"] . '",';
+        $salida .= '"Telefono":"' . $rs["telefono"] . '",';
+        $salida .= '"Edad":"' . $rs["edad"] . '",';
+        $salida .= '"Correo":"' . $rs["correo"] . '",';
+        $salida .= '"Cedula":"' . $rs["no_cedula"] . '",';
+        $salida .= '"Grado":"' . $rs["grado"] . '",';
+        $salida .= '"Especialidad":"' . $rs["especialidad"] . '",';
+        $salida .= '"Universidad":"' . $rs["universidad"] . '"}';
+    }
+    $salida = '{"medicos":[' . $salida . '],';
+    $pendiente_s = "";
+    while ($rs = $pendientes->fetch(PDO::FETCH_ASSOC)) {
+        if ($pendiente_s != "") {
+            $pendiente_s .= ",";
+        }
+        $pendiente_s .= '{"Medico":"' . $rs["nombre"] . ' ' . $rs["apellido"] . '",';
+        $pendiente_s .= '"Sexo":"' . $rs["sexo"] . '",';
+        $pendiente_s .= '"Fecha":"' . $rs["fecha_nacimiento"] . '",';
+        $pendiente_s .= '"Imagen":"' . $rs["imagen"] . '",';
+        $pendiente_s .= '"Telefono":"' . $rs["telefono"] . '",';
+        $pendiente_s .= '"Edad":"' . $rs["edad"] . '",';
+        $pendiente_s .= '"Correo":"' . $rs["correo"] . '",';
+        $pendiente_s .= '"Cedula":"' . $rs["no_cedula"] . '",';
+        $pendiente_s .= '"Grado":"' . $rs["grado"] . '",';
+        $pendiente_s .= '"Especialidad":"' . $rs["especialidad"] . '",';
+        $pendiente_s .= '"Universidad":"' . $rs["universidad"] . '"}';
+    }
+    echo $salida.='"pendientes":['.$pendiente_s.']}';
+} catch (PDOException $e) {
+    return '{"error":{"error":' . $e->getMessage() . '}}';
+}
+*/
+/*
+
 $fname = "Carlos";
 $id = 1;
 $clave = (bin2hex(random_bytes(20)));
@@ -18,6 +116,7 @@ $header .= "From: Sender <carlosfdez@outlook.com>";
 $header .= "X-Mailer: PHP ". phpversion();
 mail('carlosfdez@outlook.com', 'Thank you for registering!', $message, $header);*/
 
+/*
 $fname = "Carlos";
 $id = 1;
 $clave = (bin2hex(random_bytes(20)));
@@ -64,7 +163,7 @@ $headers[] = 'Cc: carlosfdez@outlook.com';
 $headers[] = 'Bcc: carlosfdez@outlook.com';
 
 // Mail it
-mail($to, $subject, $message, implode("\r\n", $headers));
+mail($to, $subject, $message, implode("\r\n", $headers));*/
 /*
 $id = 1;
 $clave = (bin2hex(random_bytes(20)));

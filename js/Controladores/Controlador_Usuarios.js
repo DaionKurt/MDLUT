@@ -14,6 +14,7 @@ app.controller('Datos_sesion',function ($scope, $http) {
             $scope.pass_o = "";
             $scope.correo_o = $scope.informacion.Correo;
             $scope.telefono_o = $scope.informacion.Telefono;
+            $scope.IDX = $scope.informacion.IDX;
             console.log($scope.informacion);
         },function error(response) {
             console.log("Error: "+response);
@@ -43,6 +44,19 @@ app.controller('Datos_sesion',function ($scope, $http) {
         $scope.error = false;
         $scope.pass = "";
         document.getElementById('corroborar').style.display='none';
+    };
+    $scope.elimina = function () {
+        console.log($scope.IDX);
+        $http({
+            method: "POST",
+            url: "../../src/Gestores/External/eliminar.php",
+            data: { IDX: $scope.IDX}
+        }).then(function correcto(response){
+            console.log("BIEN");
+            window.location = "../../index.php";
+        },function error(response) {
+            console.log($scope.IDX);
+        });
     };
     $scope.guardar = function() {
         $http({

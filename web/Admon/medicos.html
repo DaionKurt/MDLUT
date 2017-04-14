@@ -1,10 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div data-ng-controller="Controlador_Medicos">
+    <h3>Medicos pendientes</h3>
+    <div ng-if="existen_medicos_pendientes">
+        <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar medico pendiente"
+               id="buscar_medicos_p" onkeyup="buscar('buscar_medicos_p','tabla_medicos_p')">
+        <div class="w3-responsive">
+            <div class="w3-responsive">
+                <br>
+                <table class="w3-table-all w3-card-2" id="tabla_medicos_p">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Sexo</th>
+                        <th>Edad</th>
+                        <th>Correo</th>
+                        <th>Información</th>
+                        <th>EDX</th>
+                    </tr>
+                    <tr data-ng-repeat="medico in medicos_pendientes">
+                        <td>{{ medico.Medico}}</td>
+                        <td>{{ medico.Sexo=='M'?"Masculino":"Femenino" }}</td>
+                        <td>{{ medico.Edad }}</td>
+                        <td>{{ medico.Correo }}</td>
 
-</body>
-</html>
+                        <td>
+                            <button ng-click="modal('ModalX'+$index)" class="w3-button w3-green">
+                                Datos de {{ medico.Medico}}</button>
+                            <div id="ModalX{{$index}}" class="w3-modal">
+                                <div class="w3-modal-content w3-animate-zoom" style="overflow-y: auto; max-height: 35em">
+                                    <header class="w3-container w3-blue">
+                              <span ng-click="cerrar_modal('ModalX'+$index)"
+                                    class="w3-button w3-display-topright">&times;</span>
+                                        <h4>Datos administrativos de {{medico.Medico}}</h4>
+                                    </header>
+                                    <div class="w3-container">
+                                        <div class="w3-row">
+                                            <div class="w3-quarter">
+                                                <img src="../../img/perfiles/{{medico.Imagen}}" class="w3-left w3-margin-right w3-card"
+                                                     style="width:100%;margin: 1em">
+                                            </div>
+                                            <div class="w3-threequarter" style="padding-left: 2em">
+                                                <h4>Datos personales</h4>
+                                                <table class="w3-table-all">
+                                                    <tr>
+                                                        <th>Sexo</th>
+                                                        <th>Edad</th>
+                                                        <th>Fecha de nacimiento</th>
+                                                        <th>Correo</th>
+                                                        <th>Teléfono</th>
+                                                        <th>EDX</th>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{{medico.Sexo=='M'?"Masculino":"Femenino" }}</td>
+                                                        <td>{{medico.Edad}}</td>
+                                                        <td>{{medico.Fecha}}</td>
+                                                        <td>{{medico.Correo}}</td>
+                                                        <td>{{medico.Telefono}}</td>
+                                                        <td> <div align="right">
+                                                            <button ng-click="activar(medico.IDX)" class="w3-button w3-green">
+                                                                Dar de alta</button>
+                                                        </div></td>
+                                                    </tr>
+                                                </table>
+                                                <p style="display:inline;">Estado: <span style="color: red;">INACTIVO</span></p>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <h4>Formación</h4>
+                                        <table class="w3-table-all">
+                                            <tr>
+                                                <th>No. de Cédula</th>
+                                                <th>Grado actual</th>
+                                                <th>Universidad</th>
+                                                <th>Especialidad</th>
+                                            </tr>
+                                            <tr>
+                                                <td>{{medico.Cedula}}</td>
+                                                <td>{{medico.Grado}}</td>
+                                                <td>{{medico.Universidad}}</td>
+                                                <td>{{medico.Especialidad}}</td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button ng-click="activar(medico.IDX)" class="w3-button w3-blue">
+                                Activar</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!existen_medicos_pendientes" align="center">
+        <h4 class="w3-card-2 nada">Aún no existen pacientes con registros</h4>
+    </div>
+    <h3>Todos los médicos</h3>
+    <div ng-if="existen_medicos">
+        <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar medico"
+               id="buscar_medicos" onkeyup="buscar('buscar_medicos','tabla_medicos')">
+        <div class="w3-responsive">
+            <br>
+            <table class="w3-table-all w3-card-2" id="tabla_medicos">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Sexo</th>
+                    <th>Edad</th>
+                    <th>Correo</th>
+                    <th>Información</th>
+                    <th>EDX</th>
+                </tr>
+                <tr data-ng-repeat="medico in medicos">
+                    <td>{{ medico.Medico}}</td>
+                    <td>{{ medico.Sexo=='M'?"Masculino":"Femenino" }}</td>
+                    <td>{{ medico.Edad }}</td>
+                    <td>{{ medico.Correo }}</td>
+
+                    <td>
+                        <button ng-click="modal('Modal'+$index)" class="w3-button w3-green">
+                            Datos de {{ medico.Medico}}</button>
+                        <div id="Modal{{$index}}" class="w3-modal">
+                            <div class="w3-modal-content w3-animate-zoom" style="overflow-y: auto; max-height: 35em">
+                                <header class="w3-container w3-blue">
+                              <span ng-click="cerrar_modal('Modal'+$index)"
+                                    class="w3-button w3-display-topright">&times;</span>
+                                    <h4>Datos administrativos de {{medico.Medico}}</h4>
+                                </header>
+                                <div class="w3-container">
+                                    <div class="w3-row">
+                                        <div class="w3-quarter">
+                                            <img src="../../img/perfiles/{{medico.Imagen}}" class="w3-left w3-margin-right w3-card"
+                                                 style="width:100%;margin: 1em">
+                                        </div>
+                                        <div class="w3-threequarter" style="padding-left: 2em">
+                                            <h4>Datos personales</h4>
+                                            <table class="w3-table-all">
+                                                <tr>
+                                                    <th>Sexo</th>
+                                                    <th>Edad</th>
+                                                    <th>Fecha de nacimiento</th>
+                                                    <th>Correo</th>
+                                                    <th>Teléfono</th>
+                                                    <th>EDX</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>{{medico.Sexo=='M'?"Masculino":"Femenino" }}</td>
+                                                    <td>{{medico.Edad}}</td>
+                                                    <td>{{medico.Fecha}}</td>
+                                                    <td>{{medico.Correo}}</td>
+                                                    <td>{{medico.Telefono}}</td>
+                                                    <td> <div align="right">
+                                                        <button ng-click="eliminar(medico.IDX)" class="w3-button w3-deep-orange">
+                                                            Dar de baja</button>
+                                                    </div></td>
+                                                </tr>
+                                            </table>
+                                            <p style="display:inline;">Estado: <span style="color: blue;">ACTIVO</span></p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <h4>Formación</h4>
+                                    <table class="w3-table-all">
+                                        <tr>
+                                            <th>No. de Cédula</th>
+                                            <th>Grado actual</th>
+                                            <th>Universidad</th>
+                                            <th>Especialidad</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{{medico.Cedula}}</td>
+                                            <td>{{medico.Grado}}</td>
+                                            <td>{{medico.Universidad}}</td>
+                                            <td>{{medico.Especialidad}}</td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button ng-click="eliminar(medico.IDX)" class="w3-button w3-red">
+                            Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="w3-row w3-center">
+            <div class="w3-bar w3-border">
+                <a href="#" class="w3-button">&laquo;</a>
+                <a href="#" class="w3-button w3-red">1</a>
+                <a href="#" class="w3-button">&raquo;</a>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!existen_medicos" align="center">
+        <h4 class="w3-card-2 nada">Aún no existen pacientes con registros</h4><br><br><br><br><br>
+    </div>
+</div>

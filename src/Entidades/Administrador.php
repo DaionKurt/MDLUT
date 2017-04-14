@@ -30,8 +30,8 @@ class Administrador extends Usuario{
      * @param $id_ad
      */
     public function __construct($nombre, $apellido, $sexo, $fecha_nacimiento, $telefono, $edad, $usuario,
-                                $correo, $pass, $activo, $id, $clave, $id_ad){
-        parent::__construct($nombre, $apellido, $sexo, $fecha_nacimiento, $telefono, $edad, $usuario, $correo, $pass, $activo, $id);
+                                $correo, $activo, $id, $clave, $id_ad){
+        parent::__construct($nombre, $apellido, $sexo, $fecha_nacimiento, $telefono, $edad, $usuario, $correo, $activo, $id);
         $this->set_clave($clave);
         $this->set_IdAd($id_ad);
     }
