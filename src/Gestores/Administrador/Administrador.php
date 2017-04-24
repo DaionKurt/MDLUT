@@ -160,9 +160,9 @@ class Administrador{
         $sentencia->bindParam(':via',$via,PDO::PARAM_STR);
         try{
             $sentencia->execute();
-            return '{"exito":1}';
+            return '{"exito":"1"}';
         }catch(PDOException $e){
-            return '{"error":{"error":'. $e->getMessage() .'}}';
+            return '{"error":{"error":"ERROR"}}';
         }
     }
     function eliminar($IDX){

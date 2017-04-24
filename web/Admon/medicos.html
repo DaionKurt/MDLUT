@@ -95,7 +95,7 @@
         </div>
     </div>
     <div ng-if="!existen_medicos_pendientes" align="center">
-        <h4 class="w3-card-2 nada">Aún no existen pacientes con registros</h4>
+        <h4 class="w3-card-2 nada">No hay médicos pendientes por aprobar</h4>
     </div>
     <h3>Todos los médicos</h3>
     <div ng-if="existen_medicos">
@@ -153,7 +153,7 @@
                                                     <td>{{medico.Correo}}</td>
                                                     <td>{{medico.Telefono}}</td>
                                                     <td> <div align="right">
-                                                        <button ng-click="eliminar(medico.IDX)" class="w3-button w3-deep-orange">
+                                                        <button ng-click="modal('EliminarX'+$index)" class="w3-button w3-deep-orange">
                                                             Dar de baja</button>
                                                     </div></td>
                                                 </tr>
@@ -183,8 +183,31 @@
                         </div>
                     </td>
                     <td>
-                        <button ng-click="eliminar(medico.IDX)" class="w3-button w3-red">
+                        <button ng-click="modal('EliminarX'+$index)" class="w3-button w3-red">
                             Eliminar</button>
+                        <div id="EliminarX{{$index}}" class="w3-modal">
+                            <div class="w3-modal-content" style="max-width: 30em;">
+                                <header class="w3-container w3-amber">
+                                 <span ng-click="cerrar_modal('EliminarX'+$index)"
+                                       class="w3-button w3-display-topright">&times;</span>
+                                    <h4><i class="fa fa-shield"></i> Confirmación</h4>
+                                </header>
+                                <div class="w3-container">
+                                    <p>Estás seguro de querer eliminar a {{medico.Medico}}?</p>
+                                    <div align="center">
+                                        <button ng-click="eliminar(medico.IDX)" class="w3-button w3-blue-grey">
+                                            Si, eliminar</button>
+                                        <button ng-click="cerrar_modal('EliminarX'+$index)" class="w3-button w3-red">
+                                            No, cancelar</button>
+                                    </div>
+                                    <br>
+                                    <div ng-show="eliminando" class="w3-teal w3-container">
+                                        <p><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Eliminando</p>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </table>
@@ -199,6 +222,6 @@
         </div>
     </div>
     <div ng-if="!existen_medicos" align="center">
-        <h4 class="w3-card-2 nada">Aún no existen pacientes con registros</h4><br><br><br><br><br>
+        <h4 class="w3-card-2 nada">No hay registro de algún médico</h4><br><br><br><br><br>
     </div>
 </div>

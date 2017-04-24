@@ -9,8 +9,8 @@
                 </header>
                 <div class="w3-container" ng-if="existen"><br>
                     <h4 style="display: inline;"> Estado actual: </h4>
-                    <span ng-style="ultimo.Estado === 'Diabético' && {'color':'red'}  ||
-                           ultimo.Estado === 'No Diabético' && {'color':'blue'}" style="color:goldenrod;font-size: large">
+                    <span ng-style="ultimo.Estado === 'Diabetico' && {'color':'red'}  ||
+                           ultimo.Estado === 'No diabetico' && {'color':'blue'}" style="color:goldenrod;font-size: large">
                        {{ultimo.Estado | uppercase}}
                                 </span>
                     <ul>
@@ -79,7 +79,7 @@
     <div id="nuevo_diagnos" class="w3-modal" >
         <div class="w3-modal-content w3-animate-zoom w3-card-4" style="max-width: 650px;">
             <header class="w3-container w3-teal">
-        <span onclick="document.getElementById('nuevo_diagnos').style.display='none'"
+        <span data-ng-click="cargar_func()"
               class="w3-button w3-display-topright">&times;</span>
                 <h3>Nuevo Diagnóstico</h3>
             </header>
@@ -87,16 +87,31 @@
                 <div class="dizzy-gillespie">
                 </div>
             </div>
+            <div class="w3-container" id="fallo_servidor" style="display: none; min-height:15em;">
+                <div class="w3-panel w3-card w3-red" align="center">
+                    <h4><i class="fa fa-ban "></i> Error de conexión <i class="fa fa-ban "></i></h4>
+                </div>
+                <div>
+                    <p>Parece que tenemos un problema para conectarnos al servidor, revisa: </p>
+                    <ul>
+                        <li>Si tienes conexión a internet</li>
+                        <li>Que no has cerrado sesión en otra pestaña del navegador</li>
+                    </ul>
+                    <p>Si después de corroborar lo anterior,sigue fallando, intenta más tarde, por favor</p>
+                    <p>Si la falla persiste, contacta al administrador</p>
+                </div>
+                <br>
+            </div>
             <div class="w3-container" id="contenedor_resultados" style="display: none;">
                 <div class="row">
                     <h4>Resultados del análisis</h4>
-                    <div class="w3-half"><p>Resultado Dataset: <b>{{dato.resultado?"Diabético":"No Diabético"}}</b></p></div>
-                    <div class="w3-half"><p>Resultado Fuzzy: <b>{{dato.result}}</b></p></div>
+                    <div class="w3-half"><p>Resultado Dataset: <b>{{dato.resultado}}</b></p></div>
+                    <div class="w3-half"><p>Resultado Fuzzy: <b>{{dato.estado}}</b></p></div>
                     <p>Certeza del análisis: {{dato.certeza*100}}%</p>
-                    <div class="w3-panel w3-red w3-display-container w3-card-2" ng-if="dato.resultado">
+                    <div class="w3-panel w3-red w3-display-container w3-card-2" ng-if="!valido">
                         <p>Tu resultado no es bueno, considera el acudir a un médico para un diagnóstico confirmatorio</p>
                     </div>
-                    <div class="w3-panel w3-blue w3-display-container w3-card-2" ng-if="!dato.resultado">
+                    <div class="w3-panel w3-blue w3-display-container w3-card-2" ng-if="valido">
                         <p>Muy bien, parece que todo está en orden</p>
                     </div>
                     <div align="right">
@@ -159,16 +174,16 @@
                             <input class="w3-input-inline w3-radio" type="radio" name="tiempo" value="0" data-ng-model="tiempo" id="enc_0_N" required>
                             <label for="enc_0_N">Despues de comer (1-1:30 hrs)</label>
                             <hr style="max-width: 85%;" align="center">
-                            <input class="w3-input-inline w3-radio" type="radio" name="vision" ng-value="1" data-ng-model="vision"id="enc_1_Y" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="familiar" ng-value="1" data-ng-model="familiar" id="enc_2_Y" required>
+                            <label for="enc_2_Y">Si</label>
+                            <input class="w3-input-inline w3-radio" type="radio" name="familiar" ng-value="0" data-ng-model="familiar" id="enc_2_N" required>
+                            <label for="enc_2_N">No - </label>
+                            <label> Un familiar directo tiene diabetes?</label><br>
+                            <input class="w3-input-inline w3-radio" type="radio" name="vision" ng-value="1" data-ng-model="vision" id="enc_1_Y" required>
                             <label for="enc_1_Y">Si</label>
                             <input class="w3-input-inline w3-radio" type="radio" name="vision" ng-value="0" data-ng-model="vision" id="enc_1_N" required>
                             <label for="enc_1_N">No - </label>
                             <label> Has tenido visión borrosa?</label><br>
-                            <input class="w3-input-inline w3-radio" type="radio" name="sed" ng-value="1" data-ng-model="sed" id="enc_2_Y" required>
-                            <label for="enc_2_Y">Si</label>
-                            <input class="w3-input-inline w3-radio" type="radio" name="sed" ng-value="0" data-ng-model="sed" id="enc_2_N" required>
-                            <label for="enc_2_N">No - </label>
-                            <label> Sufres de sed excesiva?</label><br>
                             <input class="w3-input-inline w3-radio" type="radio" name="fatiga" ng-value="1" data-ng-model="fatiga" id="enc_3_Y" required>
                             <label for="enc_3_Y">Si</label>
                             <input class="w3-input-inline w3-radio" type="radio" name="fatiga" ng-value="0" data-ng-model="fatiga" id="enc_3_N" required>
@@ -179,11 +194,11 @@
                             <input class="w3-input-inline w3-radio" type="radio" name="orina" ng-value="0" data-ng-model="orina" id="enc_4_N" required>
                             <label for="enc_4_N">No - </label>
                             <label> Orinas muy frecuentemente?</label><br>
-                            <input class="w3-input-inline w3-radio" type="radio" name="hambre" ng-value="1" data-ng-model="hambre" id="enc_5_Y" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="gestar" ng-value="1" data-ng-model="gestar" id="enc_5_Y" required>
                             <label for="enc_5_Y">Si</label>
-                            <input class="w3-input-inline w3-radio" type="radio" name="hambre" ng-value="0" data-ng-model="hambre" id="enc_5_N" required>
+                            <input class="w3-input-inline w3-radio" type="radio" name="gestar" ng-value="0" data-ng-model="gestar" id="enc_5_N" required>
                             <label for="enc_5_N">No - </label>
-                            <label> Tienes mucha hambre y bajas de peso?</label><br>
+                            <label> Has tenido diabetes gestacional?</label><br>
                         </div>
                         <div class="w3-third" style="text-align: justify;">
                             <br>

@@ -111,7 +111,10 @@
                     <p>Ups! :C hubo un error. Tal vez ya existe este usuario o el correo ya está en uso.</p>
                 </div>
                 <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
-                    <p>Tu usuario ha sido creado :D, ve a tu correo para activar tu cuenta</p>
+                    <p>Tu usuario ha sido creado, ve a tu correo para activar tu cuenta</p>
+                </div>
+                <div data-ng-show="cargando" class="w3-panel w3-card w3-teal w3-display-container ">
+                    <p><i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i> Estamos validando tus datos, espera un momento</p>
                 </div>
                 <p></p>
                 <div align="right">

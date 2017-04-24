@@ -49,25 +49,26 @@ app.controller('Controlador_Diagnostico', function($scope, $http) {
             glucosa:$scope.glucosa_d,
             tiempo:$scope.tiempo,
             vision:$scope.vision,
-            sed:$scope.sed,
+            familiar:$scope.familiar,
             fatiga:$scope.fatiga,
             orina:$scope.orina,
-            hambre:$scope.hambre,
+            gestar:$scope.gestar,
             fecha:$scope.dame_fecha_actual()});
     };
     $scope.cargar_func = function () {
         document.getElementById('nuevo_diagnos').style.display='none';
         document.getElementById("contenedor_resultados").style.display = "none";
+        document.getElementById("fallo_servidor").style.display = "none";
         document.getElementById("contenedor_analisis").style.display = "block";
         $scope.peso_d = 70;
         $scope.estatura_d = 165;
         $scope.glucosa_d = 120;
-        $scope.tiempo = false;
-        $scope.vision = false;
-        $scope.sed = false;
-        $scope.fatiga = false;
-        $scope.orina = false;
-        $scope.hambre = false;
+        $scope.tiempo = 0;
+        $scope.vision = 0;
+        $scope.familiar = 0;
+        $scope.fatiga = 0;
+        $scope.orina = 0;
+        $scope.gestar = 0;
     }
 });
 app.controller('Controlador_Citas', function($scope, $http) {
@@ -132,11 +133,16 @@ function diagnosticar($scope,$http,$params){
         url: "../../src/Gestores/Pacientes/generar_diagnostico.php",
         params: $params
     }).then(function correcto(response) {
+            console.log(response);
             $scope.dato = response.data;
+            $scope.valido = $scope.dato.estado==="No diabetico";
+            console.log($scope.valido);
             document.getElementById("animacion").style.display = "none";
             document.getElementById("contenedor_resultados").style.display = "block";
             $scope.cargar();
         },function error(response){
+            document.getElementById("animacion").style.display = "none";
+            document.getElementById("fallo_servidor").style.display = "block";
             console.log('Error: ' + response);
         });
 }

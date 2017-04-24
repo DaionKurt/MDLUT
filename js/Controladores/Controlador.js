@@ -12,17 +12,27 @@ app.controller("InicioSesion",function ($scope,$http) {
         limpia_formulario($scope);
     };
     $scope.cerrar_ventana_inicio = function () {
+        $scope.limpiar();
         document.getElementById('inicio_sesion').style.display='none';
         $scope.inicio_correcto = true;
         $scope.usuario_activo = true;
-    }
+    };
 });
 app.controller("RegistroUsuario",function ($scope,$http) {
+    $scope.cargando = false;
     $scope.registrar = function() {
+        $scope.cargando = true;
         registrar_usuario($http,$scope);
     };
     $scope.limpiar = function() {
         limpia_formulario($scope);
+    };
+    $scope.cerrar_ventana = function () {
+        $scope.limpiar();
+        document.getElementById('registro_usuario').style.display='none';
+        $scope.cargando = false;
+        $scope.correcto = false;
+        $scope.error = false;
     };
 });
 app.controller("IngresoAdmon",function ($scope,$http) {
@@ -44,7 +54,11 @@ var aor = angular.module("Register",[]);
 aor.controller("RegistroMedico",function ($scope,$http) {
     $scope.correcto = false;
     $scope.error = false;
+    $scope.cargando = false;
     $scope.registrar = function() {
+        console.log($scope.cargando);
+        $scope.cargando = true;
+        console.log($scope.cargando);
         registrar_medico($http,$scope);
     };
     $scope.cerrar_ventana_inicio = function () {
@@ -76,8 +90,10 @@ function registrar_medico($http,$scope){
         }
     }).then(function correcto(response) {
         limpia_formulario($scope);
+        $scope.cargando = false;
         $scope.correcto = true;
     }, function error(response) {
+        $scope.cargando = false;
         $scope.error = true;
     });
 }
@@ -101,6 +117,8 @@ function consultar_admon($http,$scope) {
 }
 
 function consultar_usuario($http,$scope){
+    console.log($scope.usuario);
+    console.log($scope.pass);
     $http({
         method: 'POST',
         url: 'src/BD/inicio_sesion.php',
@@ -137,13 +155,27 @@ function registrar_usuario($http,$scope){
             edad: $scope.edad_r,
             fecha_nacimiento: $scope.fecha_r}
     }).then(function correcto(response) {
+        $scope.cargando = false;
         limpia_formulario($scope);
         $scope.correcto = true;
     }, function error(response) {
+        limpia_formulario($scope);
         $scope.error = true;
     });
 }
 function limpia_formulario($scope){
-    $scope.usuario = '';
-    $scope.pass = '';
+    $scope.nombre_r='';
+    $scope.apellido_r='';
+    $scope.correo_r='';
+    $scope.usuario='';
+    $scope.pass='';
+    $scope.usuario_r='';
+    $scope.pass_r='';
+    $scope.telefono_r='';
+    $scope.sexo_r='';
+    $scope.edad_r='';
+    $scope.fecha_nacimiento_r='';
+    $scope.correcto = false;
+    $scope.error = false;
+    $scope.cargando = false;
 }

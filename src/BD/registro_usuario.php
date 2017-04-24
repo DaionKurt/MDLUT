@@ -10,6 +10,15 @@ header("Content-Type: application/json; charset=UTF-8");
 require('gestorBD.php');
 $conexion   = get_connection_test();
 $request    = json_decode(file_get_contents("php://input"));
+/*$nombre     = "Carlos";
+$apellido   = "Fernández Jalomo";
+$correo     = "carlosfdez@outlook.com";
+$usuario    = "carlosfdez";
+$pass       = "perrito";
+$telefono   = "3321073333";
+$sexo       = "M";
+$edad       = 21;
+$fecha_n    = "07/05/1995";*/
 $nombre     = $request->nombre;
 $apellido   = $request->apellido;
 $correo     = $request->correo;
@@ -86,6 +95,7 @@ try{
     mail($to, $subject, $message, implode("\r\n", $headers));
 
     $conexion = null;
+    echo '{"exito":"1"}';
 }catch(PDOException $e){
     echo '{"error":{"error":'. $e->getMessage() .'}}';
 }

@@ -76,7 +76,7 @@ if(isset($_SESSION['usuario'])){
                 class="w3-button w3-dark-grey w3-hover-blue btn-espacio btn-inicio-sesion">Iniciar sesión</button>
         <br>
         <button onclick="document.getElementById('registro_usuario').style.display='block'"
-                class="w3-button w3-black w3-hover-green btn-espacio">Registrar nuevo usuario</button>
+                class="w3-button w3-black w3-hover-green btn-espacio">Registrar nuevo paciente</button>
     </div>
 </div>
 
@@ -306,12 +306,12 @@ if(isset($_SESSION['usuario'])){
 <div id="inicio_sesion" class="w3-modal" data-ng-controller="InicioSesion">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
         <header class="w3-container w3-teal">
-            <span ng-click="cerrar_ventana_inicio()"
+            <span  ng-click="cerrar_ventana_inicio()"
                   class="w3-button w3-display-topright w3-xlarge" id="cerrar">&times;</span>
             <h2><i class="fa fa-sign-in"></i> Inicio de sesión</h2>
         </header>
         <div class="w3-container">
-            <p>Inicia tu sesión de paciente para poder ingresar a los paneles de información</p>
+            <p>Inicia tu sesión para poder ingresar a los paneles de información, nos alegra que vuelvas </p>
             <form class="w3-container" data-ng-submit="iniciar()">
                 <label for="usuario">Usuario</label>
                 <input class="w3-input w3-animate-input entrada" type="text" id="usuario" data-ng-model="usuario" required><p></p>
@@ -323,7 +323,8 @@ if(isset($_SESSION['usuario'])){
                 </div>
                 <div class="w3-panel w3-deep-orange w3-display-container w3-card-2" data-ng-hide="usuario_activo">
                     <h3>Oh vaya! :(</h3>
-                    <p>Tu usuario no está activo</p>
+                    <p>Tu usuario no está activo, si eres paciente, ve a tu correo para activarlo, si eres
+                    médico, espera a que un administrador valide tus datos</p>
                 </div>
                 <div align="right">
                     <button class="w3-btn" style="background-color: #007c6e; color: white;" type="reset" data-ng-click="limpiar()">Limpiar campos</button>
@@ -333,15 +334,18 @@ if(isset($_SESSION['usuario'])){
         </div>
     </div>
 </div>
-<div id="registro_usuario" class="w3-modal" data-ng-controller="RegistroUsuario">
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:700px">
+<div id="registro_usuario" class="w3-modal" data-ng-controller="RegistroUsuario" style="padding-top: 50px">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:700px;">
         <header class="w3-container w3-blue-gray">
-            <span onclick="document.getElementById('registro_usuario').style.display='none'"
-                  class="w3-button w3-display-topright w3-xlarge">&times;</span>
+            <span ng-click="cerrar_ventana()" class="w3-button w3-display-topright w3-xlarge" >&times;</span>
             <h2><i class="fa fa-arrow-up"></i> Registro de Usuario</h2>
         </header>
         <div class="w3-container">
             <p>Estamos felices de que te vayas a unir a nuestro sistema, por favor registrate para obtener acceso al sistema</p>
+            <div style="background-color: coral;color: white; padding-left: 1em; padding-right: 1em;text-align: justify">
+                <p> NOTA: este registro es solo para nuevos pacientes, si eres un médico, por favor revisa el botón azul en la
+                    pantalla principal, eso seguirá tu proceso de registro</p>
+            </div>
             <form class="w3-container" data-ng-submit="registrar()">
                 <div class="w3-row">
                     <div class="w3-half" style="padding-right: 1em">
@@ -367,6 +371,7 @@ if(isset($_SESSION['usuario'])){
                         <input class="w3-input w3-animate-input entrada" type="password" id="pass_r" data-ng-model="pass_r" required>
                     </div>
                 </div>
+                
                 <div class="w3-row">
                     <div class="w3-quarter" style="padding-right: 1em">
                         <label for="telefono_r">Telefono</label>
@@ -397,6 +402,9 @@ if(isset($_SESSION['usuario'])){
                 </div>
                 <div class="w3-panel w3-blue w3-display-container w3-card-2" data-ng-show="correcto">
                     <p>Tu usuario ha sido creado :D, ve a tu correo para activar tu cuenta</p>
+                </div>
+                <div data-ng-show="cargando" class="w3-panel w3-card w3-teal w3-display-container ">
+                    <p><i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i> Estamos validando tus datos, espera un momento</p>
                 </div>
                 <p></p>
                 <div align="right">

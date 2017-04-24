@@ -46,6 +46,7 @@ app.controller('Datos_sesion',function ($scope, $http) {
         document.getElementById('corroborar').style.display='none';
     };
     $scope.elimina = function () {
+        $scope.eliminando = true;
         console.log($scope.IDX);
         $http({
             method: "POST",
@@ -82,5 +83,11 @@ app.controller('Datos_sesion',function ($scope, $http) {
         }, function error(response) {
             console.log('Error: ' + response);
         });
+    };
+    $scope.abrir_modal = function() {
+        document.getElementById('elimina_modal').style.display = "block";
+    };
+    $scope.cerrar_modal = function () {
+        document.getElementById('elimina_modal').style.display = "none";
     };
 });

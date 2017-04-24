@@ -127,8 +127,37 @@ if(!isset($_SESSION['usuario']))
                     <p><i class="fa fa-id-badge"></i> Edad: {{informacion.Edad}}</p>
                 </div>
                 <div ng-hide="edicion" class="w3-quarter" style="padding-top: 1em;padding-left: 1em">
-                    <button class="w3-btn fa fa-pencil w3-large w3-red" ng-click="elimina()"><p style="display: inline;
-                    font-family: 'Calibri', sans-serif"> Eliminar cuenta</p></button>
+                    <button class="w3-btn fa fa-pencil w3-large w3-red" ng-click="abrir_modal()"><p style="display: inline;
+                    font-family: 'Calibri', sans-serif">
+                        Eliminar cuenta</button>
+                    <div id="elimina_modal" class="w3-modal">
+                        <div class="w3-modal-content" style="max-width: 30em;">
+                            <header class="w3-container w3-amber">
+                                 <span ng-click="cerrar_modal()"
+                                       class="w3-button w3-display-topright">&times;</span>
+                                <h4><i class="fa fa-shield"></i> Confirmación</h4>
+                            </header>
+                            <div class="w3-container">
+                                <p style="color: black;">Estás seguro de querer eliminar tu cuenta?</p>
+                                <div class="w3-container w3-deep-orange">
+                                    <p><i class="fa fa-exclamation-triangle"></i> Esta acción no se puede deshacer</p>
+                                </div>
+                                <br>
+                                <div align="center">
+                                    <button ng-click="elimina()" class="w3-button w3-blue-grey">
+                                        Si, eliminar</button>
+                                    <button ng-click="cerrar_modal()" class="w3-button w3-red">
+                                        No, cancelar</button>
+                                </div>
+                                <br>
+                                <div ng-show="eliminando" class="w3-teal w3-container">
+                                    <p><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i> Eliminando todos tus datos</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

@@ -20,6 +20,7 @@ app.controller("Controlador_Medicos",function($scope,$http) {
                 $scope.medicos_pendientes = response.data.pendientes;
                 $scope.existen_medicos = $scope.medicos.length>0;
                 $scope.existen_medicos_pendientes = $scope.medicos_pendientes.length>0;
+                $scope.eliminando = false;
                 console.log($scope.medicos);
             }
             ,function error(response) {
@@ -31,6 +32,12 @@ app.controller("Controlador_Medicos",function($scope,$http) {
         document.getElementById(modal).style.display = "block";
     };
     $scope.cerrar_modal = function (modal) {
+        document.getElementById(modal).style.display = "none";
+    };
+    $scope.modal_eliminar = function(modal) {
+        document.getElementById(modal).style.display = "block";
+    };
+    $scope.cerrar_modal_eliminar = function (modal) {
         document.getElementById(modal).style.display = "none";
     };
     $scope.activar = function (IDX) {
@@ -45,6 +52,7 @@ app.controller("Controlador_Medicos",function($scope,$http) {
         });
     };
     $scope.eliminar = function (IDX) {
+        $scope.eliminando = true;
         eliminar(IDX,$http,$scope);
     }
 });
@@ -56,6 +64,7 @@ app.controller("Controlador_Pacientes",function ($scope,$http){
         }).then(function correcto(response) {
                 $scope.pacientes = response.data.pacientes;
                 $scope.existen_pacientes = $scope.pacientes.length>0;
+                $scope.eliminando = false;
                 console.log($scope.pacientes);
             }
             ,function error(response) {
@@ -70,6 +79,7 @@ app.controller("Controlador_Pacientes",function ($scope,$http){
         document.getElementById(modal).style.display = "none";
     };
     $scope.eliminar = function (IDX) {
+        $scope.eliminando = true;
         eliminar(IDX,$http,$scope);
     }
 });
@@ -89,6 +99,8 @@ app.controller("Controlador_Medicinas",function ($scope,$http) {
     };
     $scope.cargar();
     $scope.registrar_medicamento = function () {
+        $scope.correcto = false;
+        $scope.error = false;
         $http({
             method: "POST",
             url: "../../src/Gestores/Administrador/crear_medicamento.php",
@@ -99,9 +111,17 @@ app.controller("Controlador_Medicinas",function ($scope,$http) {
                 via_administracion: $scope.via_administracion_m
             }
         }).then(function correcto(response) {
-            $scope.correcto = true;
-            $scope.cargar();
+            if(typeof(response.data.error) === "undefined"){
+                $scope.correcto = true;
+                $scope.error = false;
+                $scope.cargar();
+            }else{
+                $scope.correcto = false;
+                $scope.error = true;
+            }
+            console.log(response);
         }, function error(response) {
+            $scope.correcto = false;
             $scope.error = true;
         });
     }

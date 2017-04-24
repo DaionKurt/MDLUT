@@ -16,15 +16,25 @@
             </form>
         </div>
         <div class="w3-half" style="padding-left: 1em">
-            <h4 class="w3-blue w3-round-medium" style="padding-left: 1em">Qué debes hacer en tus consultas?</h4>
+            <h4 class="w3-blue w3-round-medium" style="padding-left: 1em">Recuerda que los medicamentos deben: </h4>
             <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
-            Atender todas las inquitudes del paciente <br>
+            Ser aprobados por una asociación médica certificada <br>
             <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
-            Hacer notar que vivir con diabétes no es el fin del mundo <br>
+            Se deben anotar todas sus instrucciones importantes <br>
             <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
-            Reconocer los patrones de diagnósticos para dar resultados correctos <br>
-            <i style="padding-left: 1em;color: orangered;" class="fa fa-check-square"></i>
-            Indicar el camino correcto a seguir para un paciente con diabétes <br>
+            Se deben se establecer las dosis y medidas adecuadas <br>
+            <br>
+            <h4 class="w3-blue w3-round-medium" style="padding-left: 1em">Debes recordar: </h4>
+            <i style="padding-left: 1em;color: red;" class="fa fa-check-square"></i>
+            Si un medcicamento ya no es válido, eliminarlo <br>
+            <i style="padding-left: 1em;color: red;" class="fa fa-check-square"></i>
+            Si sale un medicamento mejor, suplantarlo con el antiguo<br><br>
+            <div ng-show="error" class="w3-container w3-red">
+                <p><i class="fa fa-exclamation-triangle "></i> Ya existe este medicamento</p>
+            </div>
+            <div ng-show="correcto" class="w3-container w3-light-blue">
+                <p><i class="fa fa-check-square-o "></i> Listo, medicamento agregado</p>
+            </div>
         </div>
     </div>
     <div class="w3-row">
@@ -36,10 +46,10 @@
                 <br>
                 <table class="w3-table-all w3-card-2" id="tabla_medicinas">
                     <tr>
-                        <th>Nombre</th>
-                        <th>Información</th>
-                        <th>Dosis</th>
-                        <th>Vía de administración</th>
+                        <th><i class="fa fa-bars"></i> Nombre</th>
+                        <th><i class="fa fa-info-circle"></i> Información</th>
+                        <th><i class="fa fa-medkit"></i> Dosis</th>
+                        <th><i class="fa fa-child"></i> Vía de administración</th>
                     </tr>
                     <tr data-ng-repeat="medicamento in medicamentos">
                         <td>{{ medicamento.Nombre}}</td>
@@ -59,7 +69,7 @@
             </div>
         </div>
         <div ng-if="!existen_medicamentos" align="center">
-            <h4 class="w3-card-2 nada">Aún no tienes horarios de atención disponibles</h4><br>
+            <h4 class="w3-card-2 nada">Aún no hay medicamentos registrados</h4><br>
         </div>
     </div>
 </div>

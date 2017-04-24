@@ -17,5 +17,5 @@ $via = $request->via_administracion;
 $admon  = $_SESSION['admon'];
 $usuario = $_SESSION['usuario'];
 $administrador = new Administrador($admon,$usuario);
-$administrador->crear_medicamento($nombre,$informacion,$dosis,$via);
+echo $administrador->crear_medicamento($nombre,$informacion,$dosis,$via);
 $administrador = null;
